@@ -30,6 +30,8 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
+#include "LED1.h"
+#include "BitIoLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -49,6 +51,22 @@ int main(void)
 
   /* Write your code here */
   /* For example: for(;;) { } */
+int i=0;
+short b=0;//Das ist ein Toggelwert
+  for(;;){
+	  i++;
+	  if(i>1000000){
+		  if(b>0){
+			  LED1_SetDir(0);
+			  b=0;
+		  }else{
+			  LED1_SetDir(1);
+			  b=1;
+		  }
+		  i=0;
+	  }
+  }
+
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
@@ -57,7 +75,7 @@ int main(void)
   #endif
   /*** End of RTOS startup code.  ***/
   /*** Processor Expert end of main routine. DON'T MODIFY THIS CODE!!! ***/
-  for(;;){}
+  for(;;){  }
   /*** Processor Expert end of main routine. DON'T WRITE CODE BELOW!!! ***/
 } /*** End of main routine. DO NOT MODIFY THIS TEXT!!! ***/
 
