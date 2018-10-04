@@ -22,7 +22,7 @@ by the component.
 <td class="regNotResetVal">0x00041000</td>
  <td>SIM_SOPT2 register, peripheral USB0.</td></tr>
 <tr><td>0x40048034</td><td>SIM_SCGC4</td>
-<td class="regNotResetVal">0xF0140030</td>
+<td class="regNotResetVal">0xF0140430</td>
  <td>SIM_SCGC4 register, peripheral USB0.</td></tr>
 <tr><td>0x40072094</td><td>USB0_CTL</td>
 <td class="regNotResetVal">0x00000003</td>
@@ -275,7 +275,7 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048034</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xF0140030</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0xF0140430</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0xF0100030</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>20</td><td>VREF</td><td>0x01</td><td>VREF Clock Gate Control</td>
@@ -284,7 +284,7 @@ registers of the peripheral(s) configured by the component.
 <tr><td>13</td><td>UART3</td><td>0x00</td><td>UART3 Clock Gate Control</td>
 <tr><td>12</td><td>UART2</td><td>0x00</td><td>UART2 Clock Gate Control</td>
 <tr><td>11</td><td>UART1</td><td>0x00</td><td>UART1 Clock Gate Control</td>
-<tr><td>10</td><td>UART0</td><td>0x00</td><td>UART0 Clock Gate Control</td>
+<tr><td>10</td><td>UART0</td><td>0x01</td><td>UART0 Clock Gate Control</td>
 <tr><td>7</td><td>I2C1</td><td>0x00</td><td>I2C1 Clock Gate Control</td>
 <tr><td>6</td><td>I2C0</td><td>0x00</td><td>I2C0 Clock Gate Control</td>
 <tr><td>2</td><td>CMT</td><td>0x00</td><td>CMT Clock Gate Control</td>

@@ -212,6 +212,54 @@ Module "SW1"       (component BitIO)
                 returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
                 limitations). This method cannot be disabled if direction is [input].
 
+Module "AS1"       (component AsynchroSerial)
+   - AS1_RecvChar -If any data is received, this method returns one character, otherwise it returns an error code (it does not 
+                wait for data). This method is enabled only if the receiver property is enabled.  [Note:] Because the preferred 
+                method to handle error and break exception in the interrupt mode is to use events <OnError> and <OnBreak> the 
+                return value ERR_RXEMPTY has higher priority than other error codes. As a consequence the information about an 
+                exception in interrupt mode is returned only if there is a valid character ready to be read.
+   - AS1_SendChar -Sends one character to the channel. If the component is temporarily disabled (Disable method) SendChar 
+                method only stores data into an output buffer. In case of a zero output buffer size, only one character can be 
+                stored. Enabling the component (Enable method) starts the transmission of the stored data. This method is 
+                available only if the transmitter property is enabled.
+   - AS1_RecvBlock -If any data is received, this method returns the block of the data and its length (and incidental error), 
+                otherwise it returns an error code (it does not wait for data).  This method is available only if non-zero 
+                length of the input buffer is defined and the receiver property is enabled.  If less than requested number of 
+                characters is received only the available data is copied from the receive buffer to the user specified 
+                destination. The value ERR_EXEMPTY is returned and the value of variable pointed by the Rcv parameter is set to 
+                the number of received characters.
+   - AS1_SendBlock -Sends a block of characters to the channel.  This method is available only if non-zero length of the output 
+                buffer is defined and the transmitter property is enabled.
+   - AS1_ClearRxBuf -Clears the receive buffer.  This method is available only if non-zero length of the input buffer is 
+                defined and the receiver property is enabled.
+   - AS1_ClearTxBuf -Clears the transmit buffer.  This method is available only if non-zero length of the output buffer is 
+                defined and the receiver property is enabled.
+   - AS1_GetCharsInRxBuf -Returns the number of characters in the input buffer. This method is available only if the receiver 
+                property is enabled.
+   - AS1_GetCharsInTxBuf -Returns the number of characters in the output buffer. This method is available only if the 
+                transmitter property is enabled.
+
+Module "TI1"       (component TimerInt)
+
+Module "TU1"       (component TimerUnit_LDD)
+   - TU1_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
+                interrupt priority, sets pin routing, sets timing, etc. If the property <"Enable in init. code"> is set to 
+                "yes" value then the device is also enabled (see the description of the <Enable> method). In this case the 
+                <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
+                second call of Init the <Deinit> must be called first.
+   - TU1_SetEventMask -Enables/disables event(s). The events contained within the mask are enabled. Events not contained within 
+                the mask are disabled. The component event masks are defined in the PE_Types.h file. Note: Event that are not 
+                generated (See the "Events" tab in the Component inspector) are not handled by this method. In this case the 
+                method returns ERR_PARAM_MASK error code. See also method <GetEventMask>.
+   - TU1_GetEventMask -Returns current events mask. Note: Event that are not generated (See the "Events" tab in the Component 
+                inspector) are not handled by this method. See also method <SetEventMask>.
+   - TU1_GetCounterValue -Returns the content of counter register. This method can be used both if counter is enabled and if 
+                counter is disabled. The method is not available if HW doesn't allow reading of the counter.
+   - TU1_SetOffsetTicks -Sets the new offset value to channel specified by the parameter ChannelIdx. It is user responsibility 
+                to use value below selected period. This method is available when at least one channel is configured.
+   - TU1_GetOffsetTicks -Returns the number of counter ticks to compare match channel specified by the parameter ChannelIdx. 
+                See also method <SetOffsetTicks>. This method is available when at least one channel is configured.
+
 Module "BUZ1"      (component BitIO)
    - BUZ1_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
                 returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
@@ -248,233 +296,6 @@ Module "RTT1"      (component SeggerRTT)
    - RTT1_GetStdio -Returns a pointer to the standard I/O
    - RTT1_Deinit -Driver deinitialization
    - RTT1_Init -Initializes the RTT Control Block.
-
-Module "LED_IR"    (component LED)
-   - LED_IR_On -This turns the LED on.
-   - LED_IR_Off -This turns the LED off.
-   - LED_IR_Neg -This negates/toggles the LED
-   - LED_IR_Get -This returns logical 1 in case the LED is on, 0 otherwise.
-   - LED_IR_Put -Turns the LED on or off.
-   - LED_IR_SetRatio16 -Method to specify the duty cycle. If using a PWM pin, this means the duty cycle is set. For On/off pins,
-                values smaller 0x7FFF means off, while values greater means on.
-   - LED_IR_ParseCommand -Shell Command Line parser. This method is enabled/disabled depending on if you have the Shell 
-                enabled/disabled in the properties.
-   - LED_IR_Deinit -Deinitializes the driver
-   - LED_IR_Init -Performs the LED driver initialization.
-
-Module "RefCnt"    (component TimerUnit_LDD)
-   - RefCnt_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
-                interrupt priority, sets pin routing, sets timing, etc. If the property <"Enable in init. code"> is set to 
-                "yes" value then the device is also enabled (see the description of the <Enable> method). In this case the 
-                <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
-                second call of Init the <Deinit> must be called first.
-   - RefCnt_Deinit -Deinitializes the device. Switches off the device, frees the device data structure memory, interrupts 
-                vectors, etc.
-   - RefCnt_ResetCounter -Resets counter. If counter is counting up then it is set to zero. If counter is counting down then 
-                counter is updated to the reload value.   The method is not available if HW doesn't allow resetting of the 
-                counter.
-   - RefCnt_GetCounterValue -Returns the content of counter register. This method can be used both if counter is enabled and if 
-                counter is disabled. The method is not available if HW doesn't allow reading of the counter.
-
-Module "IR1"       (component BitIO)
-   - IR1_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR1_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR1_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR1_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR1_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR1_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR1_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "IR2"       (component BitIO)
-   - IR2_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR2_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR2_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR2_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR2_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR2_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR2_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "IR3"       (component BitIO)
-   - IR3_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR3_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR3_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR3_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR3_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR3_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR3_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "IR4"       (component BitIO)
-   - IR4_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR4_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR4_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR4_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR4_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR4_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR4_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "IR5"       (component BitIO)
-   - IR5_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR5_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR5_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR5_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR5_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR5_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR5_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "IR6"       (component BitIO)
-   - IR6_SetDir -Sets a pin direction (available only if the direction = _[input/output]_).
-   - IR6_SetInput -Sets a pin direction to input (available only if the direction = _[input/output]_).
-   - IR6_SetOutput -Sets a pin direction to output (available only if the direction = _[input/output]_).
-   - IR6_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - IR6_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or a 
-                register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - IR6_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - IR6_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "Q4CLeft"   (component QuadCounter)
-   - Q4CLeft_GetPos -Returns the current position based on the encoder tracking.
-   - Q4CLeft_SetPos -Sets the position information. Can be used as well to reset the position information.
-   - Q4CLeft_GetVal -Returns the quadrature value (0, 1, 2 or 3)
-   - Q4CLeft_Sample -Call this method to periodically sample the signals.
-   - Q4CLeft_NofErrors -Returns the number of decoding errors
-   - Q4CLeft_SwapPins -Swap the two pins
-   - Q4CLeft_Deinit -Module de-initialization method
-   - Q4CLeft_Init -Module initialization method
-   - Q4CLeft_ParseCommand -Handler to process shell commands
-
-Module "Q4CRight"  (component QuadCounter)
-   - Q4CRight_GetPos -Returns the current position based on the encoder tracking.
-   - Q4CRight_SetPos -Sets the position information. Can be used as well to reset the position information.
-   - Q4CRight_GetVal -Returns the quadrature value (0, 1, 2 or 3)
-   - Q4CRight_Sample -Call this method to periodically sample the signals.
-   - Q4CRight_NofErrors -Returns the number of decoding errors
-   - Q4CRight_SwapPins -Swap the two pins
-   - Q4CRight_Deinit -Module de-initialization method
-   - Q4CRight_Init -Module initialization method
-   - Q4CRight_ParseCommand -Handler to process shell commands
-
-Module "MOTTU"     (component TimerUnit_LDD)
-   - MOTTU_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and sets 
-                interrupt priority, sets pin routing, sets timing, etc. If the property <"Enable in init. code"> is set to 
-                "yes" value then the device is also enabled (see the description of the <Enable> method). In this case the 
-                <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
-                second call of Init the <Deinit> must be called first.
-   - MOTTU_Deinit -Deinitializes the device. Switches off the device, frees the device data structure memory, interrupts 
-                vectors, etc.
-   - MOTTU_Enable -Enables the component - it starts the signal generation. Events may be generated (see SetEventMask). The 
-                method is not available if the counter can't be disabled/enabled by HW.
-   - MOTTU_Disable -Disables the component - it stops signal generation and events calling. The method is not available if the 
-                counter can't be disabled/enabled by HW.
-   - MOTTU_GetPeriodTicks -Returns the number of counter ticks before re-initialization. See also method <SetPeriodTicks>. This 
-                method is available only if the property <"Counter restart"> is switched to 'on-match' value.
-   - MOTTU_ResetCounter -Resets counter. If counter is counting up then it is set to zero. If counter is counting down then 
-                counter is updated to the reload value.   The method is not available if HW doesn't allow resetting of the 
-                counter.
-   - MOTTU_GetCounterValue -Returns the content of counter register. This method can be used both if counter is enabled and if 
-                counter is disabled. The method is not available if HW doesn't allow reading of the counter.
-   - MOTTU_SetOffsetTicks -Sets the new offset value to channel specified by the parameter ChannelIdx. It is user 
-                responsibility to use value below selected period. This method is available when at least one channel is 
-                configured.
-   - MOTTU_GetOffsetTicks -Returns the number of counter ticks to compare match channel specified by the parameter ChannelIdx. 
-                See also method <SetOffsetTicks>. This method is available when at least one channel is configured.
-   - MOTTU_SelectOutputAction -Sets the type of compare match and counter overflow action on channel output. This method is 
-                available when at least one channel is configured.
-
-Module "DIRL"      (component BitIO)
-   - DIRL_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - DIRL_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or 
-                a register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - DIRL_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - DIRL_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "PWMR"      (component PWM)
-   - PWMR_Enable -This method enables the component - it starts the signal generation. Events may be generated 
-                (<DisableEvent>/<EnableEvent>).
-   - PWMR_Disable -This method disables the component - it stops the signal generation and events calling. When the timer is 
-                disabled, it is possible to call <ClrValue> and <SetValue> methods.
-   - PWMR_SetRatio16 -This method sets a new duty-cycle ratio. Ratio is expressed as a 16-bit unsigned integer number. 0 - FFFF 
-                value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of predefined 
-                values in <Starting pulse width> property.   Note: Calculated duty depends on the timer possibilities and on 
-                the selected period.
-
-Module "DIRR"      (component BitIO)
-   - DIRR_GetVal -Returns the input/output value. If the direction is [input] then the input value of the pin is read and 
-                returned. If the direction is [output] then the last written value is returned (see <Safe mode> property for 
-                limitations). This method cannot be disabled if direction is [input].
-   - DIRR_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory or 
-                a register and this value will be written to the pin after switching to the output mode (using [SetDir(TRUE)]; 
-                see <Safe mode> property for limitations). If the direction is [output], it writes the value to the pin. 
-                (Method is available only if the direction = _[output]_ or _[input/output]_).
-   - DIRR_ClrVal -Clears (set to zero) the output value. It is equivalent to the [PutVal(FALSE)]. This method is available only 
-                if the direction = _[output]_ or _[input/output]_.
-   - DIRR_SetVal -Sets (to one) the output value. It is equivalent to the [PutVal(TRUE)]. This method is available only if the 
-                direction = _[output]_ or _[input/output]_.
-
-Module "PWML"      (component PWM)
-   - PWML_Enable -This method enables the component - it starts the signal generation. Events may be generated 
-                (<DisableEvent>/<EnableEvent>).
-   - PWML_Disable -This method disables the component - it stops the signal generation and events calling. When the timer is 
-                disabled, it is possible to call <ClrValue> and <SetValue> methods.
-   - PWML_SetRatio16 -This method sets a new duty-cycle ratio. Ratio is expressed as a 16-bit unsigned integer number. 0 - FFFF 
-                value is proportional to ratio 0 - 100%. The method is available only if it is not selected list of predefined 
-                values in <Starting pulse width> property.   Note: Calculated duty depends on the timer possibilities and on 
-                the selected period.
-
-Module "QuadInt"   (component TimerInt)
-
-Module "TU_QuadInt" (component TimerUnit_LDD)
-   - TU_QuadInt_Init -Initializes the device. Allocates memory for the device data structure, allocates interrupt vectors and 
-                sets interrupt priority, sets pin routing, sets timing, etc. If the property <"Enable in init. code"> is set to 
-                "yes" value then the device is also enabled (see the description of the <Enable> method). In this case the 
-                <Enable> method is not necessary and needn't to be generated. This method can be called only once. Before the 
-                second call of Init the <Deinit> must be called first.
 
 Module "TMOUT1"    (component Timeout)
    - TMOUT1_GetCounter -Initializes a new timeout counter and returns the handle to it. At the end, use LeaveCounter() to free 

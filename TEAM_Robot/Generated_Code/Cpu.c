@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K22P144M100SF5RM, Rev.2, Apr 2013
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-09-28, 16:04, # CodeGen: 0
+**     Date/Time   : 2018-10-04, 14:53, # CodeGen: 1
 **     Abstract    :
 **
 **     Settings    :
@@ -324,47 +324,14 @@
 #include "BitIoLdd2.h"
 #include "SW1.h"
 #include "BitIoLdd3.h"
+#include "AS1.h"
+#include "ASerialLdd3.h"
+#include "TI1.h"
+#include "TimerIntLdd1.h"
+#include "TU1.h"
 #include "BUZ1.h"
 #include "BitIoLdd4.h"
 #include "RTT1.h"
-#include "LED_IR.h"
-#include "LEDpin3.h"
-#include "BitIoLdd5.h"
-#include "RefCnt.h"
-#include "IR1.h"
-#include "BitIoLdd6.h"
-#include "IR2.h"
-#include "BitIoLdd7.h"
-#include "IR3.h"
-#include "BitIoLdd8.h"
-#include "IR4.h"
-#include "BitIoLdd9.h"
-#include "IR5.h"
-#include "BitIoLdd10.h"
-#include "IR6.h"
-#include "BitIoLdd11.h"
-#include "Q4CLeft.h"
-#include "C12.h"
-#include "BitIoLdd16.h"
-#include "C23.h"
-#include "BitIoLdd17.h"
-#include "Q4CRight.h"
-#include "C13.h"
-#include "BitIoLdd18.h"
-#include "C25.h"
-#include "BitIoLdd19.h"
-#include "MOTTU.h"
-#include "DIRL.h"
-#include "BitIoLdd12.h"
-#include "PWMR.h"
-#include "PwmLdd2.h"
-#include "DIRR.h"
-#include "BitIoLdd13.h"
-#include "PWML.h"
-#include "PwmLdd3.h"
-#include "QuadInt.h"
-#include "TimerIntLdd2.h"
-#include "TU_QuadInt.h"
 #include "TMOUT1.h"
 #include "USB1.h"
 #include "CDC1.h"
@@ -1062,36 +1029,6 @@ PE_ISR(Cpu_ivINT_Reserved46)
 
 /*
 ** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_UART0_RX_TX (component MK22FN1M0LK12)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-PE_ISR(Cpu_ivINT_UART0_RX_TX)
-{
-  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
-  PE_DEBUGHALT();
-}
-
-/*
-** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_UART0_ERR (component MK22FN1M0LK12)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-PE_ISR(Cpu_ivINT_UART0_ERR)
-{
-  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
-  PE_DEBUGHALT();
-}
-
-/*
-** ===================================================================
 **     Method      :  Cpu_Cpu_ivINT_UART1_RX_TX (component MK22FN1M0LK12)
 **
 **     Description :
@@ -1242,21 +1179,6 @@ PE_ISR(Cpu_ivINT_FTM0)
 
 /*
 ** ===================================================================
-**     Method      :  Cpu_Cpu_ivINT_FTM1 (component MK22FN1M0LK12)
-**
-**     Description :
-**         This ISR services an unused interrupt/exception vector.
-**         This method is internal. It is used by Processor Expert only.
-** ===================================================================
-*/
-PE_ISR(Cpu_ivINT_FTM1)
-{
-  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
-  PE_DEBUGHALT();
-}
-
-/*
-** ===================================================================
 **     Method      :  Cpu_Cpu_ivINT_FTM2 (component MK22FN1M0LK12)
 **
 **     Description :
@@ -1325,6 +1247,21 @@ PE_ISR(Cpu_ivINT_RTC_Seconds)
 ** ===================================================================
 */
 PE_ISR(Cpu_ivINT_PIT0)
+{
+  /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
+  PE_DEBUGHALT();
+}
+
+/*
+** ===================================================================
+**     Method      :  Cpu_Cpu_ivINT_PIT1 (component MK22FN1M0LK12)
+**
+**     Description :
+**         This ISR services an unused interrupt/exception vector.
+**         This method is internal. It is used by Processor Expert only.
+** ===================================================================
+*/
+PE_ISR(Cpu_ivINT_PIT1)
 {
   /* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
   PE_DEBUGHALT();
@@ -2016,48 +1953,14 @@ void PE_low_level_init(void)
   (void)BitIoLdd2_Init(NULL);
   /* ### BitIO_LDD "BitIoLdd3" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)BitIoLdd3_Init(NULL);
+  /* ### Asynchro serial "AS1" init code ... */
+  AS1_Init();
+  /* ### TimerInt_LDD "TimerIntLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)TimerIntLdd1_Init(NULL);
+  /* ### TimerInt "TI1" init code ... */
   /* ### BitIO_LDD "BitIoLdd4" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)BitIoLdd4_Init(NULL);
   RTT1_Init(); /* ### SeggerRTT "RTT1" init code ... */
-  /* ### BitIO_LDD "BitIoLdd5" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd5_Init(NULL);
-  /* ### LED "LED_IR" init code ... */
-  LED_IR_Init(); /* initialize LED driver */
-  /* ### BitIO_LDD "BitIoLdd6" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd6_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd7" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd7_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd8" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd8_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd9" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd9_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd10" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd10_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd11" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd11_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd16" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd16_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd17" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd17_Init(NULL);
-  /* ### QuadCounter "Q4CLeft" init code ... */
-  Q4CLeft_Init();
-  /* ### BitIO_LDD "BitIoLdd18" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd18_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd19" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd19_Init(NULL);
-  /* ### QuadCounter "Q4CRight" init code ... */
-  Q4CRight_Init();
-  /* ### BitIO_LDD "BitIoLdd12" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd12_Init(NULL);
-  /* ### PWM_LDD "PwmLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)PwmLdd2_Init(NULL);
-  /* ### BitIO_LDD "BitIoLdd13" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd13_Init(NULL);
-  /* ### PWM_LDD "PwmLdd3" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)PwmLdd3_Init(NULL);
-  /* ### TimerInt_LDD "TimerIntLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)TimerIntLdd2_Init(NULL);
-  /* ### TimerInt "QuadInt" init code ... */
   /* ### Timeout "TMOUT1" init code ... */
   TMOUT1_Init();
   Tx1_Init(); /* ### RingBuffer "Tx1" init code ... */

@@ -6,7 +6,7 @@
 **     Version     : Component 01.014, Driver 01.04, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2018-09-28, 16:04, # CodeGen: 0
+**     Date/Time   : 2018-10-04, 14:53, # CodeGen: 1
 **     Abstract    :
 **
 **     Settings    :
@@ -69,23 +69,7 @@
 ** Array of initialized device structures of LDD components.
 ** ===========================================================================
 */
-LDD_TDeviceData *PE_LDD_DeviceDataList[25] = {
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
+LDD_TDeviceData *PE_LDD_DeviceDataList[9] = {
     NULL,
     NULL,
     NULL,
@@ -168,14 +152,12 @@ bool PE_PeripheralUsed(uint32_t PrphBaseAddress)
     case 0x400FF0C0UL:
     /* Base address allocated by peripheral(s) PTA */
     case 0x400FF000UL:
+    /* Base address allocated by peripheral(s) UART0 */
+    case 0x4006A000UL:
+    /* Base address allocated by peripheral(s) FTM1 */
+    case 0x40039000UL:
     /* Base address allocated by peripheral(s) PTC */
     case 0x400FF080UL:
-    /* Base address allocated by peripheral(s) FTM2 */
-    case 0x400B8000UL:
-    /* Base address allocated by peripheral(s) FTM0 */
-    case 0x40038000UL:
-    /* Base address allocated by peripheral(s) PIT */
-    case 0x40037000UL:
     /* Base address allocated by peripheral(s) FTFE */
     case 0x40020000UL:
     /* Base address allocated by peripheral(s) ADC1 */

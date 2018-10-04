@@ -91,6 +91,7 @@ int main(void)
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
+
   APP_Start();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

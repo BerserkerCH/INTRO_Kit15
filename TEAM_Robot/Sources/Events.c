@@ -57,9 +57,9 @@ void Cpu_OnNMIINT(void)
 
 /*
 ** ===================================================================
-**     Event       :  QuadInt_OnInterrupt (module Events)
+**     Event       :  TI1_OnInterrupt (module Events)
 **
-**     Component   :  QuadInt [TimerInt]
+**     Component   :  TI1 [TimerInt]
 **     Description :
 **         When a timer interrupt occurs this event is called (only
 **         when the component is enabled - <Enable> and the events are
@@ -69,7 +69,7 @@ void Cpu_OnNMIINT(void)
 **     Returns     : Nothing
 ** ===================================================================
 */
-void QuadInt_OnInterrupt(void)
+void TI1_OnInterrupt(void)
 {
   /* Write your code here ... */
 }

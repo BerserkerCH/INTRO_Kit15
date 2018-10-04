@@ -18,7 +18,7 @@ by the component.
 <td class="regNotResetVal">0x00000013</td>
  <td>ADC1_SC1A register, peripheral ADC_Bat.</td></tr>
 <tr><td>0x40048030</td><td>SIM_SCGC3</td>
-<td class="regNotResetVal">0x09000000</td>
+<td class="regNotResetVal">0x08000000</td>
  <td>SIM_SCGC3 register, peripheral ADC_Bat.</td></tr>
 <tr><td>0x400BB008</td><td>ADC1_CFG1</td>
 <td class="regNotResetVal">0x0000007C</td>
@@ -140,12 +140,12 @@ registers of the peripheral(s) configured by the component.
         
 </div>
 <table class="regtbl2"><tr><td class="trowtit" colspan="2">Address</td><td colspan="2">0x40048030</td></tr>
-<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x09000000</td></tr>
+<tr class="trowtit"><td  class="trowtit" colspan="2">Initial value</td><td colspan="2">0x08000000</td></tr>
 <tr class="trowtit"><td  class="trowtit" colspan="2">After-reset value</td><td colspan="2">0x00000000</td></tr>
 <tr><td class="ttitle2">Bit</td><td class="ttitle2">Field</td><td class="ttitle2">Value</td><td class="ttitle2">Description</td></tr>
 <tr><td>27</td><td>ADC1</td><td>0x01</td><td>ADC1 Clock Gate Control</td>
 <tr><td>25</td><td>FTM3</td><td>0x00</td><td>FTM3 Clock Gate Control</td>
-<tr><td>24</td><td>FTM2</td><td>0x01</td><td>FTM2 Clock Gate Control</td>
+<tr><td>24</td><td>FTM2</td><td>0x00</td><td>FTM2 Clock Gate Control</td>
 <tr><td>17</td><td>SDHC</td><td>0x00</td><td>SDHC Clock Gate Control</td>
 </tr></table>
 <div class="reghdr1">ADC1_CFG1</div>
