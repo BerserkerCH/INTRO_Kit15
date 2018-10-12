@@ -72,15 +72,19 @@ bool EVNT_EventIsSetAutoClear(EVNT_Handle event) {
 void EVNT_HandleEvent(void (*callback)(EVNT_Handle), bool clearEvent) {
    /* Handle the one with the highest priority. Zero is the event with the highest priority. */
    EVNT_Handle event;
+   CS1_CriticalVariable()
    /*! \todo Make it reentrant  continuer ici*/
+
+   CS1_EnterCritical();
    for (event=(EVNT_Handle)0; event<EVNT_NOF_EVENTS; event++) { /* does a test on every event */
      if (GET_EVENT(event)) { /* event present? */
-       if (clearEvent) {
-         CLR_EVENT(event); /* clear event */
-       }
-       break; /* get out of loop */
+    	 if (clearEvent) {
+    		 CLR_EVENT(event); /* clear event */
+    	 }
+    	 break; /* get out of loop */
      }
    }
+   CS1_ExitCritical();
    if (event != EVNT_NOF_EVENTS) {
      callback(event);
      /* Note: if the callback sets the event, we will get out of the loop.
