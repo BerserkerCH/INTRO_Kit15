@@ -89,8 +89,12 @@ void APP_EventHandler(EVNT_Handle event) {
       }
       LED1_Off();
     }
+    break;
   case EVNT_LED_HEARTBEAT:
     LED2_Neg();
+    break;
+  case EVNT_BUZZ_NEG:
+    BUZ_PlayTune(BUZ_TUNE_WELCOME); // does not work yet
     break;
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
@@ -179,6 +183,10 @@ static void APP_AdoptToHardware(void) {
 #endif
 }
 
+/* void myISR(void){
+	EVNT_SetEvent(EVNT_LED_HEARTBEAT);
+} */
+
 void APP_Start(void) {
 
   PL_Init();
@@ -187,6 +195,13 @@ void APP_Start(void) {
   EVNT_SetEvent(EVNT_STARTUP);
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);
+  BUZ_Init();
+  EVNT_SetEvent(EVNT_STARTUP);
+
+  for(;;) {
+	  EVNT_HandleEvent(APP_EventHandler,TRUE);
+	  LED1_Neg();
+	  WAIT1_Waitms(350);
   }
 }
 

@@ -28,6 +28,8 @@
 
 #include "Cpu.h"
 #include "Events.h"
+#include "Event.h"
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -72,6 +74,7 @@ void Cpu_OnNMIINT(void)
 void TI1_OnInterrupt(void)
 {
   /* Write your code here ... */
+	EVNT_SetEvent(EVNT_BUZZ_NEG);
 }
 
 /* END Events */

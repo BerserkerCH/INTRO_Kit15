@@ -11,6 +11,8 @@
 
 #include "Platform.h"
 #if PL_CONFIG_HAS_BUZZER
+  #include "BUZ1.h"
+
 #if PL_CONFIG_HAS_SHELL
   #include "CLS1.h"
 
