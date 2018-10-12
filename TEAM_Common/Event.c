@@ -72,7 +72,6 @@ bool EVNT_EventIsSetAutoClear(EVNT_Handle event) {
 void EVNT_HandleEvent(void (*callback)(EVNT_Handle), bool clearEvent) {
    /* Handle the one with the highest priority. Zero is the event with the highest priority. */
    EVNT_Handle event;
-<<<<<<< Updated upstream
    CS1_CriticalVariable()
    /*! \todo Make it reentrant  continuer ici*/
 
@@ -83,7 +82,6 @@ void EVNT_HandleEvent(void (*callback)(EVNT_Handle), bool clearEvent) {
     		 CLR_EVENT(event); /* clear event */
     	 }
     	 break; /* get out of loop */
-=======
    /*! \todo Make it reentrant */
    CS1_CriticalVariable()
    CS1_EnterCritical();
@@ -93,7 +91,6 @@ void EVNT_HandleEvent(void (*callback)(EVNT_Handle), bool clearEvent) {
 		 CLR_EVENT(event); /* clear event */
 	   }
        break; /* get out of loop */
->>>>>>> Stashed changes
      }
    }
    CS1_ExitCritical();
