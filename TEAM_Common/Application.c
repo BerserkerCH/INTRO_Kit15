@@ -98,8 +98,10 @@ void APP_EventHandler(EVNT_Handle event) {
     break;
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
+    LED1_Neg();
     BtnMsg(1, "pressed");
-     break;
+    //CLS1_SendStr("SW1 pressed but Andy depressed!\r\n", CLS1_GetStdio()->stdOut);
+    break;
 #endif
     default:
       break;
@@ -192,16 +194,8 @@ void APP_Start(void) {
   PL_Init();
   APP_AdoptToHardware();
   __asm volatile("cpsie i"); /* enable interrupts */
-  EVNT_SetEvent(EVNT_STARTUP);
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);
-  BUZ_Init();
-  EVNT_SetEvent(EVNT_STARTUP);
-
-  for(;;) {
-	  EVNT_HandleEvent(APP_EventHandler,TRUE);
-	  LED1_Neg();
-	  WAIT1_Waitms(350);
   }
 }
 
