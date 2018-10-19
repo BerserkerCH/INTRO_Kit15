@@ -1,0 +1,6 @@
+Events.c:54:6:Cpu_OnNMI	4	static
+Events.c:74:6:FRTOS1_vApplicationStackOverflowHook	16	static
+Events.c:99:6:FRTOS1_vApplicationTickHook	4	static
+Events.c:117:6:FRTOS1_vApplicationIdleHook	4	static
+Events.c:136:6:FRTOS1_vApplicationMallocFailedHook	4	static
+Events.c:160:6:PTRC1_OnTraceWrap	4	static

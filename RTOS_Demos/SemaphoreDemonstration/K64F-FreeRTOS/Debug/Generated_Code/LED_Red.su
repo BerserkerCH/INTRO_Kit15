@@ -1,0 +1,3 @@
+LED_Red.c:166:6:LED_Red_Init	8	static
+LED_Red.c:183:6:LED_Red_Deinit	4	static
+LED_Red.c:204:6:LED_Red_SetRatio16	16	static

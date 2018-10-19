@@ -1,0 +1,7 @@
+startup.c:43:6:__copy_rom_section	48	static
+startup.c:97:6:__copy_rom_sections_to_ram	24	static
+startup.c:121:13:zero_fill_bss	40	static
+startup.c:167:29:__init_registers	4	static
+startup.c:176:29:__init_hardware	4	static
+startup.c:181:29:__init_user	4	static
+startup.c:190:6:__iar_program_start	8	static

@@ -1,0 +1,5 @@
+BitIoLdd3.c:120:18:BitIoLdd3_Init	24	static
+BitIoLdd3.c:169:6:BitIoLdd3_GetVal	24	static
+BitIoLdd3.c:192:6:BitIoLdd3_ClrVal	16	static
+BitIoLdd3.c:212:6:BitIoLdd3_SetVal	16	static
+BitIoLdd3.c:232:6:BitIoLdd3_NegVal	16	static

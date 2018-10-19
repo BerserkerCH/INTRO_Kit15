@@ -1,0 +1,7 @@
+CPU_Init.c:277:6:CPU_SetBASEPRI	16	static
+CPU_Init.c:318:30:__init_hardware	8	static
+CPU_Init.c:406:6:PE_low_level_init	8	static
+CPU_Init.c:513:19:CPU_GetClockGenMode	4	static
+CPU_Init.c:560:6:CPU_SetClockConfigGenMode	40	static
+CPU_Init.c:753:12:CPU_SetClockConfiguration	24	static
+CPU_Init.c:849:25:CPU_GetClockConfiguration	4	static

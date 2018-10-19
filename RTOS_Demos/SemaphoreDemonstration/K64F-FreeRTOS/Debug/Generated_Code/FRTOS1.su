@@ -1,0 +1,3 @@
+FRTOS1.c:1770:6:FRTOS1_Init	8	static
+FRTOS1.c:4059:6:FRTOS1_Deinit	4	static
+FRTOS1.c:4538:10:FRTOS1_AppGetRuntimeCounterValueFromISR	4	static

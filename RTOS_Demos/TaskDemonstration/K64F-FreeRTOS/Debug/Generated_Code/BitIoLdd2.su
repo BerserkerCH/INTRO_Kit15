@@ -1,0 +1,5 @@
+BitIoLdd2.c:120:18:BitIoLdd2_Init	24	static
+BitIoLdd2.c:169:6:BitIoLdd2_GetVal	24	static
+BitIoLdd2.c:192:6:BitIoLdd2_ClrVal	16	static
+BitIoLdd2.c:212:6:BitIoLdd2_SetVal	16	static
+BitIoLdd2.c:232:6:BitIoLdd2_NegVal	16	static

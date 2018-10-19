@@ -1,0 +1,15 @@
+port.c:362:6:prvTaskExitError	4	static
+port.c:396:17:pxPortInitialiseStack	24	static
+port.c:715:6:vPortInitTickTimer	4	static
+port.c:775:6:vPortStartTickTimer	4	static
+port.c:779:6:vPortStopTickTimer	4	static
+port.c:786:33:vPortEnableVFP	4	static
+port.c:835:12:xPortStartScheduler	24	static
+port.c:921:6:vPortEndScheduler	8	static
+port.c:933:6:vPortEnterCritical	4	static
+port.c:961:6:vPortExitCritical	4	static
+port.c:973:6:vPortYieldFromISR	4	static
+port.c:983:10:uxGetTickCounterValue	16	static
+port.c:1041:6:vPortTickHandler	8	static
+port.c:1134:6:vPortStartFirstTask	16	static
+port.c:1602:8:vPortValidateInterruptPriority	16	static

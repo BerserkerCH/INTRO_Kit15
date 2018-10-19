@@ -1,0 +1,5 @@
+main.c:69:6:Led_BlueBlink	32	static
+main.c:96:6:Led_RedBlink	32	static
+main.c:123:6:Led_GreenBlink	32	static
+main.c:153:6:Delay_Nonsense	16	static
+main.c:165:5:main	16	static

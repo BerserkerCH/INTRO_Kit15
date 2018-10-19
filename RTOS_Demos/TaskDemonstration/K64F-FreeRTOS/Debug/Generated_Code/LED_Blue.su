@@ -1,0 +1,3 @@
+LED_Blue.c:166:6:LED_Blue_Init	8	static
+LED_Blue.c:183:6:LED_Blue_Deinit	4	static
+LED_Blue.c:204:6:LED_Blue_SetRatio16	16	static

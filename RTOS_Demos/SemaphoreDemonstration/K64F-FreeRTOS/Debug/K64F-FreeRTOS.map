@@ -1,0 +1,2394 @@
+Archive member included to satisfy reference by file (symbol)
+
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+                              Project_Settings\Startup_Code\startup.o (__libc_init_array)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+                              Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o (memcmp)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+                              Generated_Code\SEGGER_RTT.o (memcpy)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+                              Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o (memset)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+                              Generated_Code\UTIL1.o (strchr)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+                              Generated_Code\CLS1.o (strcmp)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+                              Generated_Code\CLS1.o (strlen)
+d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+                              Generated_Code\UTIL1.o (strncmp)
+
+Allocating common symbols
+Common symbol       size              file
+
+RTT1_DefaultShellBuffer
+                    0x30              Generated_Code\RTT1.o
+LEDSemaphore        0x4               Sources\main.o
+CLS1_DefaultShellBuffer
+                    0x30              Generated_Code\CLS1.o
+PageInfo            0x10              Generated_Code\trcStreamingRecorder.o
+SR_reg              0x1               Static_Code\System\CPU_Init.o
+_SEGGER_RTT         0xd8              Generated_Code\SEGGER_RTT.o
+trcWarningChannel   0x4               Generated_Code\trcKernelPort.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+m_interrupts     0x00000000         0x00000198         xr
+m_text           0x00000410         0x000ffbf0         xr
+m_data_1FFF0000  0x1fff0000         0x00010000         rw
+m_data           0x20000000         0x00030000         rw
+m_cfmprotrom     0x00000400         0x00000010         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+LOAD Generated_Code\BitIoLdd1.o
+LOAD Generated_Code\BitIoLdd2.o
+LOAD Generated_Code\BitIoLdd3.o
+LOAD Generated_Code\CLS1.o
+LOAD Generated_Code\CS1.o
+LOAD Generated_Code\Cpu.o
+LOAD Generated_Code\FRTOS1.o
+LOAD Generated_Code\LED_Blue.o
+LOAD Generated_Code\LED_Green.o
+LOAD Generated_Code\LED_Red.o
+LOAD Generated_Code\LEDpin1.o
+LOAD Generated_Code\LEDpin2.o
+LOAD Generated_Code\LEDpin3.o
+LOAD Generated_Code\MCUC1.o
+LOAD Generated_Code\PE_LDD.o
+LOAD Generated_Code\PTRC1.o
+LOAD Generated_Code\Pins1.o
+LOAD Generated_Code\RTT1.o
+LOAD Generated_Code\RTT_Syscalls_GCC.o
+LOAD Generated_Code\SEGGER_RTT.o
+LOAD Generated_Code\SEGGER_RTT_printf.o
+LOAD Generated_Code\SEGGER_SYSVIEW.o
+LOAD Generated_Code\SEGGER_SYSVIEW_Config.o
+LOAD Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+LOAD Generated_Code\SYS1.o
+LOAD Generated_Code\UTIL1.o
+LOAD Generated_Code\WAIT1.o
+LOAD Generated_Code\XF1.o
+LOAD Generated_Code\croutine.o
+LOAD Generated_Code\event_groups.o
+LOAD Generated_Code\heap_1.o
+LOAD Generated_Code\heap_2.o
+LOAD Generated_Code\heap_3.o
+LOAD Generated_Code\heap_4.o
+LOAD Generated_Code\heap_5.o
+LOAD Generated_Code\list.o
+LOAD Generated_Code\port.o
+LOAD Generated_Code\portasm.o
+LOAD Generated_Code\queue.o
+LOAD Generated_Code\tasks.o
+LOAD Generated_Code\timers.o
+LOAD Generated_Code\trcKernelPort.o
+LOAD Generated_Code\trcSnapshotRecorder.o
+LOAD Generated_Code\trcStreamingRecorder.o
+LOAD Project_Settings\Startup_Code\startup.o
+LOAD Sources\Events.o
+LOAD Sources\main.o
+LOAD Static_Code\System\CPU_Init.o
+LOAD Static_Code\System\Peripherals_Init.o
+LOAD Static_Code\System\Vectors.o
+START GROUP
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libsupc++_nano.a
+END GROUP
+                0x00001000                malloc_getpagesize_P = 0x1000
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libstdc++_nano.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libm.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a
+START GROUP
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu\libgcc.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a
+END GROUP
+START GROUP
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu\libgcc.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a
+END GROUP
+START GROUP
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu\libgcc.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libnosys.a
+END GROUP
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+LOAD d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+                0x20030000                _estack = 0x20030000
+                0x20030000                __SP_INIT = _estack
+                0x00000000                __heap_size = 0x0
+                0x00000400                __stack_size = 0x400
+
+.interrupts     0x00000000      0x198
+                0x00000000                __vector_table = .
+                0x00000000                . = ALIGN (0x4)
+ *(.vectortable)
+ .vectortable   0x00000000      0x198 Static_Code\System\Vectors.o
+                0x00000000                __vect_table
+                0x00000198                . = ALIGN (0x4)
+
+.cfmprotect     0x00000400        0x0
+                0x00000400                . = ALIGN (0x4)
+ *(.cfmconfig)
+                0x00000400                . = ALIGN (0x4)
+
+.text           0x00000410     0xffb8
+                0x00000410                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000410        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+ .text          0x00000410       0x40 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+ .text          0x00000450      0x110 Generated_Code\BitIoLdd1.o
+                0x00000450                BitIoLdd1_Init
+                0x000004d0                BitIoLdd1_GetVal
+                0x00000500                BitIoLdd1_ClrVal
+                0x00000520                BitIoLdd1_SetVal
+                0x00000540                BitIoLdd1_NegVal
+ .text          0x00000560      0x110 Generated_Code\BitIoLdd2.o
+                0x00000560                BitIoLdd2_Init
+                0x000005e0                BitIoLdd2_GetVal
+                0x00000610                BitIoLdd2_ClrVal
+                0x00000630                BitIoLdd2_SetVal
+                0x00000650                BitIoLdd2_NegVal
+ .text          0x00000670      0x110 Generated_Code\BitIoLdd3.o
+                0x00000670                BitIoLdd3_Init
+                0x000006f0                BitIoLdd3_GetVal
+                0x00000720                BitIoLdd3_ClrVal
+                0x00000740                BitIoLdd3_SetVal
+                0x00000760                BitIoLdd3_NegVal
+ .text          0x00000780      0x898 Generated_Code\CLS1.o
+                0x00000780                CLS1_SendCh
+                0x0000079c                CLS1_SendStr
+                0x000007c8                CLS1_SendNum32s
+                0x000007f4                CLS1_SendNum32u
+                0x00000820                CLS1_SendNum16s
+                0x00000850                CLS1_SendNum16u
+                0x00000880                CLS1_SendNum8u
+                0x000008b0                CLS1_SendNum8s
+                0x000008e0                CLS1_ParseCommand
+                0x000009e4                CLS1_PrintPrompt
+                0x00000a04                CLS1_IsHistoryCharacter
+                0x00000a28                CLS1_ReadLine
+                0x00000af4                CLS1_PrintStatus
+                0x00000b60                CLS1_PrintCommandFailed
+                0x00000bd0                CLS1_IterateTable
+                0x00000c24                CLS1_ParseWithCommandTable
+                0x00000cb0                CLS1_SetStdio
+                0x00000cd0                CLS1_GetStdio
+                0x00000ce8                CLS1_ReadAndParseWithCommandTable
+                0x00000dbc                CLS1_RequestSerial
+                0x00000dcc                CLS1_ReleaseSerial
+                0x00000ddc                CLS1_GetSemaphore
+                0x00000e58                CLS1_SendHelpStr
+                0x00000e7c                CLS1_SendStatusStr
+                0x00000ea0                CLS1_ReadChar
+                0x00000ec8                CLS1_SendChar
+                0x00000f0c                CLS1_KeyPressed
+                0x00000f30                CLS1_Init
+                0x00000f40                CLS1_Deinit
+                0x00000f50                CLS1_SendData
+                0x00000f84                CLS1_printfPutChar
+                0x00000fa4                CLS1_printfIO
+                0x00000fdc                CLS1_printf
+ .text          0x00001018        0x0 Generated_Code\CS1.o
+ .text          0x00001018       0x54 Generated_Code\Cpu.o
+                0x00001018                Components_Init
+                0x00001050                Cpu_INT_NMIInterrupt
+ .text          0x0000106c       0x30 Generated_Code\FRTOS1.o
+                0x0000106c                FRTOS1_Init
+                0x0000107c                FRTOS1_Deinit
+                0x0000108c                FRTOS1_AppGetRuntimeCounterValueFromISR
+ .text          0x0000109c       0x60 Generated_Code\LED_Blue.o
+                0x0000109c                LED_Blue_Init
+                0x000010b4                LED_Blue_Deinit
+                0x000010c4                LED_Blue_SetRatio16
+ .text          0x000010fc       0x60 Generated_Code\LED_Green.o
+                0x000010fc                LED_Green_Init
+                0x00001114                LED_Green_Deinit
+                0x00001124                LED_Green_SetRatio16
+ .text          0x0000115c       0x60 Generated_Code\LED_Red.o
+                0x0000115c                LED_Red_Init
+                0x00001174                LED_Red_Deinit
+                0x00001184                LED_Red_SetRatio16
+ .text          0x000011bc        0x0 Generated_Code\LEDpin1.o
+ .text          0x000011bc        0x0 Generated_Code\LEDpin2.o
+ .text          0x000011bc        0x0 Generated_Code\LEDpin3.o
+ .text          0x000011bc        0x0 Generated_Code\MCUC1.o
+ .text          0x000011bc       0x78 Generated_Code\PE_LDD.o
+                0x000011bc                PE_FillMemory
+                0x000011e4                PE_PeripheralUsed
+                0x0000121c                LDD_SetClockConfiguration
+ .text          0x00001234       0x30 Generated_Code\PTRC1.o
+                0x00001234                PTRC1_vGetGDBDumpCommand
+                0x00001254                PTRC1_Startup
+ .text          0x00001264        0x0 Generated_Code\Pins1.o
+ .text          0x00001264      0x118 Generated_Code\RTT1.o
+                0x00001264                RTT1_StdIOKeyPressed
+                0x0000127c                RTT1_StdIOReadChar
+                0x000012ac                RTT1_StdIOSendChar
+                0x000012f0                RTT1_RecvChar
+                0x0000131c                RTT1_SendChar
+                0x0000134c                RTT1_Deinit
+                0x0000135c                RTT1_Init
+                0x00001368                RTT1_GetStdio
+ .text          0x0000137c       0x24 Generated_Code\RTT_Syscalls_GCC.o
+                0x0000137c                _write
+ .text          0x000013a0      0xe0c Generated_Code\SEGGER_RTT.o
+                0x000015fc                SEGGER_RTT_ReadNoLock
+                0x000016f0                SEGGER_RTT_Read
+                0x00001728                SEGGER_RTT_WriteWithOverwriteNoLock
+                0x00001854                SEGGER_RTT_WriteSkipNoLock
+                0x00001990                SEGGER_RTT_WriteNoLock
+                0x00001a2c                SEGGER_RTT_Write
+                0x00001a74                SEGGER_RTT_WriteString
+                0x00001a9c                SEGGER_RTT_GetKey
+                0x00001ad0                SEGGER_RTT_WaitKey
+                0x00001aec                SEGGER_RTT_HasKey
+                0x00001b2c                SEGGER_RTT_HasData
+                0x00001b64                SEGGER_RTT_AllocDownBuffer
+                0x00001c58                SEGGER_RTT_AllocUpBuffer
+                0x00001d50                SEGGER_RTT_ConfigUpBuffer
+                0x00001e24                SEGGER_RTT_ConfigDownBuffer
+                0x00001ef8                SEGGER_RTT_SetNameUpBuffer
+                0x00001f5c                SEGGER_RTT_SetNameDownBuffer
+                0x00001fc0                SEGGER_RTT_Init
+                0x00001fd8                SEGGER_RTT_SetTerminal
+                0x0000208c                SEGGER_RTT_TerminalOut
+ .text          0x000021ac      0x6f0 Generated_Code\SEGGER_RTT_printf.o
+                0x000024d0                SEGGER_RTT_vprintf
+                0x0000286c                SEGGER_RTT_printf
+ .text          0x0000289c     0x31c8 Generated_Code\SEGGER_SYSVIEW.o
+                0x00003510                SEGGER_SYSVIEW_Init
+                0x0000358c                SEGGER_SYSVIEW_SetRAMBase
+                0x000035ac                SEGGER_SYSVIEW_RecordVoid
+                0x000035e8                SEGGER_SYSVIEW_RecordU32
+                0x00003660                SEGGER_SYSVIEW_RecordU32x2
+                0x00003714                SEGGER_SYSVIEW_RecordU32x3
+                0x00003800                SEGGER_SYSVIEW_RecordU32x4
+                0x00003924                SEGGER_SYSVIEW_RecordU32x5
+                0x00003a80                SEGGER_SYSVIEW_RecordU32x6
+                0x00003c14                SEGGER_SYSVIEW_RecordU32x7
+                0x00003de0                SEGGER_SYSVIEW_RecordU32x8
+                0x00003fe4                SEGGER_SYSVIEW_RecordU32x9
+                0x00004224                SEGGER_SYSVIEW_RecordU32x10
+                0x000044a4                SEGGER_SYSVIEW_RecordString
+                0x000044ec                SEGGER_SYSVIEW_Start
+                0x00004664                SEGGER_SYSVIEW_Stop
+                0x000046b0                SEGGER_SYSVIEW_GetSysDesc
+                0x000047e4                SEGGER_SYSVIEW_SendTaskInfo
+                0x000049b0                SEGGER_SYSVIEW_SendTaskList
+                0x000049d8                SEGGER_SYSVIEW_SendSysDesc
+                0x00004a20                SEGGER_SYSVIEW_RecordSystime
+                0x00004a78                SEGGER_SYSVIEW_RecordEnterISR
+                0x00004afc                SEGGER_SYSVIEW_RecordExitISR
+                0x00004b34                SEGGER_SYSVIEW_RecordExitISRToScheduler
+                0x00004b6c                SEGGER_SYSVIEW_RecordEnterTimer
+                0x00004bf0                SEGGER_SYSVIEW_RecordExitTimer
+                0x00004c28                SEGGER_SYSVIEW_RecordEndCall
+                0x00004ca0                SEGGER_SYSVIEW_RecordEndCallU32
+                0x00004d50                SEGGER_SYSVIEW_OnIdle
+                0x00004d88                SEGGER_SYSVIEW_OnTaskCreate
+                0x00004e10                SEGGER_SYSVIEW_OnTaskTerminate
+                0x00004e98                SEGGER_SYSVIEW_OnTaskStartExec
+                0x00004f20                SEGGER_SYSVIEW_OnTaskStopExec
+                0x00004f58                SEGGER_SYSVIEW_OnTaskStartReady
+                0x00004fe0                SEGGER_SYSVIEW_OnTaskStopReady
+                0x000050a0                SEGGER_SYSVIEW_OnUserStart
+                0x00005118                SEGGER_SYSVIEW_OnUserStop
+                0x00005190                SEGGER_SYSVIEW_NameResource
+                0x00005220                SEGGER_SYSVIEW_SendPacket
+                0x00005258                SEGGER_SYSVIEW_EncodeU32
+                0x000052a8                SEGGER_SYSVIEW_EncodeString
+                0x000052c8                SEGGER_SYSVIEW_EncodeData
+                0x000052e8                SEGGER_SYSVIEW_EncodeId
+                0x00005348                SEGGER_SYSVIEW_ShrinkId
+                0x0000536c                SEGGER_SYSVIEW_RegisterModule
+                0x000053fc                SEGGER_SYSVIEW_RecordModuleDescription
+                0x000054f0                SEGGER_SYSVIEW_SendModule
+                0x000055f0                SEGGER_SYSVIEW_SendModuleDescription
+                0x0000562c                SEGGER_SYSVIEW_SendNumModules
+                0x000056a8                SEGGER_SYSVIEW_PrintfHostEx
+                0x000056d4                SEGGER_SYSVIEW_PrintfHost
+                0x000056fc                SEGGER_SYSVIEW_WarnfHost
+                0x00005724                SEGGER_SYSVIEW_ErrorfHost
+                0x0000574c                SEGGER_SYSVIEW_PrintfTargetEx
+                0x00005778                SEGGER_SYSVIEW_PrintfTarget
+                0x000057a0                SEGGER_SYSVIEW_WarnfTarget
+                0x000057c8                SEGGER_SYSVIEW_ErrorfTarget
+                0x000057f0                SEGGER_SYSVIEW_Print
+                0x000058a8                SEGGER_SYSVIEW_Warn
+                0x00005960                SEGGER_SYSVIEW_Error
+                0x00005a18                SEGGER_SYSVIEW_EnableEvents
+                0x00005a40                SEGGER_SYSVIEW_DisableEvents
+ .text          0x00005a64       0x64 Generated_Code\SEGGER_SYSVIEW_Config.o
+                0x00005a64                SEGGER_uxGetTickCounterValue
+                0x00005aa0                SEGGER_SYSVIEW_Conf
+ .text          0x00005ac8      0x3f0 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+                0x00005c10                SYSVIEW_AddTask
+                0x00005ce0                SYSVIEW_UpdateTask
+                0x00005dc0                SYSVIEW_SendTaskInfo
+                0x00005e04                SYSVIEW_RecordU32x4
+                0x00005e58                SYSVIEW_RecordU32x5
+ .text          0x00005eb8        0xc Generated_Code\SYS1.o
+                0x00005eb8                SYS1_Init
+ .text          0x00005ec4     0x1e68 Generated_Code\UTIL1.o
+                0x00005ec4                UTIL1_strcpy
+                0x00005f10                UTIL1_strcat
+                0x00005f78                UTIL1_chcat
+                0x00005fcc                UTIL1_Num8uToStr
+                0x00005ff0                UTIL1_Num8sToStr
+                0x00006018                UTIL1_Num16uToStr
+                0x00006104                UTIL1_Num16sToStr
+                0x000062f4                UTIL1_Num16sToStrFormatted
+                0x0000632c                UTIL1_Num16uToStrFormatted
+                0x00006364                UTIL1_Num32uToStrFormatted
+                0x00006390                UTIL1_Num32sToStrFormatted
+                0x000063bc                UTIL1_strcatNum8u
+                0x000063f0                UTIL1_strcatNum8s
+                0x00006424                UTIL1_strcatNum16u
+                0x00006458                UTIL1_strcatNum16s
+                0x0000648c                UTIL1_strcatNum16uFormatted
+                0x000064d0                UTIL1_strcatNum16sFormatted
+                0x00006514                UTIL1_strcatNum32uFormatted
+                0x00006550                UTIL1_strcatNum32sFormatted
+                0x0000658c                UTIL1_strcatNum8Hex
+                0x000065ec                UTIL1_strcatNum16Hex
+                0x0000665c                UTIL1_strcatNum24Hex
+                0x000066cc                UTIL1_strcatNum32Hex
+                0x0000673c                UTIL1_strcatNum32s
+                0x0000676c                UTIL1_strcatNum32u
+                0x0000679c                UTIL1_Num32sToStr
+                0x000068cc                UTIL1_Num32uToStr
+                0x000069b4                UTIL1_IsLeapYear
+                0x00006a14                UTIL1_WeekDay
+                0x00006ad8                UTIL1_ReadEscapedName
+                0x00006c1c                UTIL1_xatoi
+                0x00006d80                UTIL1_ScanDate
+                0x00006e78                UTIL1_ScanTime
+                0x00006fd0                UTIL1_ScanDecimal8uNumber
+                0x00007064                UTIL1_ScanDecimal8sNumber
+                0x000070ec                UTIL1_ScanDecimal16uNumber
+                0x00007184                UTIL1_ScanDecimal16sNumber
+                0x0000720c                UTIL1_ScanDecimal32uNumber
+                0x000072a0                UTIL1_ScanDecimal32sNumber
+                0x00007324                UTIL1_ScanDecimal32sDotNumber
+                0x000074f0                UTIL1_ScanHex32uNumber
+                0x00007574                UTIL1_ScanHex16uNumber
+                0x000075fc                UTIL1_ScanHex8uNumber
+                0x00007684                UTIL1_ScanHex8uNumberNoPrefix
+                0x00007708                UTIL1_strtailcmp
+                0x00007768                UTIL1_strCutTail
+                0x000077ac                UTIL1_strcatNum32sDotValue100
+                0x0000782c                UTIL1_strFind
+                0x00007888                UTIL1_ScanSeparatedNumbers
+                0x00007940                UTIL1_ScanDoubleQuotedString
+                0x000079dc                UTIL1_strcatPad
+                0x00007a94                UTIL1_NumFloatToStr
+                0x00007b94                UTIL1_strcatNumFloat
+                0x00007bd0                UTIL1_GetValue16LE
+                0x00007bfc                UTIL1_GetValue24LE
+                0x00007c28                UTIL1_GetValue32LE
+                0x00007c60                UTIL1_SetValue16LE
+                0x00007c90                UTIL1_SetValue24LE
+                0x00007cc8                UTIL1_SetValue32LE
+                0x00007d0c                UTIL1_Deinit
+                0x00007d1c                UTIL1_Init
+ .text          0x00007d2c       0xd0 Generated_Code\WAIT1.o
+                0x00007d2c                WAIT1_Wait10Cycles
+                0x00007d38                WAIT1_Wait100Cycles
+                0x00007d60                WAIT1_WaitCycles
+                0x00007d98                WAIT1_WaitLongCycles
+                0x00007dd0                WAIT1_Waitms
+ .text          0x00007dfc      0x710 Generated_Code\XF1.o
+                0x00007dfc                XF1_xformat
+                0x00007f98                XF1_xvformat
+                0x000084e0                XF1_xsprintf
+ .text          0x0000850c        0x0 Generated_Code\croutine.o
+ .text          0x0000850c      0x5b8 Generated_Code\event_groups.o
+                0x0000850c                xEventGroupCreate
+                0x0000854c                xEventGroupSync
+                0x00008694                xEventGroupWaitBits
+                0x00008810                xEventGroupClearBits
+                0x00008874                xEventGroupGetBitsFromISR
+                0x000088a8                xEventGroupSetBits
+                0x000089b4                vEventGroupDelete
+                0x00008a1c                vEventGroupSetBitsCallback
+                0x00008a38                vEventGroupClearBitsCallback
+                0x00008a98                uxEventGroupGetNumber
+ .text          0x00008ac4        0x0 Generated_Code\heap_1.o
+ .text          0x00008ac4        0x0 Generated_Code\heap_2.o
+ .text          0x00008ac4        0x0 Generated_Code\heap_3.o
+ .text          0x00008ac4      0x3f8 Generated_Code\heap_4.o
+                0x00008ac4                pvPortMalloc
+                0x00008c48                vPortFree
+                0x00008cfc                xPortGetFreeHeapSize
+                0x00008d14                xPortGetMinimumEverFreeHeapSize
+                0x00008d2c                vPortInitialiseBlocks
+ .text          0x00008ebc        0x0 Generated_Code\heap_5.o
+ .text          0x00008ebc      0x16c Generated_Code\list.o
+                0x00008ebc                vListInitialise
+                0x00008efc                vListInitialiseItem
+                0x00008f18                vListInsertEnd
+                0x00008f60                vListInsert
+                0x00008fd4                uxListRemove
+ .text          0x00009028      0x3e4 Generated_Code\port.o
+                0x00009028                prvTaskExitError
+                0x00009050                pxPortInitialiseStack
+                0x000090b0                vPortInitTickTimer
+                0x000090f8                vPortStartTickTimer
+                0x00009110                vPortStopTickTimer
+                0x00009128                vPortEnableVFP
+                0x00009144                xPortStartScheduler
+                0x00009208                vPortEndScheduler
+                0x00009214                vPortEnterCritical
+                0x00009260                vPortExitCritical
+                0x0000928c                vPortYieldFromISR
+                0x000092b0                uxGetTickCounterValue
+                0x000092d0                vPortTickHandler
+                0x000092f8                vPortStartFirstTask
+                0x00009328                vPortSVCHandler
+                0x00009348                vPortPendSVHandler
+                0x0000939c                vPortValidateInterruptPriority
+ .text          0x0000940c        0x0 Generated_Code\portasm.o
+ .text          0x0000940c     0x13cc Generated_Code\queue.o
+                0x0000940c                xQueueGenericReset
+                0x000094c0                xQueueGenericCreate
+                0x00009600                xQueueCreateMutex
+                0x00009630                xQueueGetMutexHolder
+                0x00009660                xQueueGetMutexHolderFromISR
+                0x0000969c                xQueueGiveMutexRecursive
+                0x0000970c                xQueueTakeMutexRecursive
+                0x0000978c                xQueueCreateCountingSemaphore
+                0x000097f0                xQueueGenericSend
+                0x00009b04                xQueueGenericSendFromISR
+                0x00009c7c                xQueueGiveFromISR
+                0x00009c9c                MyWrapper
+                0x00009e00                xQueueGenericReceive
+                0x0000a1dc                xQueueReceiveFromISR
+                0x0000a31c                xQueuePeekFromISR
+                0x0000a3b8                uxQueueMessagesWaiting
+                0x0000a3e8                uxQueueSpacesAvailable
+                0x0000a424                uxQueueMessagesWaitingFromISR
+                0x0000a450                vQueueDelete
+                0x0000a4f4                uxQueueGetQueueNumber
+                0x0000a50c                vQueueSetQueueNumber
+                0x0000a528                ucQueueGetQueueType
+                0x0000a734                xQueueIsQueueEmptyFromISR
+                0x0000a79c                xQueueIsQueueFullFromISR
+ .text          0x0000a7d8     0x224c Generated_Code\tasks.o
+                0x0000a7d8                xTaskCreate
+                0x0000aa78                vTaskDelayUntil
+                0x0000ab48                vTaskDelay
+                0x0000ab9c                eTaskGetState
+                0x0000ac2c                uxTaskPriorityGet
+                0x0000ac60                uxTaskPriorityGetFromISR
+                0x0000aca4                vTaskPrioritySet
+                0x0000adec                vTaskSuspend
+                0x0000af1c                vTaskResume
+                0x0000afd0                xTaskResumeFromISR
+                0x0000b0a8                vTaskStartScheduler
+                0x0000b120                vTaskSuspendAll
+                0x0000b13c                xTaskResumeAll
+                0x0000b264                xTaskGetTickCount
+                0x0000b288                xTaskGetTickCountFromISR
+                0x0000b2bc                uxTaskGetNumberOfTasks
+                0x0000b2d4                pcTaskGetName
+                0x0000b3dc                xTaskGetHandle
+                0x0000b488                uxTaskGetSystemState
+                0x0000b57c                xTaskGetIdleTaskHandle
+                0x0000b5a4                xTaskIncrementTick
+                0x0000b764                vTaskSwitchContext
+                0x0000b854                vTaskPlaceOnEventList
+                0x0000b890                vTaskPlaceOnUnorderedEventList
+                0x0000b8f0                xTaskRemoveFromEventList
+                0x0000b9b4                vTaskRemoveFromUnorderedEventList
+                0x0000ba6c                vTaskSetTimeOutState
+                0x0000baa8                xTaskCheckForTimeOut
+                0x0000bb50                vTaskMissedYield
+                0x0000bb68                uxTaskGetTaskNumber
+                0x0000bb94                vTaskSetTaskNumber
+                0x0000bc64                vTaskGetInfo
+                0x0000bdfc                uxTaskGetStackHighWaterMark
+                0x0000be80                xTaskGetCurrentTaskHandle
+                0x0000bea0                xTaskGetSchedulerState
+                0x0000bedc                vTaskPriorityInherit
+                0x0000bfb4                xTaskPriorityDisinherit
+                0x0000c090                vTaskList
+                0x0000c204                uxTaskResetEventItemValue
+                0x0000c234                pvTaskIncrementMutexHeldCount
+                0x0000c25c                ulTaskNotifyTake
+                0x0000c318                xTaskNotifyWait
+                0x0000c3f8                xTaskGenericNotify
+                0x0000c52c                xTaskGenericNotifyFromISR
+                0x0000c6a4                vTaskNotifyGiveFromISR
+                0x0000c7b4                xTaskNotifyStateClear
+                0x0000c94c                xGetTaskHandles
+                0x0000c9d4                vTaskGetStackInfo
+ .text          0x0000ca24        0x0 Generated_Code\timers.o
+ .text          0x0000ca24      0x2f8 Generated_Code\trcKernelPort.o
+                0x0000ca24                vTraceEnable
+                0x0000cb28                prvTraceOnBegin
+                0x0000cb38                prvTraceOnEnd
+                0x0000cb48                vTraceSetQueueName
+                0x0000cb64                vTraceSetSemaphoreName
+                0x0000cb80                vTraceSetMutexName
+                0x0000cb9c                prvTraceGetCurrentTaskHandle
+                0x0000cbac                prvIsNewTCB
+ .text          0x0000cd1c        0x0 Generated_Code\trcSnapshotRecorder.o
+ .text          0x0000cd1c     0x1544 Generated_Code\trcStreamingRecorder.o
+                0x0000cd1c                vTraceInstanceFinishedNow
+                0x0000cd2c                vTraceInstanceFinishedNext
+                0x0000cd3c                xTraceRegisterString
+                0x0000cd64                vTraceStoreKernelObjectName
+                0x0000cd8c                vTraceSetFrequency
+                0x0000cdac                vTracePrint
+                0x0000cdec                vTracePrintF
+                0x0000ce8c                xTraceSetISRProperties
+                0x0000cec4                vTraceStoreISRBegin
+                0x0000cf58                vTraceStoreISREnd
+                0x0000cffc                xTraceGetLastError
+                0x0000d0a4                vTraceClearError
+                0x0000d0e4                vTraceStop
+                0x0000d44c                prvTraceStoreEvent0
+                0x0000d4d8                prvTraceStoreEvent1
+                0x0000d570                prvTraceStoreEvent2
+                0x0000d610                prvTraceStoreEvent3
+                0x0000d6b8                prvTraceStoreEvent
+                0x0000d790                prvTraceStoreStringEvent
+                0x0000d98c                prvTraceSaveSymbol
+                0x0000da9c                prvTraceDeleteSymbol
+                0x0000db60                prvTraceSaveObjectData
+                0x0000dc10                prvTraceDeleteObjectData
+                0x0000dcd4                prvIsValidCommand
+                0x0000dd58                prvProcessCommand
+                0x0000dd80                prvTraceError
+                0x0000ddc0                prvTraceInitCortexM
+                0x0000e008                prvPagedEventBufferTransfer
+                0x0000e0a4                prvPagedEventBufferGetWritePointer
+                0x0000e1dc                prvPagedEventBufferInit
+ .text          0x0000e260      0x2cc Project_Settings\Startup_Code\startup.o
+                0x0000e260                __copy_rom_section
+                0x0000e348                __copy_rom_sections_to_ram
+                0x0000e4a0                __init_registers
+                0x0000e4d4                __init_user
+                0x0000e4e4                __iar_program_start
+                0x0000e4f0                __thumb_startup
+ .text          0x0000e52c       0x64 Sources\Events.o
+                0x0000e52c                Cpu_OnNMI
+                0x0000e53c                FRTOS1_vApplicationStackOverflowHook
+                0x0000e550                FRTOS1_vApplicationTickHook
+                0x0000e560                FRTOS1_vApplicationIdleHook
+                0x0000e570                FRTOS1_vApplicationMallocFailedHook
+                0x0000e580                PTRC1_OnTraceWrap
+ .text          0x0000e590      0x200 Sources\main.o
+                0x0000e590                Led_BlueBlink
+                0x0000e600                Led_RedBlink
+                0x0000e660                Led_GreenBlink
+                0x0000e6e4                Delay_Nonsense
+                0x0000e718                main
+ .text          0x0000e790      0x90c Static_Code\System\CPU_Init.o
+                0x0000e790                CPU_SetBASEPRI
+                0x0000e7ac                __init_hardware
+                0x0000e880                PE_low_level_init
+                0x0000e8a4                CPU_GetClockGenMode
+                0x0000e934                CPU_SetClockConfigGenMode
+                0x0000eef4                CPU_SetClockConfiguration
+                0x0000f084                CPU_GetClockConfiguration
+ .text          0x0000f09c       0x10 Static_Code\System\Peripherals_Init.o
+                0x0000f09c                Peripherals_Init
+ .text          0x0000f0ac      0x978 Static_Code\System\Vectors.o
+                0x0000f0ac                UnhandledInterrupt
+                0x0000f0c4                Unhandled_ivINT_NMI
+                0x0000f0dc                Unhandled_ivINT_Hard_Fault
+                0x0000f0f4                Unhandled_ivINT_Mem_Manage_Fault
+                0x0000f10c                Unhandled_ivINT_Bus_Fault
+                0x0000f124                Unhandled_ivINT_Usage_Fault
+                0x0000f13c                Unhandled_ivINT_Reserved7
+                0x0000f154                Unhandled_ivINT_Reserved8
+                0x0000f16c                Unhandled_ivINT_Reserved9
+                0x0000f184                Unhandled_ivINT_Reserved10
+                0x0000f19c                Unhandled_ivINT_SVCall
+                0x0000f1b4                Unhandled_ivINT_DebugMonitor
+                0x0000f1cc                Unhandled_ivINT_Reserved13
+                0x0000f1e4                Unhandled_ivINT_PendableSrvReq
+                0x0000f1fc                Unhandled_ivINT_SysTick
+                0x0000f214                Unhandled_ivINT_DMA0
+                0x0000f22c                Unhandled_ivINT_DMA1
+                0x0000f244                Unhandled_ivINT_DMA2
+                0x0000f25c                Unhandled_ivINT_DMA3
+                0x0000f274                Unhandled_ivINT_DMA4
+                0x0000f28c                Unhandled_ivINT_DMA5
+                0x0000f2a4                Unhandled_ivINT_DMA6
+                0x0000f2bc                Unhandled_ivINT_DMA7
+                0x0000f2d4                Unhandled_ivINT_DMA8
+                0x0000f2ec                Unhandled_ivINT_DMA9
+                0x0000f304                Unhandled_ivINT_DMA10
+                0x0000f31c                Unhandled_ivINT_DMA11
+                0x0000f334                Unhandled_ivINT_DMA12
+                0x0000f34c                Unhandled_ivINT_DMA13
+                0x0000f364                Unhandled_ivINT_DMA14
+                0x0000f37c                Unhandled_ivINT_DMA15
+                0x0000f394                Unhandled_ivINT_DMA_Error
+                0x0000f3ac                Unhandled_ivINT_MCM
+                0x0000f3c4                Unhandled_ivINT_FTFE
+                0x0000f3dc                Unhandled_ivINT_Read_Collision
+                0x0000f3f4                Unhandled_ivINT_LVD_LVW
+                0x0000f40c                Unhandled_ivINT_LLW
+                0x0000f424                Unhandled_ivINT_Watchdog
+                0x0000f43c                Unhandled_ivINT_RNG
+                0x0000f454                Unhandled_ivINT_I2C0
+                0x0000f46c                Unhandled_ivINT_I2C1
+                0x0000f484                Unhandled_ivINT_SPI0
+                0x0000f49c                Unhandled_ivINT_SPI1
+                0x0000f4b4                Unhandled_ivINT_I2S0_Tx
+                0x0000f4cc                Unhandled_ivINT_I2S0_Rx
+                0x0000f4e4                Unhandled_ivINT_UART0_LON
+                0x0000f4fc                Unhandled_ivINT_UART0_RX_TX
+                0x0000f514                Unhandled_ivINT_UART0_ERR
+                0x0000f52c                Unhandled_ivINT_UART1_RX_TX
+                0x0000f544                Unhandled_ivINT_UART1_ERR
+                0x0000f55c                Unhandled_ivINT_UART2_RX_TX
+                0x0000f574                Unhandled_ivINT_UART2_ERR
+                0x0000f58c                Unhandled_ivINT_UART3_RX_TX
+                0x0000f5a4                Unhandled_ivINT_UART3_ERR
+                0x0000f5bc                Unhandled_ivINT_ADC0
+                0x0000f5d4                Unhandled_ivINT_CMP0
+                0x0000f5ec                Unhandled_ivINT_CMP1
+                0x0000f604                Unhandled_ivINT_FTM0
+                0x0000f61c                Unhandled_ivINT_FTM1
+                0x0000f634                Unhandled_ivINT_FTM2
+                0x0000f64c                Unhandled_ivINT_CMT
+                0x0000f664                Unhandled_ivINT_RTC
+                0x0000f67c                Unhandled_ivINT_RTC_Seconds
+                0x0000f694                Unhandled_ivINT_PIT0
+                0x0000f6ac                Unhandled_ivINT_PIT1
+                0x0000f6c4                Unhandled_ivINT_PIT2
+                0x0000f6dc                Unhandled_ivINT_PIT3
+                0x0000f6f4                Unhandled_ivINT_PDB0
+                0x0000f70c                Unhandled_ivINT_USB0
+                0x0000f724                Unhandled_ivINT_USBDCD
+                0x0000f73c                Unhandled_ivINT_Reserved71
+                0x0000f754                Unhandled_ivINT_DAC0
+                0x0000f76c                Unhandled_ivINT_MCG
+                0x0000f784                Unhandled_ivINT_LPTimer
+                0x0000f79c                Unhandled_ivINT_PORTA
+                0x0000f7b4                Unhandled_ivINT_PORTB
+                0x0000f7cc                Unhandled_ivINT_PORTC
+                0x0000f7e4                Unhandled_ivINT_PORTD
+                0x0000f7fc                Unhandled_ivINT_PORTE
+                0x0000f814                Unhandled_ivINT_SWI
+                0x0000f82c                Unhandled_ivINT_SPI2
+                0x0000f844                Unhandled_ivINT_UART4_RX_TX
+                0x0000f85c                Unhandled_ivINT_UART4_ERR
+                0x0000f874                Unhandled_ivINT_UART5_RX_TX
+                0x0000f88c                Unhandled_ivINT_UART5_ERR
+                0x0000f8a4                Unhandled_ivINT_CMP2
+                0x0000f8bc                Unhandled_ivINT_FTM3
+                0x0000f8d4                Unhandled_ivINT_Reserved88
+                0x0000f8ec                Unhandled_ivINT_ADC1
+                0x0000f904                Unhandled_ivINT_I2C2
+                0x0000f91c                Unhandled_ivINT_CAN0_ORed_Message_buffer
+                0x0000f934                Unhandled_ivINT_CAN0_Bus_Off
+                0x0000f94c                Unhandled_ivINT_CAN0_Error
+                0x0000f964                Unhandled_ivINT_CAN0_Tx_Warning
+                0x0000f97c                Unhandled_ivINT_CAN0_Rx_Warning
+                0x0000f994                Unhandled_ivINT_CAN0_Wake_Up
+                0x0000f9ac                Unhandled_ivINT_SDHC
+                0x0000f9c4                Unhandled_ivINT_ENET_1588_Timer
+                0x0000f9dc                Unhandled_ivINT_ENET_Transmit
+                0x0000f9f4                Unhandled_ivINT_ENET_Receive
+                0x0000fa0c                Unhandled_ivINT_ENET_Error
+ .text          0x0000fa24        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .text          0x0000fa24        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+ .text          0x0000fa24        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+ .text          0x0000fa24        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .text          0x0000fa24        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+ .text          0x0000fa24       0x14 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+                0x0000fa24                strcmp
+ .text          0x0000fa38       0x10 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+                0x0000fa38                strlen
+ .text          0x0000fa48        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+ .text          0x0000fa48        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+ .text          0x0000fa48        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+ *(.text*)
+ .text.__libc_init_array
+                0x0000fa48       0x4c d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+                0x0000fa48                __libc_init_array
+ .text.memcmp   0x0000fa94       0x1e d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+                0x0000fa94                memcmp
+ .text.memcpy   0x0000fab2       0x16 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000fab2                memcpy
+ .text.memset   0x0000fac8       0x10 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+                0x0000fac8                memset
+ .text.strchr   0x0000fad8       0x1c d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+                0x0000fad8                strchr
+ .text.strncmp  0x0000faf4       0x2a d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+                0x0000faf4                strncmp
+ *(.rodata)
+ *fill*         0x0000fb1e        0x2 
+ .rodata        0x0000fb20      0x163 Generated_Code\CLS1.o
+                0x0000fb20                CLS1_stdio
+ *fill*         0x0000fc83        0x1 
+ .rodata        0x0000fc84       0xc8 Generated_Code\PE_LDD.o
+                0x0000fc84                PE_CpuClockConfigurations
+ .rodata        0x0000fd4c       0x10 Generated_Code\RTT1.o
+                0x0000fd4c                RTT1_stdio
+ .rodata        0x0000fd5c       0x17 Generated_Code\SEGGER_RTT.o
+ *fill*         0x0000fd73        0x1 
+ .rodata        0x0000fd74       0x10 Generated_Code\SEGGER_RTT_printf.o
+ .rodata        0x0000fd84       0x24 Generated_Code\SEGGER_SYSVIEW.o
+ .rodata        0x0000fda8       0x35 Generated_Code\SEGGER_SYSVIEW_Config.o
+ *fill*         0x0000fddd        0x3 
+ .rodata        0x0000fde0       0x60 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+                0x0000fe38                SYSVIEW_X_OS_TraceAPI
+ .rodata        0x0000fe40       0x28 Generated_Code\UTIL1.o
+ .rodata        0x0000fe68       0x87 Generated_Code\XF1.o
+ *fill*         0x0000feef        0x1 
+ .rodata        0x0000fef0        0x4 Generated_Code\port.o
+ .rodata        0x0000fef4       0x20 Generated_Code\tasks.o
+                0x0000ff04                FreeRTOSDebugConfig
+ .rodata        0x0000ff14       0xf5 Generated_Code\trcKernelPort.o
+ *fill*         0x00010009        0x3 
+ .rodata        0x0001000c      0x212 Generated_Code\trcStreamingRecorder.o
+ *fill*         0x0001021e        0x2 
+ .rodata        0x00010220       0x1d Sources\main.o
+ *fill*         0x0001023d        0x3 
+ .rodata        0x00010240      0x16c Static_Code\System\CPU_Init.o
+ *(.rodata*)
+ *(.glue_7)
+ .glue_7        0x000103ac        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x000103ac        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x000103ac        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x000103ac        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+ *(.init)
+ .init          0x000103b0        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+                0x000103b0                _init
+ .init          0x000103b4        0x8 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+ *(.fini)
+ .fini          0x000103bc        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+                0x000103bc                _fini
+ .fini          0x000103c0        0x8 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+                0x000103c8                . = ALIGN (0x4)
+                0x000103c8                _etext = .
+
+.vfp11_veneer   0x000103c8        0x0
+ .vfp11_veneer  0x000103c8        0x0 linker stubs
+
+.v4_bx          0x000103c8        0x0
+ .v4_bx         0x000103c8        0x0 linker stubs
+
+.iplt           0x000103c8        0x0
+ .iplt          0x000103c8        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+
+.rel.dyn        0x000103c8        0x0
+ .rel.iplt      0x000103c8        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x000103c8        0x0
+                0x000103c8                __exidx_start = .
+ *(.ARM.exidx*)
+                0x000103c8                __exidx_end = .
+
+.ctors          0x000103c8        0x0
+                0x000103c8                __CTOR_LIST__ = .
+ *crtbegin.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x000103c8                __CTOR_END__ = .
+
+.dtors          0x000103c8        0x0
+                0x000103c8                __DTOR_LIST__ = .
+ *crtbegin.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x000103c8                __DTOR_END__ = .
+
+.preinit_array  0x000103c8        0x0
+                0x000103c8                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x000103c8                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x000103c8        0x4
+                0x000103c8                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+ .init_array    0x000103c8        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+                0x000103cc                PROVIDE (__init_array_end, .)
+
+.fini_array     0x000103cc        0x4
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x000103cc        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+                [!provide]                PROVIDE (__fini_array_end, .)
+                0x000103d0                ___ROM_AT = .
+
+.data           0x20000000       0x40 load address 0x000103d0
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ .data          0x20000000        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+ .data          0x20000000        0x4 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+                0x20000000                __dso_handle
+ .data          0x20000004        0x0 Generated_Code\BitIoLdd1.o
+ .data          0x20000004        0x0 Generated_Code\BitIoLdd2.o
+ .data          0x20000004        0x0 Generated_Code\BitIoLdd3.o
+ .data          0x20000004        0x4 Generated_Code\CLS1.o
+ .data          0x20000008        0x0 Generated_Code\CS1.o
+ .data          0x20000008        0x0 Generated_Code\Cpu.o
+ .data          0x20000008        0x0 Generated_Code\FRTOS1.o
+ .data          0x20000008        0x0 Generated_Code\LED_Blue.o
+ .data          0x20000008        0x0 Generated_Code\LED_Green.o
+ .data          0x20000008        0x0 Generated_Code\LED_Red.o
+ .data          0x20000008        0x0 Generated_Code\LEDpin1.o
+ .data          0x20000008        0x0 Generated_Code\LEDpin2.o
+ .data          0x20000008        0x0 Generated_Code\LEDpin3.o
+ .data          0x20000008        0x0 Generated_Code\MCUC1.o
+ .data          0x20000008        0x0 Generated_Code\PE_LDD.o
+ .data          0x20000008        0x0 Generated_Code\PTRC1.o
+ .data          0x20000008        0x0 Generated_Code\Pins1.o
+ .data          0x20000008        0x0 Generated_Code\RTT1.o
+ .data          0x20000008        0x0 Generated_Code\RTT_Syscalls_GCC.o
+ .data          0x20000008       0x10 Generated_Code\SEGGER_RTT.o
+ .data          0x20000018        0x0 Generated_Code\SEGGER_RTT_printf.o
+ .data          0x20000018        0x0 Generated_Code\SEGGER_SYSVIEW.o
+ .data          0x20000018        0x0 Generated_Code\SEGGER_SYSVIEW_Config.o
+ .data          0x20000018        0x0 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .data          0x20000018        0x0 Generated_Code\SYS1.o
+ .data          0x20000018        0x0 Generated_Code\UTIL1.o
+ .data          0x20000018        0x0 Generated_Code\WAIT1.o
+ .data          0x20000018        0x0 Generated_Code\XF1.o
+ .data          0x20000018        0x0 Generated_Code\croutine.o
+ .data          0x20000018        0x0 Generated_Code\event_groups.o
+ .data          0x20000018        0x0 Generated_Code\heap_1.o
+ .data          0x20000018        0x0 Generated_Code\heap_2.o
+ .data          0x20000018        0x0 Generated_Code\heap_3.o
+ .data          0x20000018        0x4 Generated_Code\heap_4.o
+ .data          0x2000001c        0x0 Generated_Code\heap_5.o
+ .data          0x2000001c        0x0 Generated_Code\list.o
+ .data          0x2000001c        0x8 Generated_Code\port.o
+                0x20000020                uxTopUsedPriority
+ .data          0x20000024        0x0 Generated_Code\portasm.o
+ .data          0x20000024        0x0 Generated_Code\queue.o
+ .data          0x20000024        0x0 Generated_Code\tasks.o
+ .data          0x20000024        0x0 Generated_Code\timers.o
+ .data          0x20000024        0x0 Generated_Code\trcKernelPort.o
+ .data          0x20000024        0x0 Generated_Code\trcSnapshotRecorder.o
+ .data          0x20000024       0x1c Generated_Code\trcStreamingRecorder.o
+                0x20000030                TotalBytesRemaining_LowWaterMark
+                0x20000034                TotalBytesRemaining
+ .data          0x20000040        0x0 Project_Settings\Startup_Code\startup.o
+ .data          0x20000040        0x0 Sources\Events.o
+ .data          0x20000040        0x0 Sources\main.o
+ .data          0x20000040        0x0 Static_Code\System\CPU_Init.o
+ .data          0x20000040        0x0 Static_Code\System\Peripherals_Init.o
+ .data          0x20000040        0x0 Static_Code\System\Vectors.o
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+ .data          0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+ *(.data*)
+                0x20000040                . = ALIGN (0x4)
+                0x20000040                _edata = .
+                0x00000040                ___data_size = (_edata - _sdata)
+                0x00010410                ___m_data_1FFF0000_ROMStart = (___ROM_AT + SIZEOF (.data))
+
+.igot.plt       0x20000040        0x0 load address 0x00010410
+ .igot.plt      0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+
+.m_data_1FFF0000
+                0x1fff0000        0x0 load address 0x00010410
+                0x1fff0000                . = ALIGN (0x4)
+                0x1fff0000                ___m_data_1FFF0000_RAMStart = .
+ *(.m_data_1FFF0000)
+                0x1fff0000                ___m_data_1FFF0000_RAMEnd = .
+                0x1fff0000                . = ALIGN (0x4)
+                0x00000000                ___m_data_1FFF0000_ROMSize = (___m_data_1FFF0000_RAMEnd - ___m_data_1FFF0000_RAMStart)
+                0x1fff0000                . = ALIGN (0x4)
+
+.bss            0x20000040     0x35cc load address 0x00010410
+                0x20000040                __START_BSS = .
+                [!provide]                PROVIDE (__bss_start__, __START_BSS)
+ *(.bss)
+ .bss           0x20000040        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+ .bss           0x20000040       0x1c d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+ .bss           0x2000005c        0x4 Generated_Code\BitIoLdd1.o
+ .bss           0x20000060        0x4 Generated_Code\BitIoLdd2.o
+ .bss           0x20000064        0x4 Generated_Code\BitIoLdd3.o
+ .bss           0x20000068        0x0 Generated_Code\CLS1.o
+ .bss           0x20000068        0x0 Generated_Code\CS1.o
+ .bss           0x20000068        0x0 Generated_Code\Cpu.o
+ .bss           0x20000068        0x0 Generated_Code\FRTOS1.o
+ .bss           0x20000068        0x0 Generated_Code\LED_Blue.o
+ .bss           0x20000068        0x0 Generated_Code\LED_Green.o
+ .bss           0x20000068        0x0 Generated_Code\LED_Red.o
+ .bss           0x20000068        0x0 Generated_Code\LEDpin1.o
+ .bss           0x20000068        0x0 Generated_Code\LEDpin2.o
+ .bss           0x20000068        0x0 Generated_Code\LEDpin3.o
+ .bss           0x20000068        0x0 Generated_Code\MCUC1.o
+ .bss           0x20000068        0xc Generated_Code\PE_LDD.o
+                0x20000068                PE_LDD_DeviceDataList
+ .bss           0x20000074        0x0 Generated_Code\PTRC1.o
+ .bss           0x20000074        0x0 Generated_Code\Pins1.o
+ .bss           0x20000074        0x0 Generated_Code\RTT1.o
+ .bss           0x20000074        0x0 Generated_Code\RTT_Syscalls_GCC.o
+ .bss           0x20000074      0x481 Generated_Code\SEGGER_RTT.o
+ .bss           0x200004f5        0x0 Generated_Code\SEGGER_RTT_printf.o
+ *fill*         0x200004f5        0x3 
+ .bss           0x200004f8      0x51b Generated_Code\SEGGER_SYSVIEW.o
+ .bss           0x20000a13        0x0 Generated_Code\SEGGER_SYSVIEW_Config.o
+ *fill*         0x20000a13        0x1 
+ .bss           0x20000a14       0xa4 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .bss           0x20000ab8        0x0 Generated_Code\SYS1.o
+ .bss           0x20000ab8        0x0 Generated_Code\UTIL1.o
+ .bss           0x20000ab8        0x0 Generated_Code\WAIT1.o
+ .bss           0x20000ab8        0x0 Generated_Code\XF1.o
+ .bss           0x20000ab8        0x0 Generated_Code\croutine.o
+ .bss           0x20000ab8        0x0 Generated_Code\event_groups.o
+ .bss           0x20000ab8        0x0 Generated_Code\heap_1.o
+ .bss           0x20000ab8        0x0 Generated_Code\heap_2.o
+ .bss           0x20000ab8        0x0 Generated_Code\heap_3.o
+ .bss           0x20000ab8     0x2018 Generated_Code\heap_4.o
+ .bss           0x20002ad0        0x0 Generated_Code\heap_5.o
+ .bss           0x20002ad0        0x0 Generated_Code\list.o
+ .bss           0x20002ad0        0x8 Generated_Code\port.o
+ .bss           0x20002ad8        0x0 Generated_Code\portasm.o
+ .bss           0x20002ad8        0x0 Generated_Code\queue.o
+ .bss           0x20002ad8      0x100 Generated_Code\tasks.o
+                0x20002ad8                pxCurrentTCB
+ .bss           0x20002bd8        0x0 Generated_Code\timers.o
+ .bss           0x20002bd8      0x498 Generated_Code\trcKernelPort.o
+ .bss           0x20003070        0x0 Generated_Code\trcSnapshotRecorder.o
+ .bss           0x20003070      0x444 Generated_Code\trcStreamingRecorder.o
+                0x20003488                RecorderEnabled
+                0x20003490                isPendingContextSwitch
+                0x20003494                uiTraceTickCount
+                0x20003498                timestampFrequency
+                0x2000349c                DroppedEventCounter
+                0x200034a0                EventBuffer
+                0x200034a4                NoRoomForSymbol
+                0x200034a8                NoRoomForObjectData
+                0x200034ac                LongestSymbolName
+                0x200034b0                MaxBytesTruncated
+ .bss           0x200034b4        0x0 Project_Settings\Startup_Code\startup.o
+ .bss           0x200034b4        0x0 Sources\Events.o
+ .bss           0x200034b4        0x0 Sources\main.o
+ .bss           0x200034b4        0x2 Static_Code\System\CPU_Init.o
+                0x200034b4                SR_lock
+                0x200034b5                ClockConfigurationID
+ .bss           0x200034b6        0x0 Static_Code\System\Peripherals_Init.o
+ .bss           0x200034b6        0x0 Static_Code\System\Vectors.o
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+ .bss           0x200034b6        0x0 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+ *(.bss*)
+ *(COMMON)
+ *fill*         0x200034b6        0x2 
+ COMMON         0x200034b8       0x30 Generated_Code\CLS1.o
+                0x200034b8                CLS1_DefaultShellBuffer
+ COMMON         0x200034e8       0x30 Generated_Code\RTT1.o
+                0x200034e8                RTT1_DefaultShellBuffer
+ COMMON         0x20003518       0xd8 Generated_Code\SEGGER_RTT.o
+                0x20003518                _SEGGER_RTT
+ COMMON         0x200035f0        0x4 Generated_Code\trcKernelPort.o
+                0x200035f0                trcWarningChannel
+ COMMON         0x200035f4       0x10 Generated_Code\trcStreamingRecorder.o
+                0x200035f4                PageInfo
+ COMMON         0x20003604        0x4 Sources\main.o
+                0x20003604                LEDSemaphore
+ COMMON         0x20003608        0x1 Static_Code\System\CPU_Init.o
+                0x20003608                SR_reg
+                0x2000360c                . = ALIGN (0x4)
+ *fill*         0x20003609        0x3 
+                0x2000360c                __END_BSS = .
+                [!provide]                PROVIDE (__bss_end__, __END_BSS)
+                0x00010410                _romp_at = ((___ROM_AT + SIZEOF (.data)) + SIZEOF (.m_data_1FFF0000))
+
+.romp           0x2000360c       0x24 load address 0x00010410
+                0x00010410                __S_romp = _romp_at
+                0x2000360c        0x4 LONG 0x103d0 ___ROM_AT
+                0x20003610        0x4 LONG 0x20000000 _sdata
+                0x20003614        0x4 LONG 0x40 ___data_size
+                0x20003618        0x4 LONG 0x10410 ___m_data_1FFF0000_ROMStart
+                0x2000361c        0x4 LONG 0x1fff0000 ___m_data_1FFF0000_RAMStart
+                0x20003620        0x4 LONG 0x0 ___m_data_1FFF0000_ROMSize
+                0x20003624        0x4 LONG 0x0
+                0x20003628        0x4 LONG 0x0
+                0x2000362c        0x4 LONG 0x0
+
+._user_heap_stack
+                0x20003630      0x400 load address 0x00010434
+                0x20003630                . = ALIGN (0x4)
+                [!provide]                PROVIDE (end, .)
+                [!provide]                PROVIDE (_end, .)
+                0x20003630                __heap_addr = .
+                0x20003630                . = (. + __heap_size)
+                0x20003a30                . = (. + __stack_size)
+ *fill*         0x20003630      0x400 
+                0x20003a30                . = ALIGN (0x4)
+
+.ARM.attributes
+                0x00000000       0x30
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x22 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+ .ARM.attributes
+                0x00000022       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+ .ARM.attributes
+                0x00000056       0x39 Generated_Code\BitIoLdd1.o
+ .ARM.attributes
+                0x0000008f       0x39 Generated_Code\BitIoLdd2.o
+ .ARM.attributes
+                0x000000c8       0x39 Generated_Code\BitIoLdd3.o
+ .ARM.attributes
+                0x00000101       0x39 Generated_Code\CLS1.o
+ .ARM.attributes
+                0x0000013a       0x39 Generated_Code\CS1.o
+ .ARM.attributes
+                0x00000173       0x39 Generated_Code\Cpu.o
+ .ARM.attributes
+                0x000001ac       0x39 Generated_Code\FRTOS1.o
+ .ARM.attributes
+                0x000001e5       0x39 Generated_Code\LED_Blue.o
+ .ARM.attributes
+                0x0000021e       0x39 Generated_Code\LED_Green.o
+ .ARM.attributes
+                0x00000257       0x39 Generated_Code\LED_Red.o
+ .ARM.attributes
+                0x00000290       0x39 Generated_Code\LEDpin1.o
+ .ARM.attributes
+                0x000002c9       0x39 Generated_Code\LEDpin2.o
+ .ARM.attributes
+                0x00000302       0x39 Generated_Code\LEDpin3.o
+ .ARM.attributes
+                0x0000033b       0x39 Generated_Code\MCUC1.o
+ .ARM.attributes
+                0x00000374       0x39 Generated_Code\PE_LDD.o
+ .ARM.attributes
+                0x000003ad       0x39 Generated_Code\PTRC1.o
+ .ARM.attributes
+                0x000003e6       0x39 Generated_Code\Pins1.o
+ .ARM.attributes
+                0x0000041f       0x39 Generated_Code\RTT1.o
+ .ARM.attributes
+                0x00000458       0x39 Generated_Code\RTT_Syscalls_GCC.o
+ .ARM.attributes
+                0x00000491       0x39 Generated_Code\SEGGER_RTT.o
+ .ARM.attributes
+                0x000004ca       0x39 Generated_Code\SEGGER_RTT_printf.o
+ .ARM.attributes
+                0x00000503       0x39 Generated_Code\SEGGER_SYSVIEW.o
+ .ARM.attributes
+                0x0000053c       0x39 Generated_Code\SEGGER_SYSVIEW_Config.o
+ .ARM.attributes
+                0x00000575       0x39 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .ARM.attributes
+                0x000005ae       0x39 Generated_Code\SYS1.o
+ .ARM.attributes
+                0x000005e7       0x39 Generated_Code\UTIL1.o
+ .ARM.attributes
+                0x00000620       0x39 Generated_Code\WAIT1.o
+ .ARM.attributes
+                0x00000659       0x39 Generated_Code\XF1.o
+ .ARM.attributes
+                0x00000692       0x39 Generated_Code\croutine.o
+ .ARM.attributes
+                0x000006cb       0x39 Generated_Code\event_groups.o
+ .ARM.attributes
+                0x00000704       0x39 Generated_Code\heap_1.o
+ .ARM.attributes
+                0x0000073d       0x39 Generated_Code\heap_2.o
+ .ARM.attributes
+                0x00000776       0x39 Generated_Code\heap_3.o
+ .ARM.attributes
+                0x000007af       0x39 Generated_Code\heap_4.o
+ .ARM.attributes
+                0x000007e8       0x39 Generated_Code\heap_5.o
+ .ARM.attributes
+                0x00000821       0x39 Generated_Code\list.o
+ .ARM.attributes
+                0x0000085a       0x39 Generated_Code\port.o
+ .ARM.attributes
+                0x00000893       0x25 Generated_Code\portasm.o
+ .ARM.attributes
+                0x000008b8       0x39 Generated_Code\queue.o
+ .ARM.attributes
+                0x000008f1       0x39 Generated_Code\tasks.o
+ .ARM.attributes
+                0x0000092a       0x39 Generated_Code\timers.o
+ .ARM.attributes
+                0x00000963       0x39 Generated_Code\trcKernelPort.o
+ .ARM.attributes
+                0x0000099c       0x39 Generated_Code\trcSnapshotRecorder.o
+ .ARM.attributes
+                0x000009d5       0x39 Generated_Code\trcStreamingRecorder.o
+ .ARM.attributes
+                0x00000a0e       0x39 Project_Settings\Startup_Code\startup.o
+ .ARM.attributes
+                0x00000a47       0x39 Sources\Events.o
+ .ARM.attributes
+                0x00000a80       0x39 Sources\main.o
+ .ARM.attributes
+                0x00000ab9       0x39 Static_Code\System\CPU_Init.o
+ .ARM.attributes
+                0x00000af2       0x39 Static_Code\System\Peripherals_Init.o
+ .ARM.attributes
+                0x00000b2b       0x39 Static_Code\System\Vectors.o
+ .ARM.attributes
+                0x00000b64       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000b98       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+ .ARM.attributes
+                0x00000bcc       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x00000c00       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000c34       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+ .ARM.attributes
+                0x00000c68       0x20 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+ .ARM.attributes
+                0x00000c88       0x1b d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+ .ARM.attributes
+                0x00000ca3       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+ .ARM.attributes
+                0x00000cd7       0x34 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtend.o
+ .ARM.attributes
+                0x00000d0b       0x22 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtn.o
+OUTPUT(K64F-FreeRTOS.elf elf32-littlearm)
+
+.debug_info     0x00000000    0x1094a
+ .debug_info    0x00000000      0x4ff Generated_Code\BitIoLdd1.o
+ .debug_info    0x000004ff      0x4ff Generated_Code\BitIoLdd2.o
+ .debug_info    0x000009fe      0x4ff Generated_Code\BitIoLdd3.o
+ .debug_info    0x00000efd      0xb1e Generated_Code\CLS1.o
+ .debug_info    0x00001a1b       0x79 Generated_Code\CS1.o
+ .debug_info    0x00001a94       0xa3 Generated_Code\Cpu.o
+ .debug_info    0x00001b37       0xd1 Generated_Code\FRTOS1.o
+ .debug_info    0x00001c08      0x100 Generated_Code\LED_Blue.o
+ .debug_info    0x00001d08      0x100 Generated_Code\LED_Green.o
+ .debug_info    0x00001e08      0x100 Generated_Code\LED_Red.o
+ .debug_info    0x00001f08       0x79 Generated_Code\LEDpin1.o
+ .debug_info    0x00001f81       0x79 Generated_Code\LEDpin2.o
+ .debug_info    0x00001ffa       0x79 Generated_Code\LEDpin3.o
+ .debug_info    0x00002073       0x79 Generated_Code\MCUC1.o
+ .debug_info    0x000020ec      0x252 Generated_Code\PE_LDD.o
+ .debug_info    0x0000233e      0x109 Generated_Code\PTRC1.o
+ .debug_info    0x00002447       0x79 Generated_Code\Pins1.o
+ .debug_info    0x000024c0      0x2d3 Generated_Code\RTT1.o
+ .debug_info    0x00002793       0xc7 Generated_Code\RTT_Syscalls_GCC.o
+ .debug_info    0x0000285a      0xc86 Generated_Code\SEGGER_RTT.o
+ .debug_info    0x000034e0      0x3f3 Generated_Code\SEGGER_RTT_printf.o
+ .debug_info    0x000038d3     0x3397 Generated_Code\SEGGER_SYSVIEW.o
+ .debug_info    0x00006c6a      0x150 Generated_Code\SEGGER_SYSVIEW_Config.o
+ .debug_info    0x00006dba      0x4ca Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .debug_info    0x00007284       0x92 Generated_Code\SYS1.o
+ .debug_info    0x00007316     0x1943 Generated_Code\UTIL1.o
+ .debug_info    0x00008c59      0x144 Generated_Code\WAIT1.o
+ .debug_info    0x00008d9d      0x687 Generated_Code\XF1.o
+ .debug_info    0x00009424       0x79 Generated_Code\croutine.o
+ .debug_info    0x0000949d      0x665 Generated_Code\event_groups.o
+ .debug_info    0x00009b02       0x79 Generated_Code\heap_1.o
+ .debug_info    0x00009b7b       0x79 Generated_Code\heap_2.o
+ .debug_info    0x00009bf4       0x79 Generated_Code\heap_3.o
+ .debug_info    0x00009c6d      0x32e Generated_Code\heap_4.o
+ .debug_info    0x00009f9b       0x79 Generated_Code\heap_5.o
+ .debug_info    0x0000a014      0x2a4 Generated_Code\list.o
+ .debug_info    0x0000a2b8      0x37d Generated_Code\port.o
+ .debug_info    0x0000a635      0xd5d Generated_Code\queue.o
+ .debug_info    0x0000b392     0x195c Generated_Code\tasks.o
+ .debug_info    0x0000ccee       0x79 Generated_Code\timers.o
+ .debug_info    0x0000cd67      0x51f Generated_Code\trcKernelPort.o
+ .debug_info    0x0000d286       0x79 Generated_Code\trcSnapshotRecorder.o
+ .debug_info    0x0000d2ff     0x19dc Generated_Code\trcStreamingRecorder.o
+ .debug_info    0x0000ecdb      0x455 Project_Settings\Startup_Code\startup.o
+ .debug_info    0x0000f130      0x11b Sources\Events.o
+ .debug_info    0x0000f24b      0x276 Sources\main.o
+ .debug_info    0x0000f4c1      0xbd6 Static_Code\System\CPU_Init.o
+ .debug_info    0x00010097       0x92 Static_Code\System\Peripherals_Init.o
+ .debug_info    0x00010129      0x821 Static_Code\System\Vectors.o
+
+.debug_abbrev   0x00000000     0x2dde
+ .debug_abbrev  0x00000000      0x14b Generated_Code\BitIoLdd1.o
+ .debug_abbrev  0x0000014b      0x14b Generated_Code\BitIoLdd2.o
+ .debug_abbrev  0x00000296      0x14b Generated_Code\BitIoLdd3.o
+ .debug_abbrev  0x000003e1      0x1f1 Generated_Code\CLS1.o
+ .debug_abbrev  0x000005d2       0x26 Generated_Code\CS1.o
+ .debug_abbrev  0x000005f8       0x42 Generated_Code\Cpu.o
+ .debug_abbrev  0x0000063a       0x81 Generated_Code\FRTOS1.o
+ .debug_abbrev  0x000006bb       0xc3 Generated_Code\LED_Blue.o
+ .debug_abbrev  0x0000077e       0xc3 Generated_Code\LED_Green.o
+ .debug_abbrev  0x00000841       0xc3 Generated_Code\LED_Red.o
+ .debug_abbrev  0x00000904       0x26 Generated_Code\LEDpin1.o
+ .debug_abbrev  0x0000092a       0x26 Generated_Code\LEDpin2.o
+ .debug_abbrev  0x00000950       0x26 Generated_Code\LEDpin3.o
+ .debug_abbrev  0x00000976       0x26 Generated_Code\MCUC1.o
+ .debug_abbrev  0x0000099c      0x10a Generated_Code\PE_LDD.o
+ .debug_abbrev  0x00000aa6       0x90 Generated_Code\PTRC1.o
+ .debug_abbrev  0x00000b36       0x26 Generated_Code\Pins1.o
+ .debug_abbrev  0x00000b5c      0x166 Generated_Code\RTT1.o
+ .debug_abbrev  0x00000cc2       0x6b Generated_Code\RTT_Syscalls_GCC.o
+ .debug_abbrev  0x00000d2d      0x1f1 Generated_Code\SEGGER_RTT.o
+ .debug_abbrev  0x00000f1e      0x175 Generated_Code\SEGGER_RTT_printf.o
+ .debug_abbrev  0x00001093      0x23e Generated_Code\SEGGER_SYSVIEW.o
+ .debug_abbrev  0x000012d1       0xea Generated_Code\SEGGER_SYSVIEW_Config.o
+ .debug_abbrev  0x000013bb      0x141 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .debug_abbrev  0x000014fc       0x42 Generated_Code\SYS1.o
+ .debug_abbrev  0x0000153e      0x1b5 Generated_Code\UTIL1.o
+ .debug_abbrev  0x000016f3       0xae Generated_Code\WAIT1.o
+ .debug_abbrev  0x000017a1      0x167 Generated_Code\XF1.o
+ .debug_abbrev  0x00001908       0x26 Generated_Code\croutine.o
+ .debug_abbrev  0x0000192e      0x153 Generated_Code\event_groups.o
+ .debug_abbrev  0x00001a81       0x26 Generated_Code\heap_1.o
+ .debug_abbrev  0x00001aa7       0x26 Generated_Code\heap_2.o
+ .debug_abbrev  0x00001acd       0x26 Generated_Code\heap_3.o
+ .debug_abbrev  0x00001af3      0x179 Generated_Code\heap_4.o
+ .debug_abbrev  0x00001c6c       0x26 Generated_Code\heap_5.o
+ .debug_abbrev  0x00001c92       0xbe Generated_Code\list.o
+ .debug_abbrev  0x00001d50      0x13f Generated_Code\port.o
+ .debug_abbrev  0x00001e8f      0x18b Generated_Code\queue.o
+ .debug_abbrev  0x0000201a      0x275 Generated_Code\tasks.o
+ .debug_abbrev  0x0000228f       0x26 Generated_Code\timers.o
+ .debug_abbrev  0x000022b5      0x1d6 Generated_Code\trcKernelPort.o
+ .debug_abbrev  0x0000248b       0x26 Generated_Code\trcSnapshotRecorder.o
+ .debug_abbrev  0x000024b1      0x323 Generated_Code\trcStreamingRecorder.o
+ .debug_abbrev  0x000027d4      0x19e Project_Settings\Startup_Code\startup.o
+ .debug_abbrev  0x00002972       0x88 Sources\Events.o
+ .debug_abbrev  0x000029fa       0xf5 Sources\main.o
+ .debug_abbrev  0x00002aef      0x1d8 Static_Code\System\CPU_Init.o
+ .debug_abbrev  0x00002cc7       0x42 Static_Code\System\Peripherals_Init.o
+ .debug_abbrev  0x00002d09       0xd5 Static_Code\System\Vectors.o
+
+.debug_aranges  0x00000000      0x5b8
+ .debug_aranges
+                0x00000000       0x20 Generated_Code\BitIoLdd1.o
+ .debug_aranges
+                0x00000020       0x20 Generated_Code\BitIoLdd2.o
+ .debug_aranges
+                0x00000040       0x20 Generated_Code\BitIoLdd3.o
+ .debug_aranges
+                0x00000060       0x20 Generated_Code\CLS1.o
+ .debug_aranges
+                0x00000080       0x18 Generated_Code\CS1.o
+ .debug_aranges
+                0x00000098       0x20 Generated_Code\Cpu.o
+ .debug_aranges
+                0x000000b8       0x20 Generated_Code\FRTOS1.o
+ .debug_aranges
+                0x000000d8       0x20 Generated_Code\LED_Blue.o
+ .debug_aranges
+                0x000000f8       0x20 Generated_Code\LED_Green.o
+ .debug_aranges
+                0x00000118       0x20 Generated_Code\LED_Red.o
+ .debug_aranges
+                0x00000138       0x18 Generated_Code\LEDpin1.o
+ .debug_aranges
+                0x00000150       0x18 Generated_Code\LEDpin2.o
+ .debug_aranges
+                0x00000168       0x18 Generated_Code\LEDpin3.o
+ .debug_aranges
+                0x00000180       0x18 Generated_Code\MCUC1.o
+ .debug_aranges
+                0x00000198       0x20 Generated_Code\PE_LDD.o
+ .debug_aranges
+                0x000001b8       0x20 Generated_Code\PTRC1.o
+ .debug_aranges
+                0x000001d8       0x18 Generated_Code\Pins1.o
+ .debug_aranges
+                0x000001f0       0x20 Generated_Code\RTT1.o
+ .debug_aranges
+                0x00000210       0x20 Generated_Code\RTT_Syscalls_GCC.o
+ .debug_aranges
+                0x00000230       0x20 Generated_Code\SEGGER_RTT.o
+ .debug_aranges
+                0x00000250       0x20 Generated_Code\SEGGER_RTT_printf.o
+ .debug_aranges
+                0x00000270       0x20 Generated_Code\SEGGER_SYSVIEW.o
+ .debug_aranges
+                0x00000290       0x20 Generated_Code\SEGGER_SYSVIEW_Config.o
+ .debug_aranges
+                0x000002b0       0x20 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .debug_aranges
+                0x000002d0       0x20 Generated_Code\SYS1.o
+ .debug_aranges
+                0x000002f0       0x20 Generated_Code\UTIL1.o
+ .debug_aranges
+                0x00000310       0x20 Generated_Code\WAIT1.o
+ .debug_aranges
+                0x00000330       0x20 Generated_Code\XF1.o
+ .debug_aranges
+                0x00000350       0x18 Generated_Code\croutine.o
+ .debug_aranges
+                0x00000368       0x20 Generated_Code\event_groups.o
+ .debug_aranges
+                0x00000388       0x18 Generated_Code\heap_1.o
+ .debug_aranges
+                0x000003a0       0x18 Generated_Code\heap_2.o
+ .debug_aranges
+                0x000003b8       0x18 Generated_Code\heap_3.o
+ .debug_aranges
+                0x000003d0       0x20 Generated_Code\heap_4.o
+ .debug_aranges
+                0x000003f0       0x18 Generated_Code\heap_5.o
+ .debug_aranges
+                0x00000408       0x20 Generated_Code\list.o
+ .debug_aranges
+                0x00000428       0x20 Generated_Code\port.o
+ .debug_aranges
+                0x00000448       0x20 Generated_Code\queue.o
+ .debug_aranges
+                0x00000468       0x20 Generated_Code\tasks.o
+ .debug_aranges
+                0x00000488       0x18 Generated_Code\timers.o
+ .debug_aranges
+                0x000004a0       0x20 Generated_Code\trcKernelPort.o
+ .debug_aranges
+                0x000004c0       0x18 Generated_Code\trcSnapshotRecorder.o
+ .debug_aranges
+                0x000004d8       0x20 Generated_Code\trcStreamingRecorder.o
+ .debug_aranges
+                0x000004f8       0x20 Project_Settings\Startup_Code\startup.o
+ .debug_aranges
+                0x00000518       0x20 Sources\Events.o
+ .debug_aranges
+                0x00000538       0x20 Sources\main.o
+ .debug_aranges
+                0x00000558       0x20 Static_Code\System\CPU_Init.o
+ .debug_aranges
+                0x00000578       0x20 Static_Code\System\Peripherals_Init.o
+ .debug_aranges
+                0x00000598       0x20 Static_Code\System\Vectors.o
+
+.debug_line     0x00000000     0x65c2
+ .debug_line    0x00000000      0x16f Generated_Code\BitIoLdd1.o
+ .debug_line    0x0000016f      0x16f Generated_Code\BitIoLdd2.o
+ .debug_line    0x000002de      0x16f Generated_Code\BitIoLdd3.o
+ .debug_line    0x0000044d      0x353 Generated_Code\CLS1.o
+ .debug_line    0x000007a0       0x1d Generated_Code\CS1.o
+ .debug_line    0x000007bd       0x58 Generated_Code\Cpu.o
+ .debug_line    0x00000815      0x12a Generated_Code\FRTOS1.o
+ .debug_line    0x0000093f      0x13a Generated_Code\LED_Blue.o
+ .debug_line    0x00000a79      0x13b Generated_Code\LED_Green.o
+ .debug_line    0x00000bb4      0x139 Generated_Code\LED_Red.o
+ .debug_line    0x00000ced       0x1d Generated_Code\LEDpin1.o
+ .debug_line    0x00000d0a       0x1d Generated_Code\LEDpin2.o
+ .debug_line    0x00000d27       0x1d Generated_Code\LEDpin3.o
+ .debug_line    0x00000d44       0x1d Generated_Code\MCUC1.o
+ .debug_line    0x00000d61      0x14d Generated_Code\PE_LDD.o
+ .debug_line    0x00000eae      0x125 Generated_Code\PTRC1.o
+ .debug_line    0x00000fd3       0x1d Generated_Code\Pins1.o
+ .debug_line    0x00000ff0      0x17a Generated_Code\RTT1.o
+ .debug_line    0x0000116a       0x57 Generated_Code\RTT_Syscalls_GCC.o
+ .debug_line    0x000011c1      0x268 Generated_Code\SEGGER_RTT.o
+ .debug_line    0x00001429      0x200 Generated_Code\SEGGER_RTT_printf.o
+ .debug_line    0x00001629     0x100f Generated_Code\SEGGER_SYSVIEW.o
+ .debug_line    0x00002638      0x14d Generated_Code\SEGGER_SYSVIEW_Config.o
+ .debug_line    0x00002785      0x1d4 Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .debug_line    0x00002959       0x4b Generated_Code\SYS1.o
+ .debug_line    0x000029a4      0x858 Generated_Code\UTIL1.o
+ .debug_line    0x000031fc      0x143 Generated_Code\WAIT1.o
+ .debug_line    0x0000333f      0x1f1 Generated_Code\XF1.o
+ .debug_line    0x00003530       0x1d Generated_Code\croutine.o
+ .debug_line    0x0000354d      0x2e3 Generated_Code\event_groups.o
+ .debug_line    0x00003830       0x1d Generated_Code\heap_1.o
+ .debug_line    0x0000384d       0x1d Generated_Code\heap_2.o
+ .debug_line    0x0000386a       0x1d Generated_Code\heap_3.o
+ .debug_line    0x00003887      0x248 Generated_Code\heap_4.o
+ .debug_line    0x00003acf       0x1d Generated_Code\heap_5.o
+ .debug_line    0x00003aec      0x16d Generated_Code\list.o
+ .debug_line    0x00003c59      0x1fb Generated_Code\port.o
+ .debug_line    0x00003e54      0x82d Generated_Code\queue.o
+ .debug_line    0x00004681      0xac4 Generated_Code\tasks.o
+ .debug_line    0x00005145       0x1d Generated_Code\timers.o
+ .debug_line    0x00005162      0x1c9 Generated_Code\trcKernelPort.o
+ .debug_line    0x0000532b       0x1d Generated_Code\trcSnapshotRecorder.o
+ .debug_line    0x00005348      0x7fb Generated_Code\trcStreamingRecorder.o
+ .debug_line    0x00005b43      0x1eb Project_Settings\Startup_Code\startup.o
+ .debug_line    0x00005d2e       0x7e Sources\Events.o
+ .debug_line    0x00005dac      0x1cc Sources\main.o
+ .debug_line    0x00005f78      0x2c9 Static_Code\System\CPU_Init.o
+ .debug_line    0x00006241       0x5c Static_Code\System\Peripherals_Init.o
+ .debug_line    0x0000629d      0x325 Static_Code\System\Vectors.o
+
+.debug_str      0x00000000     0x5e44
+ .debug_str     0x00000000      0x3bf Generated_Code\BitIoLdd1.o
+                                0x417 (size before relaxing)
+ .debug_str     0x000003bf       0xa0 Generated_Code\BitIoLdd2.o
+                                0x417 (size before relaxing)
+ .debug_str     0x0000045f       0xa0 Generated_Code\BitIoLdd3.o
+                                0x417 (size before relaxing)
+ .debug_str     0x000004ff      0x48c Generated_Code\CLS1.o
+                                0x66e (size before relaxing)
+ .debug_str     0x0000098b       0x18 Generated_Code\CS1.o
+                                0x19c (size before relaxing)
+ .debug_str     0x000009a3       0x3d Generated_Code\Cpu.o
+                                0x1c1 (size before relaxing)
+ .debug_str     0x000009e0       0x5d Generated_Code\FRTOS1.o
+                                0x1f5 (size before relaxing)
+ .debug_str     0x00000a3d       0x55 Generated_Code\LED_Blue.o
+                                0x213 (size before relaxing)
+ .debug_str     0x00000a92       0x53 Generated_Code\LED_Green.o
+                                0x217 (size before relaxing)
+ .debug_str     0x00000ae5       0x4b Generated_Code\LED_Red.o
+                                0x20f (size before relaxing)
+ .debug_str     0x00000b30       0x1c Generated_Code\LEDpin1.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00000b4c       0x1c Generated_Code\LEDpin2.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00000b68       0x1c Generated_Code\LEDpin3.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x00000b84       0x1a Generated_Code\MCUC1.o
+                                0x19e (size before relaxing)
+ .debug_str     0x00000b9e      0x172 Generated_Code\PE_LDD.o
+                                0x35a (size before relaxing)
+ .debug_str     0x00000d10       0x4a Generated_Code\PTRC1.o
+                                0x1fc (size before relaxing)
+ .debug_str     0x00000d5a       0x1a Generated_Code\Pins1.o
+                                0x19e (size before relaxing)
+ .debug_str     0x00000d74       0xb7 Generated_Code\RTT1.o
+                                0x322 (size before relaxing)
+ .debug_str     0x00000e2b       0x31 Generated_Code\RTT_Syscalls_GCC.o
+                                0x1b5 (size before relaxing)
+ .debug_str     0x00000e5c      0x388 Generated_Code\SEGGER_RTT.o
+                                0x538 (size before relaxing)
+ .debug_str     0x000011e4       0xf6 Generated_Code\SEGGER_RTT_printf.o
+                                0x2e6 (size before relaxing)
+ .debug_str     0x000012da      0xbd4 Generated_Code\SEGGER_SYSVIEW.o
+                                0xf57 (size before relaxing)
+ .debug_str     0x00001eae       0x83 Generated_Code\SEGGER_SYSVIEW_Config.o
+                                0x25e (size before relaxing)
+ .debug_str     0x00001f31       0xdf Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+                                0x3ad (size before relaxing)
+ .debug_str     0x00002010       0x23 Generated_Code\SYS1.o
+                                0x1a7 (size before relaxing)
+ .debug_str     0x00002033      0x6fc Generated_Code\UTIL1.o
+                                0x907 (size before relaxing)
+ .debug_str     0x0000272f       0x84 Generated_Code\WAIT1.o
+                                0x230 (size before relaxing)
+ .debug_str     0x000027b3      0x208 Generated_Code\XF1.o
+                                0x3e6 (size before relaxing)
+ .debug_str     0x000029bb       0x1d Generated_Code\croutine.o
+                                0x1a1 (size before relaxing)
+ .debug_str     0x000029d8      0x356 Generated_Code\event_groups.o
+                                0x542 (size before relaxing)
+ .debug_str     0x00002d2e       0x1b Generated_Code\heap_1.o
+                                0x19f (size before relaxing)
+ .debug_str     0x00002d49       0x1b Generated_Code\heap_2.o
+                                0x19f (size before relaxing)
+ .debug_str     0x00002d64       0x1b Generated_Code\heap_3.o
+                                0x19f (size before relaxing)
+ .debug_str     0x00002d7f      0x1f0 Generated_Code\heap_4.o
+                                0x3c0 (size before relaxing)
+ .debug_str     0x00002f6f       0x1b Generated_Code\heap_5.o
+                                0x19f (size before relaxing)
+ .debug_str     0x00002f8a       0x9b Generated_Code\list.o
+                                0x2f0 (size before relaxing)
+ .debug_str     0x00003025      0x259 Generated_Code\port.o
+                                0x43c (size before relaxing)
+ .debug_str     0x0000327e      0x4d1 Generated_Code\queue.o
+                                0x7a6 (size before relaxing)
+ .debug_str     0x0000374f      0xc7c Generated_Code\tasks.o
+                               0x1046 (size before relaxing)
+ .debug_str     0x000043cb       0x1b Generated_Code\timers.o
+                                0x19f (size before relaxing)
+ .debug_str     0x000043e6      0x239 Generated_Code\trcKernelPort.o
+                                0x4b2 (size before relaxing)
+ .debug_str     0x0000461f       0x28 Generated_Code\trcSnapshotRecorder.o
+                                0x1ac (size before relaxing)
+ .debug_str     0x00004647      0x765 Generated_Code\trcStreamingRecorder.o
+                                0xadb (size before relaxing)
+ .debug_str     0x00004dac      0x199 Project_Settings\Startup_Code\startup.o
+                                0x375 (size before relaxing)
+ .debug_str     0x00004f45       0x5c Sources\Events.o
+                                0x254 (size before relaxing)
+ .debug_str     0x00004fa1       0xb1 Sources\main.o
+                                0x2be (size before relaxing)
+ .debug_str     0x00005052      0x41b Static_Code\System\CPU_Init.o
+                                0x79a (size before relaxing)
+ .debug_str     0x0000546d       0x3a Static_Code\System\Peripherals_Init.o
+                                0x1be (size before relaxing)
+ .debug_str     0x000054a7      0x99d Static_Code\System\Vectors.o
+                                0xb6e (size before relaxing)
+
+.comment        0x00000000       0x7e
+ .comment       0x00000000       0x7e Generated_Code\BitIoLdd1.o
+                                 0x7f (size before relaxing)
+ .comment       0x0000007e       0x7f Generated_Code\BitIoLdd2.o
+ .comment       0x0000007e       0x7f Generated_Code\BitIoLdd3.o
+ .comment       0x0000007e       0x7f Generated_Code\CLS1.o
+ .comment       0x0000007e       0x7f Generated_Code\CS1.o
+ .comment       0x0000007e       0x7f Generated_Code\Cpu.o
+ .comment       0x0000007e       0x7f Generated_Code\FRTOS1.o
+ .comment       0x0000007e       0x7f Generated_Code\LED_Blue.o
+ .comment       0x0000007e       0x7f Generated_Code\LED_Green.o
+ .comment       0x0000007e       0x7f Generated_Code\LED_Red.o
+ .comment       0x0000007e       0x7f Generated_Code\LEDpin1.o
+ .comment       0x0000007e       0x7f Generated_Code\LEDpin2.o
+ .comment       0x0000007e       0x7f Generated_Code\LEDpin3.o
+ .comment       0x0000007e       0x7f Generated_Code\MCUC1.o
+ .comment       0x0000007e       0x7f Generated_Code\PE_LDD.o
+ .comment       0x0000007e       0x7f Generated_Code\PTRC1.o
+ .comment       0x0000007e       0x7f Generated_Code\Pins1.o
+ .comment       0x0000007e       0x7f Generated_Code\RTT1.o
+ .comment       0x0000007e       0x7f Generated_Code\RTT_Syscalls_GCC.o
+ .comment       0x0000007e       0x7f Generated_Code\SEGGER_RTT.o
+ .comment       0x0000007e       0x7f Generated_Code\SEGGER_RTT_printf.o
+ .comment       0x0000007e       0x7f Generated_Code\SEGGER_SYSVIEW.o
+ .comment       0x0000007e       0x7f Generated_Code\SEGGER_SYSVIEW_Config.o
+ .comment       0x0000007e       0x7f Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .comment       0x0000007e       0x7f Generated_Code\SYS1.o
+ .comment       0x0000007e       0x7f Generated_Code\UTIL1.o
+ .comment       0x0000007e       0x7f Generated_Code\WAIT1.o
+ .comment       0x0000007e       0x7f Generated_Code\XF1.o
+ .comment       0x0000007e       0x7f Generated_Code\croutine.o
+ .comment       0x0000007e       0x7f Generated_Code\event_groups.o
+ .comment       0x0000007e       0x7f Generated_Code\heap_1.o
+ .comment       0x0000007e       0x7f Generated_Code\heap_2.o
+ .comment       0x0000007e       0x7f Generated_Code\heap_3.o
+ .comment       0x0000007e       0x7f Generated_Code\heap_4.o
+ .comment       0x0000007e       0x7f Generated_Code\heap_5.o
+ .comment       0x0000007e       0x7f Generated_Code\list.o
+ .comment       0x0000007e       0x7f Generated_Code\port.o
+ .comment       0x0000007e       0x7f Generated_Code\queue.o
+ .comment       0x0000007e       0x7f Generated_Code\tasks.o
+ .comment       0x0000007e       0x7f Generated_Code\timers.o
+ .comment       0x0000007e       0x7f Generated_Code\trcKernelPort.o
+ .comment       0x0000007e       0x7f Generated_Code\trcSnapshotRecorder.o
+ .comment       0x0000007e       0x7f Generated_Code\trcStreamingRecorder.o
+ .comment       0x0000007e       0x7f Project_Settings\Startup_Code\startup.o
+ .comment       0x0000007e       0x7f Sources\Events.o
+ .comment       0x0000007e       0x7f Sources\main.o
+ .comment       0x0000007e       0x7f Static_Code\System\CPU_Init.o
+ .comment       0x0000007e       0x7f Static_Code\System\Peripherals_Init.o
+ .comment       0x0000007e       0x7f Static_Code\System\Vectors.o
+
+.debug_frame    0x00000000     0x5800
+ .debug_frame   0x00000000       0xd8 Generated_Code\BitIoLdd1.o
+ .debug_frame   0x000000d8       0xd8 Generated_Code\BitIoLdd2.o
+ .debug_frame   0x000001b0       0xd8 Generated_Code\BitIoLdd3.o
+ .debug_frame   0x00000288      0x4f4 Generated_Code\CLS1.o
+ .debug_frame   0x0000077c       0x58 Generated_Code\Cpu.o
+ .debug_frame   0x000007d4       0x6c Generated_Code\FRTOS1.o
+ .debug_frame   0x00000840       0x70 Generated_Code\LED_Blue.o
+ .debug_frame   0x000008b0       0x70 Generated_Code\LED_Green.o
+ .debug_frame   0x00000920       0x70 Generated_Code\LED_Red.o
+ .debug_frame   0x00000990       0x84 Generated_Code\PE_LDD.o
+ .debug_frame   0x00000a14       0x54 Generated_Code\PTRC1.o
+ .debug_frame   0x00000a68      0x118 Generated_Code\RTT1.o
+ .debug_frame   0x00000b80       0x34 Generated_Code\RTT_Syscalls_GCC.o
+ .debug_frame   0x00000bb4      0x398 Generated_Code\SEGGER_RTT.o
+ .debug_frame   0x00000f4c       0xe0 Generated_Code\SEGGER_RTT_printf.o
+ .debug_frame   0x0000102c      0xb64 Generated_Code\SEGGER_SYSVIEW.o
+ .debug_frame   0x00001b90       0x70 Generated_Code\SEGGER_SYSVIEW_Config.o
+ .debug_frame   0x00001c00      0x12c Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+ .debug_frame   0x00001d2c       0x2c Generated_Code\SYS1.o
+ .debug_frame   0x00001d58      0x988 Generated_Code\UTIL1.o
+ .debug_frame   0x000026e0       0x9c Generated_Code\WAIT1.o
+ .debug_frame   0x0000277c      0x188 Generated_Code\XF1.o
+ .debug_frame   0x00002904      0x1a8 Generated_Code\event_groups.o
+ .debug_frame   0x00002aac      0x108 Generated_Code\heap_4.o
+ .debug_frame   0x00002bb4       0xd8 Generated_Code\list.o
+ .debug_frame   0x00002c8c      0x224 Generated_Code\port.o
+ .debug_frame   0x00002eb0      0x498 Generated_Code\queue.o
+ .debug_frame   0x00003348      0x898 Generated_Code\tasks.o
+ .debug_frame   0x00003be0      0x164 Generated_Code\trcKernelPort.o
+ .debug_frame   0x00003d44      0x61c Generated_Code\trcStreamingRecorder.o
+ .debug_frame   0x00004360      0x114 Project_Settings\Startup_Code\startup.o
+ .debug_frame   0x00004474       0xc4 Sources\Events.o
+ .debug_frame   0x00004538       0xb8 Sources\main.o
+ .debug_frame   0x000045f0      0x100 Static_Code\System\CPU_Init.o
+ .debug_frame   0x000046f0       0x30 Static_Code\System\Peripherals_Init.o
+ .debug_frame   0x00004720      0xfd8 Static_Code\System\Vectors.o
+ .debug_frame   0x000056f8       0x2c d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00005724       0x28 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+ .debug_frame   0x0000574c       0x28 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x00005774       0x20 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00005794       0x20 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+ .debug_frame   0x000057b4       0x20 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+ .debug_frame   0x000057d4       0x2c d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+
+.debug_ranges   0x00000000       0x18
+ .debug_ranges  0x00000000       0x18 Generated_Code\SEGGER_RTT_printf.o
+
+Cross Reference Table
+
+Symbol                                            File
+BitIoLdd1_ClrVal                                  Generated_Code\BitIoLdd1.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Blue.o
+BitIoLdd1_GetVal                                  Generated_Code\BitIoLdd1.o
+BitIoLdd1_Init                                    Generated_Code\BitIoLdd1.o
+                                                  Generated_Code\Cpu.o
+BitIoLdd1_NegVal                                  Generated_Code\BitIoLdd1.o
+BitIoLdd1_SetVal                                  Generated_Code\BitIoLdd1.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Blue.o
+BitIoLdd2_ClrVal                                  Generated_Code\BitIoLdd2.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Red.o
+BitIoLdd2_GetVal                                  Generated_Code\BitIoLdd2.o
+BitIoLdd2_Init                                    Generated_Code\BitIoLdd2.o
+                                                  Generated_Code\Cpu.o
+BitIoLdd2_NegVal                                  Generated_Code\BitIoLdd2.o
+BitIoLdd2_SetVal                                  Generated_Code\BitIoLdd2.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Red.o
+BitIoLdd3_ClrVal                                  Generated_Code\BitIoLdd3.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Green.o
+BitIoLdd3_GetVal                                  Generated_Code\BitIoLdd3.o
+BitIoLdd3_Init                                    Generated_Code\BitIoLdd3.o
+                                                  Generated_Code\Cpu.o
+BitIoLdd3_NegVal                                  Generated_Code\BitIoLdd3.o
+BitIoLdd3_SetVal                                  Generated_Code\BitIoLdd3.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Green.o
+CLS1_DefaultShellBuffer                           Generated_Code\CLS1.o
+CLS1_Deinit                                       Generated_Code\CLS1.o
+CLS1_GetSemaphore                                 Generated_Code\CLS1.o
+CLS1_GetStdio                                     Generated_Code\CLS1.o
+CLS1_Init                                         Generated_Code\CLS1.o
+                                                  Generated_Code\Cpu.o
+CLS1_IsHistoryCharacter                           Generated_Code\CLS1.o
+CLS1_IterateTable                                 Generated_Code\CLS1.o
+CLS1_KeyPressed                                   Generated_Code\CLS1.o
+CLS1_ParseCommand                                 Generated_Code\CLS1.o
+CLS1_ParseWithCommandTable                        Generated_Code\CLS1.o
+CLS1_PrintCommandFailed                           Generated_Code\CLS1.o
+CLS1_PrintPrompt                                  Generated_Code\CLS1.o
+CLS1_PrintStatus                                  Generated_Code\CLS1.o
+CLS1_ReadAndParseWithCommandTable                 Generated_Code\CLS1.o
+CLS1_ReadChar                                     Generated_Code\CLS1.o
+CLS1_ReadLine                                     Generated_Code\CLS1.o
+CLS1_ReleaseSerial                                Generated_Code\CLS1.o
+CLS1_RequestSerial                                Generated_Code\CLS1.o
+CLS1_SendCh                                       Generated_Code\CLS1.o
+CLS1_SendChar                                     Generated_Code\CLS1.o
+CLS1_SendData                                     Generated_Code\CLS1.o
+CLS1_SendHelpStr                                  Generated_Code\CLS1.o
+CLS1_SendNum16s                                   Generated_Code\CLS1.o
+CLS1_SendNum16u                                   Generated_Code\CLS1.o
+CLS1_SendNum32s                                   Generated_Code\CLS1.o
+CLS1_SendNum32u                                   Generated_Code\CLS1.o
+CLS1_SendNum8s                                    Generated_Code\CLS1.o
+CLS1_SendNum8u                                    Generated_Code\CLS1.o
+CLS1_SendStatusStr                                Generated_Code\CLS1.o
+CLS1_SendStr                                      Generated_Code\CLS1.o
+CLS1_SetStdio                                     Generated_Code\CLS1.o
+CLS1_printf                                       Generated_Code\CLS1.o
+CLS1_printfIO                                     Generated_Code\CLS1.o
+CLS1_printfPutChar                                Generated_Code\CLS1.o
+CLS1_stdio                                        Generated_Code\CLS1.o
+CPU_GetClockConfiguration                         Static_Code\System\CPU_Init.o
+CPU_GetClockGenMode                               Static_Code\System\CPU_Init.o
+CPU_SetBASEPRI                                    Static_Code\System\CPU_Init.o
+CPU_SetClockConfigGenMode                         Static_Code\System\CPU_Init.o
+CPU_SetClockConfiguration                         Static_Code\System\CPU_Init.o
+ClockConfigurationID                              Static_Code\System\CPU_Init.o
+Components_Init                                   Generated_Code\Cpu.o
+                                                  Static_Code\System\CPU_Init.o
+Cpu_INT_NMIInterrupt                              Generated_Code\Cpu.o
+                                                  Static_Code\System\Vectors.o
+Cpu_OnNMI                                         Sources\Events.o
+                                                  Generated_Code\Cpu.o
+Delay_Nonsense                                    Sources\main.o
+DroppedEventCounter                               Generated_Code\trcStreamingRecorder.o
+EventBuffer                                       Generated_Code\trcStreamingRecorder.o
+FRTOS1_AppGetRuntimeCounterValueFromISR           Generated_Code\FRTOS1.o
+FRTOS1_Deinit                                     Generated_Code\FRTOS1.o
+FRTOS1_Init                                       Generated_Code\FRTOS1.o
+FRTOS1_vApplicationIdleHook                       Sources\Events.o
+                                                  Generated_Code\tasks.o
+FRTOS1_vApplicationMallocFailedHook               Sources\Events.o
+                                                  Generated_Code\heap_4.o
+FRTOS1_vApplicationStackOverflowHook              Sources\Events.o
+                                                  Generated_Code\tasks.o
+FRTOS1_vApplicationTickHook                       Sources\Events.o
+                                                  Generated_Code\tasks.o
+FreeRTOSDebugConfig                               Generated_Code\tasks.o
+LDD_SetClockConfiguration                         Generated_Code\PE_LDD.o
+                                                  Static_Code\System\CPU_Init.o
+LEDSemaphore                                      Sources\main.o
+LED_Blue_Deinit                                   Generated_Code\LED_Blue.o
+LED_Blue_Init                                     Generated_Code\LED_Blue.o
+                                                  Generated_Code\Cpu.o
+LED_Blue_SetRatio16                               Generated_Code\LED_Blue.o
+LED_Green_Deinit                                  Generated_Code\LED_Green.o
+LED_Green_Init                                    Generated_Code\LED_Green.o
+                                                  Generated_Code\Cpu.o
+LED_Green_SetRatio16                              Generated_Code\LED_Green.o
+LED_Red_Deinit                                    Generated_Code\LED_Red.o
+LED_Red_Init                                      Generated_Code\LED_Red.o
+                                                  Generated_Code\Cpu.o
+LED_Red_SetRatio16                                Generated_Code\LED_Red.o
+Led_BlueBlink                                     Sources\main.o
+Led_GreenBlink                                    Sources\main.o
+Led_RedBlink                                      Sources\main.o
+LongestSymbolName                                 Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+MaxBytesTruncated                                 Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+MyWrapper                                         Generated_Code\queue.o
+NoRoomForObjectData                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+NoRoomForSymbol                                   Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+PE_CpuClockConfigurations                         Generated_Code\PE_LDD.o
+PE_FillMemory                                     Generated_Code\PE_LDD.o
+PE_LDD_DeviceDataList                             Generated_Code\PE_LDD.o
+                                                  Sources\main.o
+                                                  Generated_Code\LED_Red.o
+                                                  Generated_Code\LED_Green.o
+                                                  Generated_Code\LED_Blue.o
+                                                  Generated_Code\BitIoLdd3.o
+                                                  Generated_Code\BitIoLdd2.o
+                                                  Generated_Code\BitIoLdd1.o
+PE_PeripheralUsed                                 Generated_Code\PE_LDD.o
+PE_low_level_init                                 Static_Code\System\CPU_Init.o
+                                                  Sources\main.o
+PTRC1_OnTraceWrap                                 Sources\Events.o
+PTRC1_Startup                                     Generated_Code\PTRC1.o
+                                                  Static_Code\System\CPU_Init.o
+PTRC1_vGetGDBDumpCommand                          Generated_Code\PTRC1.o
+PageInfo                                          Generated_Code\trcStreamingRecorder.o
+Peripherals_Init                                  Static_Code\System\Peripherals_Init.o
+RTT1_DefaultShellBuffer                           Generated_Code\RTT1.o
+RTT1_Deinit                                       Generated_Code\RTT1.o
+RTT1_GetStdio                                     Generated_Code\RTT1.o
+RTT1_Init                                         Generated_Code\RTT1.o
+                                                  Generated_Code\Cpu.o
+RTT1_RecvChar                                     Generated_Code\RTT1.o
+                                                  Generated_Code\CLS1.o
+RTT1_SendChar                                     Generated_Code\RTT1.o
+                                                  Generated_Code\CLS1.o
+RTT1_StdIOKeyPressed                              Generated_Code\RTT1.o
+RTT1_StdIOReadChar                                Generated_Code\RTT1.o
+RTT1_StdIOSendChar                                Generated_Code\RTT1.o
+RTT1_stdio                                        Generated_Code\RTT1.o
+RecorderEnabled                                   Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+SEGGER_RTT_AllocDownBuffer                        Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_AllocUpBuffer                          Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_ConfigDownBuffer                       Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\trcKernelPort.o
+                                                  Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_RTT_ConfigUpBuffer                         Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\trcKernelPort.o
+                                                  Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_RTT_GetKey                                 Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\RTT1.o
+SEGGER_RTT_HasData                                Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_HasKey                                 Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\RTT1.o
+                                                  Generated_Code\CLS1.o
+SEGGER_RTT_Init                                   Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\RTT1.o
+SEGGER_RTT_Read                                   Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\trcKernelPort.o
+SEGGER_RTT_ReadNoLock                             Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_RTT_SetNameDownBuffer                      Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_SetNameUpBuffer                        Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_SetTerminal                            Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_TerminalOut                            Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_WaitKey                                Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_Write                                  Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\SEGGER_RTT_printf.o
+                                                  Generated_Code\RTT_Syscalls_GCC.o
+                                                  Generated_Code\RTT1.o
+SEGGER_RTT_WriteNoLock                            Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_WriteSkipNoLock                        Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_RTT_WriteString                            Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_WriteWithOverwriteNoLock               Generated_Code\SEGGER_RTT.o
+SEGGER_RTT_printf                                 Generated_Code\SEGGER_RTT_printf.o
+SEGGER_RTT_vprintf                                Generated_Code\SEGGER_RTT_printf.o
+SEGGER_SYSVIEW_Conf                               Generated_Code\SEGGER_SYSVIEW_Config.o
+                                                  Generated_Code\SYS1.o
+SEGGER_SYSVIEW_DisableEvents                      Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_EnableEvents                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_EncodeData                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_EncodeId                           Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_EncodeString                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_EncodeU32                          Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SEGGER_SYSVIEW_Error                              Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_ErrorfHost                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_ErrorfTarget                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_GetSysDesc                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_Init                               Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_Config.o
+SEGGER_SYSVIEW_NameResource                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnIdle                             Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskCreate                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskStartExec                    Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskStartReady                   Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskStopExec                     Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskStopReady                    Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnTaskTerminate                    Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnUserStart                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_OnUserStop                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_Print                              Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_PrintfHost                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_PrintfHostEx                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_PrintfTarget                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_PrintfTargetEx                     Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordEndCall                      Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordEndCallU32                   Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordEnterISR                     Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordEnterTimer                   Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordExitISR                      Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordExitISRToScheduler           Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordExitTimer                    Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordModuleDescription            Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordString                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordSystime                      Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32                          Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x10                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x2                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x3                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x4                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x5                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x6                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x7                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x8                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordU32x9                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RecordVoid                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_RegisterModule                     Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_SendModule                         Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_SendModuleDescription              Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_SendNumModules                     Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_SendPacket                         Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SEGGER_SYSVIEW_SendSysDesc                        Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_Config.o
+SEGGER_SYSVIEW_SendTaskInfo                       Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SEGGER_SYSVIEW_SendTaskList                       Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_SetRAMBase                         Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_Config.o
+SEGGER_SYSVIEW_ShrinkId                           Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_Start                              Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_Stop                               Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_Warn                               Generated_Code\SEGGER_SYSVIEW.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SEGGER_SYSVIEW_WarnfHost                          Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_SYSVIEW_WarnfTarget                        Generated_Code\SEGGER_SYSVIEW.o
+SEGGER_uxGetTickCounterValue                      Generated_Code\SEGGER_SYSVIEW_Config.o
+SR_lock                                           Static_Code\System\CPU_Init.o
+SR_reg                                            Static_Code\System\CPU_Init.o
+SYS1_Init                                         Generated_Code\SYS1.o
+                                                  Generated_Code\Cpu.o
+SYSVIEW_AddTask                                   Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SYSVIEW_RecordU32x4                               Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SYSVIEW_RecordU32x5                               Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SYSVIEW_SendTaskInfo                              Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SYSVIEW_UpdateTask                                Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+SYSVIEW_X_OS_TraceAPI                             Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+                                                  Generated_Code\SEGGER_SYSVIEW_Config.o
+TotalBytesRemaining                               Generated_Code\trcStreamingRecorder.o
+TotalBytesRemaining_LowWaterMark                  Generated_Code\trcStreamingRecorder.o
+UTIL1_Deinit                                      Generated_Code\UTIL1.o
+UTIL1_GetValue16LE                                Generated_Code\UTIL1.o
+UTIL1_GetValue24LE                                Generated_Code\UTIL1.o
+UTIL1_GetValue32LE                                Generated_Code\UTIL1.o
+UTIL1_Init                                        Generated_Code\UTIL1.o
+UTIL1_IsLeapYear                                  Generated_Code\UTIL1.o
+UTIL1_Num16sToStr                                 Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_Num16sToStrFormatted                        Generated_Code\UTIL1.o
+UTIL1_Num16uToStr                                 Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_Num16uToStrFormatted                        Generated_Code\UTIL1.o
+UTIL1_Num32sToStr                                 Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_Num32sToStrFormatted                        Generated_Code\UTIL1.o
+UTIL1_Num32uToStr                                 Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_Num32uToStrFormatted                        Generated_Code\UTIL1.o
+UTIL1_Num8sToStr                                  Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_Num8uToStr                                  Generated_Code\UTIL1.o
+                                                  Generated_Code\CLS1.o
+UTIL1_NumFloatToStr                               Generated_Code\UTIL1.o
+UTIL1_ReadEscapedName                             Generated_Code\UTIL1.o
+UTIL1_ScanDate                                    Generated_Code\UTIL1.o
+UTIL1_ScanDecimal16sNumber                        Generated_Code\UTIL1.o
+UTIL1_ScanDecimal16uNumber                        Generated_Code\UTIL1.o
+UTIL1_ScanDecimal32sDotNumber                     Generated_Code\UTIL1.o
+UTIL1_ScanDecimal32sNumber                        Generated_Code\UTIL1.o
+UTIL1_ScanDecimal32uNumber                        Generated_Code\UTIL1.o
+UTIL1_ScanDecimal8sNumber                         Generated_Code\UTIL1.o
+UTIL1_ScanDecimal8uNumber                         Generated_Code\UTIL1.o
+UTIL1_ScanDoubleQuotedString                      Generated_Code\UTIL1.o
+UTIL1_ScanHex16uNumber                            Generated_Code\UTIL1.o
+UTIL1_ScanHex32uNumber                            Generated_Code\UTIL1.o
+UTIL1_ScanHex8uNumber                             Generated_Code\UTIL1.o
+UTIL1_ScanHex8uNumberNoPrefix                     Generated_Code\UTIL1.o
+UTIL1_ScanSeparatedNumbers                        Generated_Code\UTIL1.o
+UTIL1_ScanTime                                    Generated_Code\UTIL1.o
+UTIL1_SetValue16LE                                Generated_Code\UTIL1.o
+UTIL1_SetValue24LE                                Generated_Code\UTIL1.o
+UTIL1_SetValue32LE                                Generated_Code\UTIL1.o
+UTIL1_WeekDay                                     Generated_Code\UTIL1.o
+UTIL1_chcat                                       Generated_Code\UTIL1.o
+                                                  Generated_Code\tasks.o
+UTIL1_strCutTail                                  Generated_Code\UTIL1.o
+UTIL1_strFind                                     Generated_Code\UTIL1.o
+UTIL1_strcat                                      Generated_Code\UTIL1.o
+                                                  Generated_Code\tasks.o
+UTIL1_strcatNum16Hex                              Generated_Code\UTIL1.o
+UTIL1_strcatNum16s                                Generated_Code\UTIL1.o
+UTIL1_strcatNum16sFormatted                       Generated_Code\UTIL1.o
+UTIL1_strcatNum16u                                Generated_Code\UTIL1.o
+UTIL1_strcatNum16uFormatted                       Generated_Code\UTIL1.o
+UTIL1_strcatNum24Hex                              Generated_Code\UTIL1.o
+UTIL1_strcatNum32Hex                              Generated_Code\UTIL1.o
+UTIL1_strcatNum32s                                Generated_Code\UTIL1.o
+UTIL1_strcatNum32sDotValue100                     Generated_Code\UTIL1.o
+UTIL1_strcatNum32sFormatted                       Generated_Code\UTIL1.o
+UTIL1_strcatNum32u                                Generated_Code\UTIL1.o
+                                                  Generated_Code\tasks.o
+UTIL1_strcatNum32uFormatted                       Generated_Code\UTIL1.o
+UTIL1_strcatNum8Hex                               Generated_Code\UTIL1.o
+UTIL1_strcatNum8s                                 Generated_Code\UTIL1.o
+UTIL1_strcatNum8u                                 Generated_Code\UTIL1.o
+UTIL1_strcatNumFloat                              Generated_Code\UTIL1.o
+UTIL1_strcatPad                                   Generated_Code\UTIL1.o
+                                                  Generated_Code\tasks.o
+UTIL1_strcpy                                      Generated_Code\UTIL1.o
+UTIL1_strtailcmp                                  Generated_Code\UTIL1.o
+UTIL1_xatoi                                       Generated_Code\UTIL1.o
+UnhandledInterrupt                                Static_Code\System\Vectors.o
+Unhandled_ivINT_ADC0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_ADC1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_Bus_Fault                         Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_Bus_Off                      Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_Error                        Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_ORed_Message_buffer          Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_Rx_Warning                   Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_Tx_Warning                   Static_Code\System\Vectors.o
+Unhandled_ivINT_CAN0_Wake_Up                      Static_Code\System\Vectors.o
+Unhandled_ivINT_CMP0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_CMP1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_CMP2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_CMT                               Static_Code\System\Vectors.o
+Unhandled_ivINT_DAC0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA10                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA11                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA12                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA13                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA14                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA15                             Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA3                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA4                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA5                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA6                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA7                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA8                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA9                              Static_Code\System\Vectors.o
+Unhandled_ivINT_DMA_Error                         Static_Code\System\Vectors.o
+Unhandled_ivINT_DebugMonitor                      Static_Code\System\Vectors.o
+Unhandled_ivINT_ENET_1588_Timer                   Static_Code\System\Vectors.o
+Unhandled_ivINT_ENET_Error                        Static_Code\System\Vectors.o
+Unhandled_ivINT_ENET_Receive                      Static_Code\System\Vectors.o
+Unhandled_ivINT_ENET_Transmit                     Static_Code\System\Vectors.o
+Unhandled_ivINT_FTFE                              Static_Code\System\Vectors.o
+Unhandled_ivINT_FTM0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_FTM1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_FTM2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_FTM3                              Static_Code\System\Vectors.o
+Unhandled_ivINT_Hard_Fault                        Static_Code\System\Vectors.o
+Unhandled_ivINT_I2C0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_I2C1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_I2C2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_I2S0_Rx                           Static_Code\System\Vectors.o
+Unhandled_ivINT_I2S0_Tx                           Static_Code\System\Vectors.o
+Unhandled_ivINT_LLW                               Static_Code\System\Vectors.o
+Unhandled_ivINT_LPTimer                           Static_Code\System\Vectors.o
+Unhandled_ivINT_LVD_LVW                           Static_Code\System\Vectors.o
+Unhandled_ivINT_MCG                               Static_Code\System\Vectors.o
+Unhandled_ivINT_MCM                               Static_Code\System\Vectors.o
+Unhandled_ivINT_Mem_Manage_Fault                  Static_Code\System\Vectors.o
+Unhandled_ivINT_NMI                               Static_Code\System\Vectors.o
+Unhandled_ivINT_PDB0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_PIT0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_PIT1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_PIT2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_PIT3                              Static_Code\System\Vectors.o
+Unhandled_ivINT_PORTA                             Static_Code\System\Vectors.o
+Unhandled_ivINT_PORTB                             Static_Code\System\Vectors.o
+Unhandled_ivINT_PORTC                             Static_Code\System\Vectors.o
+Unhandled_ivINT_PORTD                             Static_Code\System\Vectors.o
+Unhandled_ivINT_PORTE                             Static_Code\System\Vectors.o
+Unhandled_ivINT_PendableSrvReq                    Static_Code\System\Vectors.o
+Unhandled_ivINT_RNG                               Static_Code\System\Vectors.o
+Unhandled_ivINT_RTC                               Static_Code\System\Vectors.o
+Unhandled_ivINT_RTC_Seconds                       Static_Code\System\Vectors.o
+Unhandled_ivINT_Read_Collision                    Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved10                        Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved13                        Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved7                         Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved71                        Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved8                         Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved88                        Static_Code\System\Vectors.o
+Unhandled_ivINT_Reserved9                         Static_Code\System\Vectors.o
+Unhandled_ivINT_SDHC                              Static_Code\System\Vectors.o
+Unhandled_ivINT_SPI0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_SPI1                              Static_Code\System\Vectors.o
+Unhandled_ivINT_SPI2                              Static_Code\System\Vectors.o
+Unhandled_ivINT_SVCall                            Static_Code\System\Vectors.o
+Unhandled_ivINT_SWI                               Static_Code\System\Vectors.o
+Unhandled_ivINT_SysTick                           Static_Code\System\Vectors.o
+Unhandled_ivINT_UART0_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART0_LON                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART0_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_UART1_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART1_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_UART2_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART2_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_UART3_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART3_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_UART4_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART4_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_UART5_ERR                         Static_Code\System\Vectors.o
+Unhandled_ivINT_UART5_RX_TX                       Static_Code\System\Vectors.o
+Unhandled_ivINT_USB0                              Static_Code\System\Vectors.o
+Unhandled_ivINT_USBDCD                            Static_Code\System\Vectors.o
+Unhandled_ivINT_Usage_Fault                       Static_Code\System\Vectors.o
+Unhandled_ivINT_Watchdog                          Static_Code\System\Vectors.o
+WAIT1_Wait100Cycles                               Generated_Code\WAIT1.o
+WAIT1_Wait10Cycles                                Generated_Code\WAIT1.o
+WAIT1_WaitCycles                                  Generated_Code\WAIT1.o
+WAIT1_WaitLongCycles                              Generated_Code\WAIT1.o
+WAIT1_Waitms                                      Generated_Code\WAIT1.o
+XF1_xformat                                       Generated_Code\XF1.o
+XF1_xsprintf                                      Generated_Code\XF1.o
+XF1_xvformat                                      Generated_Code\XF1.o
+                                                  Generated_Code\CLS1.o
+_SEGGER_RTT                                       Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\trcKernelPort.o
+                                                  Generated_Code\SEGGER_SYSVIEW.o
+__END_BSS                                         Project_Settings\Startup_Code\startup.o
+__SP_INIT                                         Static_Code\System\Vectors.o
+                                                  Project_Settings\Startup_Code\startup.o
+__START_BSS                                       Project_Settings\Startup_Code\startup.o
+__S_romp                                          Project_Settings\Startup_Code\startup.o
+__copy_rom_section                                Project_Settings\Startup_Code\startup.o
+__copy_rom_sections_to_ram                        Project_Settings\Startup_Code\startup.o
+__deregister_frame_info                           d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+__dso_handle                                      d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+__iar_program_start                               Project_Settings\Startup_Code\startup.o
+__init_array_end                                  d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+__init_array_start                                d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+__init_hardware                                   Static_Code\System\CPU_Init.o
+                                                  Project_Settings\Startup_Code\startup.o
+__init_registers                                  Project_Settings\Startup_Code\startup.o
+__init_user                                       Project_Settings\Startup_Code\startup.o
+__libc_init_array                                 d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+                                                  Project_Settings\Startup_Code\startup.o
+__preinit_array_end                               d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+__preinit_array_start                             d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+__register_frame_info                             d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crtbegin.o
+__thumb_startup                                   Project_Settings\Startup_Code\startup.o
+                                                  Static_Code\System\Vectors.o
+__vect_table                                      Static_Code\System\Vectors.o
+                                                  Static_Code\System\CPU_Init.o
+_fini                                             d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+_init                                             d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/armv7e-m/fpu/crti.o
+                                                  d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-init.o)
+_write                                            Generated_Code\RTT_Syscalls_GCC.o
+eTaskGetState                                     Generated_Code\tasks.o
+isPendingContextSwitch                            Generated_Code\trcStreamingRecorder.o
+main                                              Sources\main.o
+                                                  Project_Settings\Startup_Code\startup.o
+memcmp                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcmp.o)
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+memcpy                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memcpy-stub.o)
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\SEGGER_RTT.o
+memset                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-memset.o)
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+pcTaskGetName                                     Generated_Code\tasks.o
+prvIsNewTCB                                       Generated_Code\trcKernelPort.o
+                                                  Generated_Code\tasks.o
+prvIsValidCommand                                 Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+prvPagedEventBufferGetWritePointer                Generated_Code\trcStreamingRecorder.o
+prvPagedEventBufferInit                           Generated_Code\trcStreamingRecorder.o
+prvPagedEventBufferTransfer                       Generated_Code\trcStreamingRecorder.o
+prvProcessCommand                                 Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+prvTaskExitError                                  Generated_Code\port.o
+prvTraceDeleteObjectData                          Generated_Code\trcStreamingRecorder.o
+prvTraceDeleteSymbol                              Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+prvTraceError                                     Generated_Code\trcStreamingRecorder.o
+prvTraceGetCurrentTaskHandle                      Generated_Code\trcKernelPort.o
+                                                  Generated_Code\trcStreamingRecorder.o
+prvTraceInitCortexM                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+prvTraceOnBegin                                   Generated_Code\trcKernelPort.o
+                                                  Generated_Code\trcStreamingRecorder.o
+prvTraceOnEnd                                     Generated_Code\trcKernelPort.o
+                                                  Generated_Code\trcStreamingRecorder.o
+prvTraceSaveObjectData                            Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+prvTraceSaveSymbol                                Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+prvTraceStoreEvent                                Generated_Code\trcStreamingRecorder.o
+prvTraceStoreEvent0                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+prvTraceStoreEvent1                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+prvTraceStoreEvent2                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\heap_4.o
+                                                  Generated_Code\event_groups.o
+prvTraceStoreEvent3                               Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\queue.o
+prvTraceStoreStringEvent                          Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+pvPortMalloc                                      Generated_Code\heap_4.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+pvTaskIncrementMutexHeldCount                     Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+pxCurrentTCB                                      Generated_Code\tasks.o
+                                                  Generated_Code\port.o
+pxPortInitialiseStack                             Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+strchr                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strchr.o)
+                                                  Generated_Code\UTIL1.o
+strcmp                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strcmp.o)
+                                                  Generated_Code\CLS1.o
+strlen                                            d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strlen.o)
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\UTIL1.o
+                                                  Generated_Code\SEGGER_RTT.o
+                                                  Generated_Code\CLS1.o
+strncmp                                           d:/program files (x86)/truestudio for arm 7.1.0/armtools/bin/../lib/gcc/arm-atollic-eabi/5.3.1/../../../../arm-atollic-eabi/lib/armv7e-m/fpu\libc_nano.a(lib_a-strncmp.o)
+                                                  Generated_Code\UTIL1.o
+timestampFrequency                                Generated_Code\trcStreamingRecorder.o
+trcWarningChannel                                 Generated_Code\trcKernelPort.o
+                                                  Generated_Code\trcStreamingRecorder.o
+ucQueueGetQueueType                               Generated_Code\queue.o
+uiTraceTickCount                                  Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\tasks.o
+ulTaskNotifyTake                                  Generated_Code\tasks.o
+uxEventGroupGetNumber                             Generated_Code\event_groups.o
+uxGetTickCounterValue                             Generated_Code\port.o
+uxListRemove                                      Generated_Code\list.o
+                                                  Generated_Code\tasks.o
+uxQueueGetQueueNumber                             Generated_Code\queue.o
+uxQueueMessagesWaiting                            Generated_Code\queue.o
+uxQueueMessagesWaitingFromISR                     Generated_Code\queue.o
+uxQueueSpacesAvailable                            Generated_Code\queue.o
+uxTaskGetNumberOfTasks                            Generated_Code\tasks.o
+uxTaskGetStackHighWaterMark                       Generated_Code\tasks.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+uxTaskGetSystemState                              Generated_Code\tasks.o
+uxTaskGetTaskNumber                               Generated_Code\tasks.o
+uxTaskPriorityGet                                 Generated_Code\tasks.o
+uxTaskPriorityGetFromISR                          Generated_Code\tasks.o
+uxTaskResetEventItemValue                         Generated_Code\tasks.o
+                                                  Generated_Code\event_groups.o
+uxTopUsedPriority                                 Generated_Code\port.o
+vEventGroupClearBitsCallback                      Generated_Code\event_groups.o
+vEventGroupDelete                                 Generated_Code\event_groups.o
+vEventGroupSetBitsCallback                        Generated_Code\event_groups.o
+vListInitialise                                   Generated_Code\list.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+vListInitialiseItem                               Generated_Code\list.o
+                                                  Generated_Code\tasks.o
+vListInsert                                       Generated_Code\list.o
+                                                  Generated_Code\tasks.o
+vListInsertEnd                                    Generated_Code\list.o
+                                                  Generated_Code\tasks.o
+vPortEnableVFP                                    Generated_Code\port.o
+vPortEndScheduler                                 Generated_Code\port.o
+vPortEnterCritical                                Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+vPortExitCritical                                 Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+vPortFree                                         Generated_Code\heap_4.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+vPortInitTickTimer                                Generated_Code\port.o
+                                                  Generated_Code\FRTOS1.o
+vPortInitialiseBlocks                             Generated_Code\heap_4.o
+vPortPendSVHandler                                Generated_Code\port.o
+                                                  Static_Code\System\Vectors.o
+vPortSVCHandler                                   Generated_Code\port.o
+                                                  Static_Code\System\Vectors.o
+vPortStartFirstTask                               Generated_Code\port.o
+vPortStartTickTimer                               Generated_Code\port.o
+vPortStopTickTimer                                Generated_Code\port.o
+                                                  Generated_Code\FRTOS1.o
+                                                  Generated_Code\Cpu.o
+vPortTickHandler                                  Generated_Code\port.o
+                                                  Static_Code\System\Vectors.o
+vPortValidateInterruptPriority                    Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+vPortYieldFromISR                                 Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+vQueueDelete                                      Generated_Code\queue.o
+vQueueSetQueueNumber                              Generated_Code\queue.o
+vTaskDelay                                        Generated_Code\tasks.o
+                                                  Sources\main.o
+                                                  Generated_Code\trcKernelPort.o
+                                                  Generated_Code\RTT1.o
+                                                  Generated_Code\CLS1.o
+vTaskDelayUntil                                   Generated_Code\tasks.o
+vTaskGetInfo                                      Generated_Code\tasks.o
+vTaskGetStackInfo                                 Generated_Code\tasks.o
+vTaskList                                         Generated_Code\tasks.o
+vTaskMissedYield                                  Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+vTaskNotifyGiveFromISR                            Generated_Code\tasks.o
+vTaskPlaceOnEventList                             Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+vTaskPlaceOnUnorderedEventList                    Generated_Code\tasks.o
+                                                  Generated_Code\event_groups.o
+vTaskPriorityInherit                              Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+vTaskPrioritySet                                  Generated_Code\tasks.o
+vTaskRemoveFromUnorderedEventList                 Generated_Code\tasks.o
+                                                  Generated_Code\event_groups.o
+vTaskResume                                       Generated_Code\tasks.o
+vTaskSetTaskNumber                                Generated_Code\tasks.o
+vTaskSetTimeOutState                              Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+vTaskStartScheduler                               Generated_Code\tasks.o
+                                                  Sources\main.o
+vTaskSuspend                                      Generated_Code\tasks.o
+vTaskSuspendAll                                   Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\heap_4.o
+                                                  Generated_Code\event_groups.o
+vTaskSwitchContext                                Generated_Code\tasks.o
+                                                  Generated_Code\port.o
+vTraceClearError                                  Generated_Code\trcStreamingRecorder.o
+vTraceEnable                                      Generated_Code\trcKernelPort.o
+                                                  Generated_Code\PTRC1.o
+vTraceInstanceFinishedNext                        Generated_Code\trcStreamingRecorder.o
+vTraceInstanceFinishedNow                         Generated_Code\trcStreamingRecorder.o
+vTracePrint                                       Generated_Code\trcStreamingRecorder.o
+vTracePrintF                                      Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+vTraceSetFrequency                                Generated_Code\trcStreamingRecorder.o
+vTraceSetMutexName                                Generated_Code\trcKernelPort.o
+vTraceSetQueueName                                Generated_Code\trcKernelPort.o
+vTraceSetSemaphoreName                            Generated_Code\trcKernelPort.o
+vTraceStop                                        Generated_Code\trcStreamingRecorder.o
+vTraceStoreISRBegin                               Generated_Code\trcStreamingRecorder.o
+vTraceStoreISREnd                                 Generated_Code\trcStreamingRecorder.o
+vTraceStoreKernelObjectName                       Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+xEventGroupClearBits                              Generated_Code\event_groups.o
+xEventGroupCreate                                 Generated_Code\event_groups.o
+xEventGroupGetBitsFromISR                         Generated_Code\event_groups.o
+xEventGroupSetBits                                Generated_Code\event_groups.o
+xEventGroupSync                                   Generated_Code\event_groups.o
+xEventGroupWaitBits                               Generated_Code\event_groups.o
+xGetTaskHandles                                   Generated_Code\tasks.o
+xPortGetFreeHeapSize                              Generated_Code\heap_4.o
+xPortGetMinimumEverFreeHeapSize                   Generated_Code\heap_4.o
+xPortStartScheduler                               Generated_Code\port.o
+                                                  Generated_Code\tasks.o
+xQueueCreateCountingSemaphore                     Generated_Code\queue.o
+xQueueCreateMutex                                 Generated_Code\queue.o
+xQueueGenericCreate                               Generated_Code\queue.o
+                                                  Sources\main.o
+xQueueGenericReceive                              Generated_Code\queue.o
+                                                  Sources\main.o
+xQueueGenericReset                                Generated_Code\queue.o
+xQueueGenericSend                                 Generated_Code\queue.o
+                                                  Sources\main.o
+xQueueGenericSendFromISR                          Generated_Code\queue.o
+xQueueGetMutexHolder                              Generated_Code\queue.o
+xQueueGetMutexHolderFromISR                       Generated_Code\queue.o
+xQueueGiveFromISR                                 Generated_Code\queue.o
+xQueueGiveMutexRecursive                          Generated_Code\queue.o
+xQueueIsQueueEmptyFromISR                         Generated_Code\queue.o
+xQueueIsQueueFullFromISR                          Generated_Code\queue.o
+xQueuePeekFromISR                                 Generated_Code\queue.o
+xQueueReceiveFromISR                              Generated_Code\queue.o
+xQueueTakeMutexRecursive                          Generated_Code\queue.o
+xTaskCheckForTimeOut                              Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+xTaskCreate                                       Generated_Code\tasks.o
+                                                  Sources\main.o
+                                                  Generated_Code\trcKernelPort.o
+xTaskGenericNotify                                Generated_Code\tasks.o
+xTaskGenericNotifyFromISR                         Generated_Code\tasks.o
+xTaskGetCurrentTaskHandle                         Generated_Code\tasks.o
+                                                  Generated_Code\trcKernelPort.o
+                                                  Generated_Code\queue.o
+xTaskGetHandle                                    Generated_Code\tasks.o
+xTaskGetIdleTaskHandle                            Generated_Code\tasks.o
+xTaskGetSchedulerState                            Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\event_groups.o
+xTaskGetTickCount                                 Generated_Code\tasks.o
+xTaskGetTickCountFromISR                          Generated_Code\tasks.o
+                                                  Generated_Code\SEGGER_SYSVIEW_FreeRTOS.o
+xTaskIncrementTick                                Generated_Code\tasks.o
+                                                  Generated_Code\port.o
+xTaskNotifyStateClear                             Generated_Code\tasks.o
+xTaskNotifyWait                                   Generated_Code\tasks.o
+xTaskPriorityDisinherit                           Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+xTaskRemoveFromEventList                          Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+xTaskResumeAll                                    Generated_Code\tasks.o
+                                                  Generated_Code\queue.o
+                                                  Generated_Code\heap_4.o
+                                                  Generated_Code\event_groups.o
+xTaskResumeFromISR                                Generated_Code\tasks.o
+xTraceGetLastError                                Generated_Code\trcStreamingRecorder.o
+xTraceRegisterString                              Generated_Code\trcStreamingRecorder.o
+                                                  Generated_Code\trcKernelPort.o
+xTraceSetISRProperties                            Generated_Code\trcStreamingRecorder.o

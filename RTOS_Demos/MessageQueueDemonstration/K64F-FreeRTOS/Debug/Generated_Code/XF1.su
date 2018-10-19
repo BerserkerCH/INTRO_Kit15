@@ -1,0 +1,9 @@
+XF1.c:351:10:XF1_xformat	24	static
+XF1.c:385:13:toUpperCase	16	static
+XF1.c:396:17:xstrlen	24	static
+XF1.c:411:17:outBuffer	32	static
+XF1.c:429:17:outChars	32	static
+XF1.c:441:13:putCharIntoBuf	24	static
+XF1.c:446:12:xsprintf	32	static
+XF1.c:499:10:XF1_xvformat	160	static
+XF1.c:879:5:XF1_xsprintf	28	static

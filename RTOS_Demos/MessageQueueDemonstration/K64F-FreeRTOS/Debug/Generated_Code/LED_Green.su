@@ -1,0 +1,3 @@
+LED_Green.c:166:6:LED_Green_Init	8	static
+LED_Green.c:183:6:LED_Green_Deinit	4	static
+LED_Green.c:204:6:LED_Green_SetRatio16	16	static
