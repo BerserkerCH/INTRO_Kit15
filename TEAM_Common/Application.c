@@ -94,7 +94,7 @@ void APP_EventHandler(EVNT_Handle event) {
     LED2_Neg();
     break;
   case EVNT_BUZZ_NEG:
-    BUZ_PlayTune(BUZ_TUNE_WELCOME); // does not work yet
+ //   BUZ_PlayTune(BUZ_TUNE_WELCOME); // does not work yet
     break;
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
