@@ -167,7 +167,7 @@ uint8_t BUZ_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_Std
     *handled = TRUE;
     p = cmd+sizeof("buzzer buz ")-1;
     if (UTIL1_ScanDecimal16uNumber(&p, &freq)==ERR_OK && UTIL1_ScanDecimal16uNumber(&p, &duration)==ERR_OK) {
-      if (BUZ_Beep(freq, duration)!=ERR_OK) {
+      if (BUZ_(freq, duration)!=ERR_OK) {
         CLS1_SendStr((unsigned char*)"Starting buzzer failed\r\n", io->stdErr);
         return ERR_FAILED;
       }

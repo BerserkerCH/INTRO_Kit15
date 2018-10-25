@@ -91,7 +91,7 @@ void APP_EventHandler(EVNT_Handle event) {
     }
     break;
   case EVNT_LED_HEARTBEAT:
-    LED2_Neg();
+    LED1_Neg();
     break;
   case EVNT_BUZZ_NEG:
  //   BUZ_PlayTune(BUZ_TUNE_WELCOME); // does not work yet
@@ -99,8 +99,8 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
     LED1_Neg();
-    BtnMsg(1, "pressed");
-    //CLS1_SendStr("SW1 pressed but Andy depressed!\r\n", CLS1_GetStdio()->stdOut);
+    BUZ_Beep(500,100);
+    CLS1_SendStr("SW1 pressed but Andy depressed!\r\n", CLS1_GetStdio()->stdOut);
     break;
 #endif
     default:
