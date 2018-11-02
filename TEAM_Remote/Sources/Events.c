@@ -29,6 +29,7 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "Event.h"
+#include "Keys.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -71,7 +72,7 @@ void Cpu_OnNMIINT(void)
 */
 void TI1_OnInterrupt(void)
 {
-  /* Write your code here ... */
+	TMR_OnInterrupt();
 }
 
 /*
@@ -88,7 +89,7 @@ void TI1_OnInterrupt(void)
 */
 void SW1_OnInterrupt(void)
 {
-	EVNT_SetEvent(EVNT_SW1_PRESSED);
+	KEY_OnInterrupt(KEY_BTN1);
 }
 
 /* END Events */

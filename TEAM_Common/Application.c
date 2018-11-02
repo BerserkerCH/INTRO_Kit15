@@ -98,17 +98,17 @@ void APP_EventHandler(EVNT_Handle event) {
     break;
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
-    BUZ_Beep(100,100);
+ //   BUZ_Beep(100,100);
     LED1_On();
     CLS1_SendStr("SW1 pressed!\r\n", CLS1_GetStdio()->stdOut);
     break;
   case   EVNT_SW1_LPRESSED:
-     BUZ_Beep(600,300);
+ //    BUZ_Beep(600,300);
      LED1_On();
      CLS1_SendStr("SW1 long pressed!\r\n", CLS1_GetStdio()->stdOut);
      break;
   case   EVNT_SW1_RELEASED:
-	 BUZ_Beep(60,200);
+//	 BUZ_Beep(60,200);
      LED1_Off();
      CLS1_SendStr("SW1 released!\r\n", CLS1_GetStdio()->stdOut);
      break;
