@@ -65,9 +65,13 @@ void DBNC_Process(DBNC_FSMData *data) {
           data->state = DBNC_KEY_RELEASE; /* advance to next state */
           (void)TRG_SetTrigger(data->trigger, data->debounceTicks, (TRG_Callback)DBNC_Process, (void*)data);
           return;
-        } else { /* we got another key set pressed */
-          /*! \todo Here it goes to the next state */
-          data->state = DBNC_KEY_RELEASE;
+        } else { /* we got another key set pressed ore released */
+        	if( keys>data->scanValue){ /* a new key is pressed*/
+        		data->onDebounceEvent(DBNC_EVENT_PRESSED, keys&&!data->scanValue);
+        		data->scanValue	=	keys;
+        	}else{ /*one of some pressed buttons is released*/
+        		data->state = DBNC_KEY_RELEASE;
+        	}
         }
         break;
   
