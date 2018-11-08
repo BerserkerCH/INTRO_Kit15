@@ -30,6 +30,8 @@
 #include "Events.h"
 #include "Event.h"
 #include "Keys.h"
+#include "Timer.h"
+
 
 #ifdef __cplusplus
 extern "C" {
