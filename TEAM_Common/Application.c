@@ -208,6 +208,24 @@ static void BlinkyTask(void *pvParameters){
 
 }
 
+static void Zork (void){
+	zork_config();
+	run_zork_game();
+}
+
+void startZork(void){
+	xTaskHandle taskHndl;
+	BaseType_t res;
+	 res = xTaskCreate(Zork,
+			  "Zork",
+			  1000/sizeof(StackType_t),
+			  (void*)NULL,
+			  tskIDLE_PRIORITY+3,
+			  &taskHndl
+			  );
+
+}
+
 void APP_Start(void) {
 	BaseType_t res;
 	xTaskHandle taskHndl;
