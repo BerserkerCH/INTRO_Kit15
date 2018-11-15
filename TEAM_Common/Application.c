@@ -92,20 +92,22 @@ void APP_EventHandler(EVNT_Handle event) {
     break;
   case EVNT_LED_HEARTBEAT:
     LED1_Neg();
+
     break;
   case EVNT_BUZZ_NEG:
  //   BUZ_PlayTune(BUZ_TUNE_WELCOME); // does not work yet
     break;
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
+	  BtnMsg(1,NULL);
  //   BUZ_Beep(100,100);
     LED1_On();
-    CLS1_SendStr("SW1 pressed!\r\n", CLS1_GetStdio()->stdOut);
+
     break;
   case   EVNT_SW1_LPRESSED:
  //    BUZ_Beep(600,300);
      LED1_On();
-     CLS1_SendStr("SW1 long pressed!\r\n", CLS1_GetStdio()->stdOut);
+     //CLS1_SendStr("SW1 long pressed!\r\n", CLS1_GetStdio()->stdOut);
      break;
   case   EVNT_SW1_RELEASED:
 //	 BUZ_Beep(60,200);
