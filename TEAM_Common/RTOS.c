@@ -9,7 +9,10 @@
 #include "RTOS.h"
 #include "FRTOS1.h"
 #include "Application.h"
+#include "zork_config.h"
 
+
+	xTaskHandle ZorkTaskHndl = NULL;
 
 static void BlinkyTask(void *pvParameters){
 	for(;;){
@@ -29,25 +32,15 @@ static void BeepyTask(void *pvParameters){
 	}
 }
 
-static void Zork (void){
+static void ZorkTask (void){
+	vTaskSuspend(ZorkTaskHndl);
+	zork_config();
+	run_zork_game();
 	for(;;){
-		zork_config();
-		run_zork_game();
 		vTaskDelay(pdMS_TO_TICKS(100));
 	}
 }
 
-void startZork(void){
-   	xTaskHandle taskHndl;
-   	BaseType_t res;
-   	res = xTaskCreate(Zork,
-   			  "Zork",
-   			  1000/sizeof(StackType_t),
-   			  (void*)NULL,
-   			  tskIDLE_PRIORITY+3,
-   			  &taskHndl
-   			  );
-}
 
 void RTOS_Init(void) {
   /*! \todo Create tasks here */
@@ -76,6 +69,19 @@ void RTOS_Init(void) {
 			  WAIT1_Waitms(10);
 	  }*/
 
+
+   	BaseType_t zork_res;
+   	zork_res = xTaskCreate(ZorkTask,
+   			  "Zork",
+   			  1000/sizeof(StackType_t),
+   			  (void*)NULL,
+   			  tskIDLE_PRIORITY+3,
+   			  &ZorkTaskHndl
+   			  );
+	  if (zork_res != pdPASS){
+			  // something went wrong
+			  WAIT1_Waitms(10);
+	  }
 }
 
 void RTOS_Deinit(void) {

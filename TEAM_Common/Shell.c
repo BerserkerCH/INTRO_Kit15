@@ -357,7 +357,8 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
     }
 
   }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
-	  startZork(); // create task from beginning or only if needed?
+	  vTaskResume(ZorkTaskHndl);
+	  //startZork(); // create task from beginning or only if needed?
   }
   return ERR_OK;
 }
