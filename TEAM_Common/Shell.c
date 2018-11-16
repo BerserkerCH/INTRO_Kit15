@@ -315,6 +315,7 @@ static uint8_t SHELL_PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr("Shell", "Shell commands\r\n", io->stdOut);
   CLS1_SendHelpStr("  help|status", "Print help or status information\r\n", io->stdOut);
   CLS1_SendHelpStr("  val <num>", "Assign number value\r\n", io->stdOut);
+  CLS1_SendHelpStr("  gameZork","Starts Zork\r\n", io->stdOut);
   return ERR_OK;
 }
 
@@ -351,6 +352,9 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
     } else {
       return ERR_FAILED; /* wrong format of command? */
     }
+
+  }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
+	  startZork();
   }
   return ERR_OK;
 }
