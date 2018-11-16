@@ -1,0 +1,22 @@
+SEGGER J-Link Remote Server V6.40 LogFile
+Logging started @ 2018-11-16 13:52
+TT-EE-Time    -NNNN
+TT: Type
+  00 TCPIP_IN
+  01 TCPIP_OUT
+  02 USB_IN
+  03 USB_OUT
+  04 JLINK
+  05 SERVER
+EE: Encoding
+  00 Plain text
+  01 Hex
+04-00-00000000-0038: Firmware: J-Link OpenSDA 2 compiled Oct 13 2015 12:10:27
+04-00-00000000-000F: Hardware: V1.00
+04-00-00000002-000E: S/N: 621000000
+04-00-00000002-0032: TELNET listener socket opened on port 19021WEBSRV 
+04-00-00000002-0029: Starting webserver (0034ms, 0034ms total)
+04-00-00000002-0054: T483B000 000:000 WEBSRV Webserver running on local port 19080 (0034ms, 0034ms total)
+04-00-00000002-0036: T483B000 000:000   returns O.K. (0034ms, 0034ms total)
+04-00-00000002-0054: T483B000 000:034 JLINK_EMU_GetCurrConnectionInfo()  returns 0 (0000ms, 0034ms total)
+04-00-00000002-005F: T483B000 000:034 JLINK_ExecCommand("UpdatePID = 0", ...).   returns 0x01 (0000ms, 0034ms total)
