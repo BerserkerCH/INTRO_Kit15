@@ -200,46 +200,13 @@ static void APP_AdoptToHardware(void) {
 /* void myISR(void){
 	EVNT_SetEvent(EVNT_LED_HEARTBEAT);
 } */
-static void BlinkyTask(void *pvParameters){
-	for(;;){
-		LED1_Neg();
-		vTaskDelay(pdMS_TO_TICKS(50));
-	}
 
-}
-
-static void Zork (void){
-	zork_config();
-	run_zork_game();
-}
-
-void startZork(void){
-	xTaskHandle taskHndl;
-	BaseType_t res;
-	 res = xTaskCreate(Zork,
-			  "Zork",
-			  1000/sizeof(StackType_t),
-			  (void*)NULL,
-			  tskIDLE_PRIORITY+3,
-			  &taskHndl
-			  );
-
-}
 
 void APP_Start(void) {
-	BaseType_t res;
-	xTaskHandle taskHndl;
   PL_Init();
   APP_AdoptToHardware();
   //__asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
-  res = xTaskCreate(BlinkyTask,
-		  "Blinky",
-		  500/sizeof(StackType_t),
-		  (void*)NULL,
-		  tskIDLE_PRIORITY+1,
-		  &taskHndl
-		  );
   vTaskStartScheduler() ;
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);

@@ -88,6 +88,9 @@
 #if PL_CONFIG_HAS_SUMO
   #include "Sumo.h"
 #endif
+//#if PL_CONFIG_HAS_ZORK
+  #include "RTOS.h"
+//#endif
 
 #if CLS1_DEFAULT_SERIAL
   #error "Default is RTT. Disable any Shell default connection in the component properties, as we are setting it a runtime!"
@@ -354,7 +357,7 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
     }
 
   }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
-	  startZork();
+	  startZork(); // create task from beginning or only if needed?
   }
   return ERR_OK;
 }

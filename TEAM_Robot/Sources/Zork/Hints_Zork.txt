@@ -16,13 +16,6 @@ zork
    b) In the launch configuration, enable Semihosting (launch configuration, Startup Tab)
    See: https://mcuoneclipse.com/2015/05/27/semihosting-for-kinetis-design-studio-v3-0-0-and-gnu-arm-embedded-launchpad/
 
-<<<<<<< HEAD
-=======
-- init and start the game:
-  zork_config(); /* initializes the game */
-  run_zork_game(); /* run the game, does not return while it is running */
-
->>>>>>> 785039e6a1e653a8cd91b9bd2eca75fd1ffa327c
   
 Hints:
   - dedicated task to run Zork?
@@ -30,11 +23,3 @@ Hints:
   - Shell command to start the game
   - suspend/resume tasks?
   - overwrite/replace _exit(): the game exits that way
-
-<<<<<<< HEAD
-#define PL_LOCAL_CONFIG_HAS_ZORK_DISABLED           	  /* disable ZORK */
-
-  
-=======
-  
->>>>>>> 785039e6a1e653a8cd91b9bd2eca75fd1ffa327c
