@@ -9,8 +9,8 @@
 
 /* configuration makros: */
 #define USE_FATFS         (0) /* using FatFS with SD card */
-#define USE_SEMIHOSTING   (1) /* using semihosting with the debug probe for file I/O */
-#define USE_FLASH_FILE    (0) /* using a flash file for the game data */
+#define USE_SEMIHOSTING   (0) /* using semihosting with the debug probe for file I/O */
+#define USE_FLASH_FILE    (1) /* using a flash file for the game data */
 #define USE_CONSOLE       (1) /* required, using Console input/output */
 #define USE_MCURSES       (0) /* use mcurses */
 
