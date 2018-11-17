@@ -12,7 +12,7 @@
 #include "zork_config.h"
 
 
-	xTaskHandle ZorkTaskHndl = NULL;
+xTaskHandle ZorkTaskHndl = NULL;
 
 static void BlinkyTask(void *pvParameters){
 	for(;;){

@@ -3,18 +3,18 @@
  *
  *      Author: Erich Styger  */
 
-
+#ifndef ZORK_CONFIG_H
+#define ZORK_CONFIG_H
 /* this header file needs to be included in vars.h */
-
-void run_zork_game(void); /* run the game */
 
 /* configuration makros: */
 #define USE_FATFS         (0) /* using FatFS with SD card */
 #define USE_SEMIHOSTING   (1) /* using semihosting with the debug probe for file I/O */
+#define USE_FLASH_FILE    (0) /* using a flash file for the game data */
 #define USE_CONSOLE       (1) /* required, using Console input/output */
 #define USE_MCURSES       (0) /* use mcurses */
 
-#if (USE_FATFS+USE_SEMIHOSTING > 1)
+#if (USE_FATFS+USE_SEMIHOSTING+USE_FLASH_FILE > 1)
   #error "only one can be active"
 #endif
 
@@ -42,6 +42,27 @@ void run_zork_game(void); /* run the game */
   /* using relative path inside the project to load and store files: */
   #define TEXTFILE ".\\Sources\\Zork\\dtextc.dat"
   #define SAVEFILE ".\\Sources\\Zork\\dsave.dat"
+#elif USE_FLASH_FILE
+  #define TEXTFILE "dtextc.dat"
+  #define SAVEFILE "dsave.dat"
+
+  #define FILE void
+  extern int FLASH_getc(FILE *f);
+  extern int FLASH_ftell(FILE *f);
+  extern int FLASH_fseek(FILE *f, int pos, int option);
+  extern int FLASH_fclose(FILE *f);
+  extern FILE *FLASH_fopen(const char *path, char *option);
+  extern size_t FLASH_fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+  extern size_t FLASH_fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+  #undef getc
+  #define getc(file)                    FLASH_getc(file)
+  #define ftell(f)                      FLASH_ftell(f)
+  #define fseek(f, pos, option)         FLASH_fseek(f, pos, option)
+  #define fclose(f)                     FLASH_fclose(f)
+  #define fopen(path, option)           FLASH_fopen(path, option)
+  #define fread(buf, size, nof, file)   FLASH_fread(buf, size, nof, file)
+  #define fwrite(buf, size, nof, file)  FLASH_fwrite(buf, size, nof, file)
 #elif USE_FATFS
   #define BINREAD "rb"
   #define BINWRITE "wb"
@@ -71,4 +92,8 @@ void run_zork_game(void); /* run the game */
 
 void _exit(int i);
 
+void run_zork_game(void); /* run the game */
+
 void zork_config(void);
+
+#endif /* ZORK_CONFIG_H */

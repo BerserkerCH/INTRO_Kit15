@@ -9,14 +9,12 @@
 #ifndef SHELL_H_
 #define SHELL_H_
 
-#include "FreeRTOS.h"
-#include "task.h"
 #include "Platform.h"
 #if PL_CONFIG_HAS_SHELL
 
 #include "CLS1.h"
 
-extern 	xTaskHandle ZorkTaskHndl;
+
 /*!
  * \brief Returns the current standard I/O handler
  * \return Pointer to the standard I/O handler

@@ -87,6 +87,9 @@
 #if PL_CONFIG_HAS_SUMO /*! \todo */
   #include "Sumo.h"
 #endif
+#if PL_CONFIG_HAS_ZORK
+  #include "Zork.h"
+#endif
 
 void PL_Init(void) {
 #if PL_CONFIG_HAS_LEDS
@@ -110,14 +113,14 @@ void PL_Init(void) {
 #if PL_CONFIG_HAS_DEBOUNCE
   KEYDBNC_Init();
 #endif
-#if PL_CONFIG_HAS_RTOS
-  RTOS_Init();
-#endif
 #if PL_CONFIG_HAS_SHELL
   SHELL_Init();
 #endif
 #if PL_CONFIG_HAS_SHELL_QUEUE
   SQUEUE_Init();
+#endif
+#if PL_CONFIG_HAS_ZORK
+  ZORK_Init();
 #endif
 #if PL_CONFIG_HAS_SEMAPHORE
   SEM_Init();
@@ -170,9 +173,15 @@ void PL_Init(void) {
 #if PL_CONFIG_HAS_SUMO
   SUMO_Init();
 #endif
+#if PL_CONFIG_HAS_RTOS
+  RTOS_Init();
+#endif
 }
 
 void PL_Deinit(void) {
+#if PL_CONFIG_HAS_RTOS
+  RTOS_Deinit();
+#endif
 #if PL_CONFIG_HAS_SUMO
   SUMO_Deinit();
 #endif
@@ -224,11 +233,11 @@ void PL_Deinit(void) {
 #if PL_CONFIG_HAS_SEMAPHORE
   SEM_Deinit();
 #endif
+#if PL_CONFIG_HAS_ZORK
+  ZORK_Deinit();
+#endif
 #if PL_CONFIG_HAS_SHELL_QUEUE
   SQUEUE_Deinit();
-#endif
-#if PL_CONFIG_HAS_RTOS
-  RTOS_Deinit();
 #endif
 #if PL_CONFIG_HAS_DEBOUNCE
   KEYDBNC_Deinit();
@@ -246,7 +255,7 @@ void PL_Deinit(void) {
   TMR_Deinit();
 #endif
 #if PL_CONFIG_HAS_EVENTS
-  EVNT_Init();
+  EVNT_Deinit();
 #endif
 #if PL_CONFIG_HAS_LEDS
   LED_Deinit();

@@ -84,20 +84,20 @@
   #include "Distance.h"
 #endif
 #include "KIN1.h"
-#include "TmDt1.h"
+//#include "TmDt1.h"
 #if PL_CONFIG_HAS_SUMO
   #include "Sumo.h"
 #endif
-//#if PL_CONFIG_HAS_ZORK
-  #include "RTOS.h"
-//#endif
+#if PL_CONFIG_HAS_ZORK
+  #include "Zork.h"
+#endif
 
 #if CLS1_DEFAULT_SERIAL
   #error "Default is RTT. Disable any Shell default connection in the component properties, as we are setting it a runtime!"
 #endif
 #define SHELL_CONFIG_HAS_SHELL_UART  (1 && !PL_CONFIG_BOARD_IS_ROBO_V1) /* use AsynchroSerial, V1 uses the Bluetooth on the UART */
 #define SHELL_CONFIG_HAS_SHELL_RTT   (1 && PL_CONFIG_HAS_SEGGER_RTT) /* use SEGGER RTT */
-#define SHELL_CONFIG_HAS_SHELL_CDC   (1 && PL_CONFIG_HAS_USB_CDC) /* use USB CDC */
+#define SHELL_CONFIG_HAS_SHELL_CDC   (0 && PL_CONFIG_HAS_USB_CDC) /* use USB CDC */
 
 #if SHELL_CONFIG_HAS_SHELL_UART
  /* ******************************************************************
@@ -296,6 +296,9 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
 #if PL_CONFIG_HAS_SUMO
   SUMO_ParseCommand,
 #endif
+#if PL_CONFIG_HAS_ZORK
+  ZORK_ParseCommand,
+#endif
   NULL /* Sentinel */
 };
 
@@ -318,7 +321,6 @@ static uint8_t SHELL_PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr("Shell", "Shell commands\r\n", io->stdOut);
   CLS1_SendHelpStr("  help|status", "Print help or status information\r\n", io->stdOut);
   CLS1_SendHelpStr("  val <num>", "Assign number value\r\n", io->stdOut);
-  CLS1_SendHelpStr("  gameZork","Starts Zork\r\n", io->stdOut);
   return ERR_OK;
 }
 
@@ -355,12 +357,8 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
     } else {
       return ERR_FAILED; /* wrong format of command? */
     }
-
-  }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
-	  vTaskResume(ZorkTaskHndl);
-	  //startZork(); // create task from beginning or only if needed?
-  }
   return ERR_OK;
+  }
 }
 
 void SHELL_ParseCmd(uint8_t *cmd) {
@@ -390,13 +388,21 @@ static void ShellTask(void *pvParameters) {
 #if PL_CONFIG_HAS_SHELL_QUEUE && PL_CONFIG_SQUEUE_SINGLE_CHAR
     {
         /*! \todo Handle shell queue */
+      unsigned char ch;
+
+      while((ch=SQUEUE_ReceiveChar()) && ch!='\0') {
+        ios[0].stdio->stdOut(ch); /* output on first channel */
+      }
     }
 #elif PL_CONFIG_HAS_SHELL_QUEUE /* !PL_CONFIG_SQUEUE_SINGLE_CHAR */
     {
+      /*! \todo Handle shell queue */
       const unsigned char *msg;
+
       msg = SQUEUE_ReceiveMessage();
       if(msg!=NULL){
-    	  CLS1_SendStr(msg,CLS1_GetStdio()->stdOut);
+        CLS1_SendStr(msg, CLS1_GetStdio()->stdOut/*ios[0].stdio->stdOut*/);
+		vPortFree((void*)msg);
       }
    }
 #endif /* PL_CONFIG_HAS_SHELL_QUEUE */
@@ -405,11 +411,17 @@ static void ShellTask(void *pvParameters) {
 }
 #endif /* PL_CONFIG_HAS_RTOS */
 
+
+
+
+TaskHandle_t ShellTaskHandle = NULL;
+
+
 void SHELL_Init(void) {
   SHELL_val = 0;
   CLS1_SetStdio(SHELL_GetStdio()); /* set default standard I/O to RTT */
 #if PL_CONFIG_HAS_RTOS
-  if (xTaskCreate(ShellTask, "Shell", 900/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+1, NULL) != pdPASS) {
+  if (xTaskCreate(ShellTask, "Shell", 900/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+1, &ShellTaskHandle) != pdPASS) {
     for(;;){} /* error */
   }
 #endif

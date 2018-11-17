@@ -81,6 +81,7 @@
 #define PL_CONFIG_HAS_JOYSTICK          (1 && !defined(PL_LOCAL_CONFIG_HAS_JOYSTICK_DISABLED) && PL_CONFIG_BOARD_IS_FRDM)
 
 /* robot specific features: */
+#define PL_CONFIG_HAS_ZORK     			(1 && !defined(PL_LOCAL_CONFIG_HAS_ZORK_DISABLED) && PL_CONFIG_BOARD_IS_ROBO) /* support for zork */
 #define PL_CONFIG_HAS_BUZZER            (1 && !defined(PL_LOCAL_CONFIG_HAS_BUZZER_DISABLED) && PL_CONFIG_BOARD_IS_ROBO) /* support for buzzer */
 #define PL_CONFIG_HAS_BLUETOOTH         (1 && !defined(PL_LOCAL_CONFIG_HAS_BLUETOOTH_DISABLED) && PL_CONFIG_BOARD_IS_ROBO)
 #define PL_CONFIG_HAS_MOTOR             (1 && !defined(PL_LOCAL_CONFIG_HAS_MOTOR_DISABLED) && PL_CONFIG_BOARD_IS_ROBO)
