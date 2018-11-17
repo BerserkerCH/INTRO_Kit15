@@ -16,6 +16,8 @@
 
 void APP_EventHandler(EVNT_Handle event);
 #endif
+void taskCreate(void);
+void stopZork(void);
 void startZork(void);
 void APP_Start(void);
 

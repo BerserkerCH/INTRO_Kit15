@@ -53,6 +53,7 @@
 #define PL_LOCAL_CONFIG_HAS_LCD_DISABLED                  /* disable LCD */
 #define PL_LOCAL_CONFIG_HAS_LCD_MENU_DISABLED             /* disable LCD menu */
 #define PL_LOCAL_CONFIG_HAS_SNAKE_GAME_DISABLED           /* disable snake game */
+//#define PL_LOCAL_CONFIG_HAS_ZORK_GAME_DISABLED           /* disable Zork game */
 
 /* robot hardware functionality */
 //#define PL_LOCAL_CONFIG_HAS_BUZZER_DISABLED               /* disable buzzer (only on robot) */

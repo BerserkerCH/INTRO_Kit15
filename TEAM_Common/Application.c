@@ -53,8 +53,15 @@
   #include "Reflectance.h"
 #endif
 #include "Sumo.h"
+#if PL_CONFIG_HAS_ZORK_GAME
+	#include "zork_config.h"
+	xTaskHandle taskHndl_Zork;
+	extern xTaskHandle taskHndl_Shell;
+#endif
 
 #if PL_CONFIG_HAS_EVENTS
+
+
 
 static void BtnMsg(int btn, const char *msg) {
 #if PL_CONFIG_HAS_SHELL
@@ -208,38 +215,43 @@ static void BlinkyTask(void *pvParameters){
 
 }
 
-static void Zork (void){
+static void Zork(void *pvParameters){
+	vTaskSuspend(taskHndl_Zork);
+	//vTaskSuspend(taskHndl_Shell);
 	zork_config();
 	run_zork_game();
 }
 
+void taskCreate(void){
+	xTaskHandle taskHndl_Blinky;
+	if(xTaskCreate(BlinkyTask,"Blinky",500/sizeof(StackType_t),(void*)NULL,tskIDLE_PRIORITY+1,&taskHndl_Blinky)!=pdPASS){
+		for(;;);
+	}
+	if(xTaskCreate(Zork,"Zork",1000/sizeof(StackType_t),(void*)NULL,tskIDLE_PRIORITY+3,&taskHndl_Zork)!=pdPASS){
+			for(;;);
+		}
+}
 void startZork(void){
-	xTaskHandle taskHndl;
-	BaseType_t res;
-	 res = xTaskCreate(Zork,
-			  "Zork",
-			  1000/sizeof(StackType_t),
-			  (void*)NULL,
-			  tskIDLE_PRIORITY+3,
-			  &taskHndl
-			  );
-
+	vTaskResume(taskHndl_Zork);
+	//vTaskSuspend(taskHndl_Shell);
 }
 
+void stopZork(void){
+	//vTaskResume(taskHndl_Shell);
+	xTaskHandle taskHndl_prov = taskHndl_Zork;
+	if(xTaskCreate(Zork,"Zork",1000/sizeof(StackType_t),(void*)NULL,tskIDLE_PRIORITY+3,&taskHndl_Zork)!=pdPASS){
+				for(;;);
+			}
+	vTaskDelete(taskHndl_prov);
+}
+
+
 void APP_Start(void) {
-	BaseType_t res;
-	xTaskHandle taskHndl;
   PL_Init();
   APP_AdoptToHardware();
   //__asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
-  res = xTaskCreate(BlinkyTask,
-		  "Blinky",
-		  500/sizeof(StackType_t),
-		  (void*)NULL,
-		  tskIDLE_PRIORITY+1,
-		  &taskHndl
-		  );
+  taskCreate();
   vTaskStartScheduler() ;
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);

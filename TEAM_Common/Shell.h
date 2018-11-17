@@ -26,6 +26,7 @@ CLS1_ConstStdIOType *SHELL_GetStdio(void);
  */
 void SHELL_ParseCmd(uint8_t *cmd);
 
+
 /*!
  * \brief Sends a string to the shell/console stdout
  * \param msg Zero terminated string to write

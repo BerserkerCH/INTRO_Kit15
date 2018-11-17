@@ -295,6 +295,10 @@ static const CLS1_ParseCommandCallback CmdParserTable[] =
 #endif
   NULL /* Sentinel */
 };
+#if PL_CONFIG_HAS_ZORK_GAME
+	xTaskHandle taskHndl_Shell;
+#endif
+
 
 static uint32_t SHELL_val; /* used as demo value for shell */
 
@@ -354,7 +358,11 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
     }
 
   }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
+	#if PL_CONFIG_HAS_ZORK_GAME
 	  startZork();
+	#else
+	  CLS1_SendStatusStr("Enable Zork", "\r\n", io->stdOut);
+	#endif
   }
   return ERR_OK;
 }
@@ -405,9 +413,15 @@ void SHELL_Init(void) {
   SHELL_val = 0;
   CLS1_SetStdio(SHELL_GetStdio()); /* set default standard I/O to RTT */
 #if PL_CONFIG_HAS_RTOS
-  if (xTaskCreate(ShellTask, "Shell", 900/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+1, NULL) != pdPASS) {
-    for(;;){} /* error */
-  }
+	#if PL_CONFIG_HAS_ZORK_GAME
+  	  if (xTaskCreate(ShellTask,"Shell", 900/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+1, taskHndl_Shell) != pdPASS) {
+  		  for(;;){} /* error */
+  	  }
+	#else
+  	  if (xTaskCreate(ShellTask,"Shell", 900/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+1, NULL) != pdPASS) {
+		  for(;;){} /* error */
+	  }
+	#endif
 #endif
 }
 
