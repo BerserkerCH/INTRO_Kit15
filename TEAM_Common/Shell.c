@@ -88,9 +88,7 @@
 #if PL_CONFIG_HAS_SUMO
   #include "Sumo.h"
 #endif
-//#if PL_CONFIG_HAS_ZORK
-  #include "RTOS.h"
-//#endif
+
 
 #if CLS1_DEFAULT_SERIAL
   #error "Default is RTT. Disable any Shell default connection in the component properties, as we are setting it a runtime!"
@@ -318,7 +316,6 @@ static uint8_t SHELL_PrintHelp(const CLS1_StdIOType *io) {
   CLS1_SendHelpStr("Shell", "Shell commands\r\n", io->stdOut);
   CLS1_SendHelpStr("  help|status", "Print help or status information\r\n", io->stdOut);
   CLS1_SendHelpStr("  val <num>", "Assign number value\r\n", io->stdOut);
-  CLS1_SendHelpStr("  gameZork","Starts Zork\r\n", io->stdOut);
   return ERR_OK;
 }
 
@@ -356,9 +353,6 @@ static uint8_t SHELL_ParseCommand(const unsigned char *cmd, bool *handled, const
       return ERR_FAILED; /* wrong format of command? */
     }
 
-  }else if( UTIL1_strcmp((char*)cmd, "Shell gameZork")==0){
-	  vTaskResume(ZorkTaskHndl);
-	  //startZork(); // create task from beginning or only if needed?
   }
   return ERR_OK;
 }

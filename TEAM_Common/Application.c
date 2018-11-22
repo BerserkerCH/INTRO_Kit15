@@ -1,5 +1,5 @@
 /**
- * \file
+f * \file
  * \brief Main application file
  * \author Erich Styger, erich.styger@hslu.ch
  *
@@ -200,13 +200,46 @@ static void APP_AdoptToHardware(void) {
 /* void myISR(void){
 	EVNT_SetEvent(EVNT_LED_HEARTBEAT);
 } */
+static void BlinkyTask(void *pvParameters){
+	 SHELL_SendString("Blinky started.\r\n");
+	for(;;){
+		LED1_Neg();
 
+		vTaskDelay(pdMS_TO_TICKS(100));
+	}
+}
+
+static void BeepyTask(void *pvParameters){
+	SHELL_SendString("I am Blinky\r\n");
+	for(;;){
+	    BUZ_Beep(100,2);
+	    vTaskDelay(pdMS_TO_TICKS(100));
+	}
+}
+
+void Task_init(void){
+	 BaseType_t blink_res;
+		  blink_res = xTaskCreate(BlinkyTask, "Blinky", 500/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+1, NULL);
+		  if (blink_res != pdPASS){
+				  // something went wrong
+				 for(;;);
+		  }
+		  /*
+		  BaseType_t beep_res;
+		  beep_res = xTaskCreate(BeepyTask, "Beepy", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+1, NULL);
+		  if (beep_res != pdPASS){
+				  // something went wrong
+				  WAIT1_Waitms(10);
+		  }*/
+
+}
 
 void APP_Start(void) {
   PL_Init();
   APP_AdoptToHardware();
   //__asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
+  Task_init();
   vTaskStartScheduler() ;
   for(;;) {
 	  EVNT_HandleEvent(APP_EventHandler,TRUE);

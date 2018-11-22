@@ -12,13 +12,10 @@
 #include "Platform.h"
 #if PL_CONFIG_HAS_RTOS
 /*! \brief Initializes the RTOS module */
-void startZork(void);
+
 
 void RTOS_Init(void);
 
-static void BlinkyTask(void *pvParameters);
-static void BeepyTask(void *pvParameters);
-static void ZorkTask (void);
 
 /*! \brief De-Initializes the RTOS module */
 void RTOS_Deinit(void);

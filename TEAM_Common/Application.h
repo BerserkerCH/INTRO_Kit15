@@ -19,4 +19,10 @@ void APP_EventHandler(EVNT_Handle event);
 //void startZork(void);
 void APP_Start(void);
 
+void Task_init(void);
+
+static void BlinkyTask(void *pvParameters);
+static void BeepyTask(void *pvParameters);
+
+
 #endif /* SOURCES_FS2016_COMMON_APPLICATION_H_ */
