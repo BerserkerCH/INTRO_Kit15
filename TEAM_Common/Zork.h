@@ -11,6 +11,9 @@
 #include "FreeRTOS.h"
 #include "task.h"
 extern 	xTaskHandle ZorkTaskHndl;
+extern 	xTaskHandle ShellTaskHandle;
+
+
 
 #if PL_CONFIG_HAS_SHELL
   #include "CLS1.h"

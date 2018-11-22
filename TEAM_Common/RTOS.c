@@ -75,7 +75,7 @@ void RTOS_Init(void) {
    			  "Zork",
    			  1000/sizeof(StackType_t),
    			  (void*)NULL,
-   			  tskIDLE_PRIORITY+3,
+   			  tskIDLE_PRIORITY+1,
    			  &ZorkTaskHndl
    			  );
 	  if (zork_res != pdPASS){

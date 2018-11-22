@@ -6,6 +6,7 @@
  */
 #include "Platform.h"
 #include "RTOS.h"
+#include "Shell.h"
 #include "Zork.h"
 
 #if PL_CONFIG_HAS_SHELL
@@ -32,7 +33,7 @@
 		return ZORK_PrintHighscore(io);
 	  }else if( UTIL1_strcmp((char*)cmd, "zork play Zork")==0){
 		  vTaskResume(ZorkTaskHndl); /* run the game */
-		  vTaskSuspend(NULL); /* suspend the shell */
+		  vTaskSuspend(ShellTaskHandle); /* suspend the shell */
 		  *handled = TRUE;
 		  return ERR_OK;
 	  }
@@ -42,8 +43,9 @@
 #endif
 
 void ZORK_quit(){
-  vTaskResume(NULL); /* suspend the shell */
-  KIN1_SoftwareReset(); /* will perform Software RESET */
+  vTaskResume(ShellTaskHandle); /* resume the shell */
+  vTaskSuspend(ZorkTaskHndl);
+  //KIN1_SoftwareReset(); /* will perform Software RESET */
 }
 
 void ZORK_Init(){
