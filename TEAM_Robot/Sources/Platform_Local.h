@@ -41,7 +41,7 @@
 #define PL_LOCAL_CONFIG_HAS_USB_CDC_DISABLED              /* disable USB CDC */
 #define PL_LOCAL_CONFIG_HAS_SHELL_QUEUE_DISABLED          /* disable shell queue */
 #define PL_LOCAL_CONFIG_HAS_SQUEUE_SINGLE_CHAR_DISABLED   /* disable single character support in shell queue */
-#define PL_LOCAL_CONFIG_HAS_SEMAPHORE_DISABLED            /* disable semaphore test module */
+//#define PL_LOCAL_CONFIG_HAS_SEMAPHORE_DISABLED            /* disable semaphore test module */
 #define PL_LOCAL_CONFIG_HAS_CONFIG_NVM_DISABLED           /* disable NVM storage */
 
 /* remote controller hardware functionality */
@@ -74,5 +74,8 @@
 #define PL_LOCAL_CONFIG_HAS_TURN_DISABLED                 /* disable turning module */
 #define PL_LOCAL_CONFIG_HAS_LINE_MAZE_DISABLED            /* disable maze solving */
 #define PL_LOCAL_CONFIG_HAS_BATTERY_ADC_DISABLED          /* disable battery ADC */
+
+#define PL_LCOAL_CONFIG_HAS_BLINKYTASK_DISABLED			  /* disable the blinkyTask */
+#define PL_LCOAL_CONFIG_HAS_BEEPSYTASK_DISABLED			  /* disable the beepTask */
 
 #endif /* SOURCES_PLATFORM_LOCAL_H_ */

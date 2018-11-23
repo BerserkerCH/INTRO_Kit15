@@ -103,6 +103,9 @@
 
 #define PL_CONFIG_HAS_SNAKE_GAME        (1 && !defined(PL_LOCAL_CONFIG_HAS_SNAKE_GAME_DISABLED) && PL_CONFIG_HAS_LCD)
 
+
+#define PL_CONFIG_HAS_BLINKY_TASK		(1 && !defined(PL_LCOAL_CONFIG_HAS_BLINKYTASK_DISABLED))
+#define PL_CONFIG_HAS_BEEP_TASK			(1 && !defined(PL_LCOAL_CONFIG_HAS_BEEPSYTASK_DISABLED))
 /*!
  * \brief Driver de-initialization
  */
