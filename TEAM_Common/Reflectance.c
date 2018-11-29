@@ -131,6 +131,7 @@ void REF_CalibrateStartStop(void) {
 }
 #endif
 
+#define REF_MEASURERAW_TIMOUT (800*RefCnt_CNT_INP_FREQ_U_0/1000000)
 /*!
  * \brief Measures the time until the sensor discharges
  * \param raw Array to store the raw values.
@@ -144,19 +145,23 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
 
   LED_IR_On(); /* IR LED's on */
   WAIT1_Waitus(200);
-  taskENTER_CRITICAL();
+
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetOutput(); /* turn I/O line as output */
     SensorFctArray[i].SetVal(); /* put high */
     raw[i] = MAX_SENSOR_VALUE;
   }
   WAIT1_Waitus(50); /* give at least 10 us to charge the capacitor */
+  taskENTER_CRITICAL();
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetInput(); /* turn I/O line as input */
   }
   (void)RefCnt_ResetCounter(timerHandle); /* reset timer counter */
   do {
     timerVal = RefCnt_GetCounterValue(timerHandle);
+    if(timerVal > REF_MEASURERAW_TIMOUT ){
+    		break;
+    }
     cnt = 0;
     for(i=0;i<REF_NOF_SENSORS;i++) {
       if (raw[i]==MAX_SENSOR_VALUE) { /* not measured yet? */
