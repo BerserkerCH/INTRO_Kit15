@@ -131,7 +131,7 @@ void REF_CalibrateStartStop(void) {
 }
 #endif
 
-#define REF_MEASURERAW_TIMOUT (800*RefCnt_CNT_INP_FREQ_U_0/1000000)
+#define REF_MEASURERAW_TIMOUT (50000*(RefCnt_CNT_INP_FREQ_U_0/1000000))
 /*!
  * \brief Measures the time until the sensor discharges
  * \param raw Array to store the raw values.

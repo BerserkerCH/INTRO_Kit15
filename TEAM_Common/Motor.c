@@ -40,7 +40,7 @@ static void DirLPutVal(bool val) {
 
 static void DirRPutVal(bool val) {
   /*! \todo Check if directions are working properly with your hardware */
-  DIRR_PutVal(val);
+  DIRR_PutVal(!val);
 }
 
 void MOT_SetVal(MOT_MotorDevice *motor, uint16_t val) {

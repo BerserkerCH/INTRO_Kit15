@@ -52,6 +52,10 @@ f * \file
 #if PL_CONFIG_HAS_REFLECTANCE
   #include "Reflectance.h"
 #endif
+#if PL_CONFIG_HAS_TACHO_TASK
+	#include "Tacho.h"
+#endif
+
 #include "Sumo.h"
 
 #if PL_CONFIG_HAS_EVENTS
@@ -142,6 +146,7 @@ static void APP_AdoptToHardware(void) {
   if (res!=ERR_OK) {
     for(;;); /* error */
   }
+
 #if PL_CONFIG_HAS_MOTOR
   if (KIN1_UIDSame(&id, &RoboIDs[0])) { /* L20 */
 #if PL_CONFIG_HAS_QUADRATURE
@@ -219,6 +224,14 @@ static void BeepyTask(void *pvParameters){
 	}
 }
 #endif
+#if PL_CONFIG_HAS_TACHO_TASK
+static void TachoTask(void *pvParameters){
+	for(;;){
+		TACHO_Sample();
+		vTaskDelay(pdMS_TO_TICKS(10));
+	}
+}
+#endif
 
 void Task_init(void){
 #if PL_CONFIG_HAS_BLINKY_TASK
@@ -232,6 +245,14 @@ void Task_init(void){
 #if PL_CONFIG_HAS_BEEP_TASK
 		  BaseType_t beep_res;
 		  beep_res = xTaskCreate(BeepyTask, "Beepy", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+1, NULL);
+		  if (beep_res != pdPASS){
+				  // something went wrong
+				  WAIT1_Waitms(10);
+		  }
+#endif
+#if PL_CONFIG_HAS_TACHO_TASK
+		  BaseType_t beep_res;
+		  beep_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
 		  if (beep_res != pdPASS){
 				  // something went wrong
 				  WAIT1_Waitms(10);
