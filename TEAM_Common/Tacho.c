@@ -20,7 +20,7 @@
 
 #define TACHO_SAMPLE_PERIOD_MS (10)
   /*!< \todo speed sample period in ms. Make sure that speed is sampled at the given rate. */
-#define NOF_HISTORY (2U+1U)
+#define NOF_HISTORY (16U+1U)
   /*!< number of samples for speed calculation (>0):the more, the better, but the slower. */
 
 /*! \todo Check types for position: code shall use the same type as the quadrature counter!!!!! */
@@ -94,13 +94,13 @@ void TACHO_CalcSpeed(void) {
 
 void TACHO_Sample(void) {
   /*! \todo Implement/change function as needed, make sure implementation below matches your needs */
-  static int cnt = 0;
+  //static int cnt = 0;
   /* get called from the RTOS tick counter. Divide the frequency. */
-  cnt += TMR_TICK_MS;
+/*  cnt += TMR_TICK_MS;
   if (cnt < TACHO_SAMPLE_PERIOD_MS) {
     return;
-  }
-  cnt = 0; /* reset counter */
+  }*/
+  //cnt = 0; /* reset counter */
   /* left */
   TACHO_LeftPosHistory[TACHO_PosHistory_Index] = Q4CLeft_GetPos();
   TACHO_RightPosHistory[TACHO_PosHistory_Index] = Q4CRight_GetPos();
