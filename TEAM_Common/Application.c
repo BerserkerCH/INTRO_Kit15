@@ -228,7 +228,7 @@ static void BeepyTask(void *pvParameters){
 static void TachoTask(void *pvParameters){
 	for(;;){
 		TACHO_Sample();
-		vTaskDelay(pdMS_TO_TICKS(10));
+		vTaskDelay(pdMS_TO_TICKS(5));
 	}
 }
 #endif
@@ -255,7 +255,7 @@ void Task_init(void){
 		  beep_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
 		  if (beep_res != pdPASS){
 				  // something went wrong
-				  WAIT1_Waitms(4);
+				  for(;;);
 		  }
 #endif
 }

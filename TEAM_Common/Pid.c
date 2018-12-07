@@ -380,7 +380,7 @@ static uint8_t ParsePidParameter(PID_Config *config, const unsigned char *cmd, b
   }
   return res;
 }
-
+#if PL_CONFIG_HAS_NVM
 static uint8_t PID_LoadSettingsFromFlash(void) {
   PIDConfig_t *ptr;
 
@@ -395,6 +395,7 @@ static uint8_t PID_LoadSettingsFromFlash(void) {
 static uint8_t PID_StoreSettingsToFlash(void) {
   return NVMC_SavePIDData(&config, sizeof(config));
 }
+#endif
 
 uint8_t PID_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_StdIOType *io) {
   uint8_t res = ERR_OK;
@@ -428,8 +429,9 @@ uint8_t PID_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_Std
     if (res!=ERR_OK) {
       CLS1_SendStr((unsigned char*)"Loading from FLASH failed!\r\n", io->stdErr);
     }
-  }
+
 #endif
+  }
   return res;
 }
 #endif /* PL_HAS_SHELL */
@@ -455,10 +457,10 @@ void PID_Deinit(void) {
 
 void PID_Init(void) {
   /*! \todo determine your PID values */
-  config.speedLeftConfig.pFactor100 = 0;
-  config.speedLeftConfig.iFactor100 = 0;
-  config.speedLeftConfig.dFactor100 = 0;
-  config.speedLeftConfig.iAntiWindup = 0;
+  config.speedLeftConfig.pFactor100 = 600;
+  config.speedLeftConfig.iFactor100 = 60;
+  config.speedLeftConfig.dFactor100 = 80;
+  config.speedLeftConfig.iAntiWindup = 100000;
   config.speedLeftConfig.maxSpeedPercent = 0;
   config.speedLeftConfig.lastError = 0;
   config.speedLeftConfig.integral = 0;
