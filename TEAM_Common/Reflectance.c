@@ -318,7 +318,7 @@ static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
     return REF_LINE_STRAIGHT;
 #endif
   } else if (outerLeft<REF_MIN_LINE_VAL && outerRight>=REF_MIN_LINE_VAL && sumRight>MIN_LEFT_RIGHT_SUM && sumLeft<MIN_LEFT_RIGHT_SUM) {
-#if 1 || PL_APP_LINE_MAZE
+#if 0 || PL_APP_LINE_MAZE
     return REF_LINE_RIGHT; /* line going to the right side */
 #else
     return REF_LINE_STRAIGHT;

@@ -228,7 +228,7 @@ static void BeepyTask(void *pvParameters){
 static void TachoTask(void *pvParameters){
 	for(;;){
 		TACHO_Sample();
-		vTaskDelay(pdMS_TO_TICKS(5));
+		vTaskDelay(pdMS_TO_TICKS(2));
 	}
 }
 #endif
