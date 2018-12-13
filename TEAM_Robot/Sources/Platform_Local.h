@@ -37,15 +37,15 @@
 //#define PL_LOCAL_CONFIG_HAS_TRIGGER_DISABLED              /* disable triggers */
 //#define PL_LOCAL_CONFIG_HAS_DEBOUNCE_DISABLED             /* disable debouncing */
 //#define PL_LOCAL_CONFIG_HAS_RTOS_DISABLED                 /* disable RTOS usage */
-//#define PL_LOCAL_CONFIG_HAS_SEGGER_RTT_DISABLED           /* disable Segger RTT */
+#define PL_LOCAL_CONFIG_HAS_SEGGER_RTT_DISABLED           /* disable Segger RTT */
 #define PL_LOCAL_CONFIG_HAS_USB_CDC_DISABLED              /* disable USB CDC */
 //#define PL_LOCAL_CONFIG_HAS_SHELL_QUEUE_DISABLED          /* disable shell queue */
 #define PL_LOCAL_CONFIG_HAS_SQUEUE_SINGLE_CHAR_DISABLED   /* disable single character support in shell queue */
 #define PL_LOCAL_CONFIG_HAS_SEMAPHORE_DISABLED            /* disable semaphore test module */
-#define PL_LOCAL_CONFIG_HAS_CONFIG_NVM_DISABLED           /* disable NVM storage */
+//#define PL_LOCAL_CONFIG_HAS_CONFIG_NVM_DISABLED           /* disable NVM storage */
 
 /* remote controller hardware functionality */
-#define PL_LOCAL_CONFIG_HAS_RADIO_DISABLED                /* disable Radio transceiver */
+//#define PL_LOCAL_CONFIG_HAS_RADIO_DISABLED                /* disable Radio transceiver */
 #define PL_LOCAL_CONFIG_HAS_REMOTE_STDIO_DISABLED         /* disable Std I/O over radio */
 #define PL_LOCAL_CONFIG_HAS_REMOTE_DISABLED               /* disable remote controller (sender and receiver) */
 #define PL_LOCAL_CONFIG_HAS_CONTROL_SENDER_DISABLED       /* disable that we are the sender (otherwise we are the receiver) */
@@ -66,16 +66,16 @@
 //#define PL_LOCAL_CONFIG_HAS_MOTOR_TACHO_DISABLED          /* disable tacho */
 //#define PL_LOCAL_CONFIG_HAS_PID_DISABLED                  /* disable PID */
 //#define PL_LOCAL_CONFIG_HAS_DRIVE_DISABLED                /* disable drive module */
-#define PL_LOCAL_CONFIG_HAS_LINE_FOLLOW_DISABLED          /* disable line following */
+//#define PL_LOCAL_CONFIG_HAS_LINE_FOLLOW_DISABLED          /* disable line following */
 
 #define PL_LOCAL_CONFIG_HAS_DISTANCE_DISABLED             /* disabling distance sensors */
 #define PL_LOCAL_CONFIG_HAS_TOF_SENSOR_DISABLED           /* disabling ToF sensors */
 
-#define PL_LOCAL_CONFIG_HAS_TURN_DISABLED                 /* disable turning module */
+//#define PL_LOCAL_CONFIG_HAS_TURN_DISABLED                 /* disable turning module */
 #define PL_LOCAL_CONFIG_HAS_LINE_MAZE_DISABLED            /* disable maze solving */
 #define PL_LOCAL_CONFIG_HAS_BATTERY_ADC_DISABLED          /* disable battery ADC */
 
-#define PL_LCOAL_CONFIG_HAS_BLINKYTASK_DISABLED			  /* disable the blinkyTask */
+//#define PL_LCOAL_CONFIG_HAS_BLINKYTASK_DISABLED			  /* disable the blinkyTask */
 #define PL_LCOAL_CONFIG_HAS_BEEPSYTASK_DISABLED			  /* disable the beepTask */
 //#define PL_LOCAL_CONFIG_HAS_TACHO_TASK_DISABLED
 

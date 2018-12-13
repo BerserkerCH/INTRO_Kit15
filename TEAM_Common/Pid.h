@@ -74,6 +74,8 @@ void PID_Init(void);
 /*! \brief Driver de-initialization */
 void PID_Deinit(void);
 
+uint8_t PID_LoadSettingsFromFlash(void);
+
 #endif /* PL_CONFIG_HAS_PID */
 
 #endif /* PID_H_ */

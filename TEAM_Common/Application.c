@@ -15,6 +15,8 @@ f * \file
 #include "KeyDebounce.h"
 #include "CLS1.h"
 #include "KIN1.h"
+#include "Drive.h"
+#include "Pid.h"
 #if PL_CONFIG_HAS_KEYS
   #include "Keys.h"
 #endif
@@ -104,6 +106,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
 	  BtnMsg(1,NULL);
+	  LF_StartFollowing();
  //   BUZ_Beep(100,100);
     LED1_On();
 
@@ -207,10 +210,11 @@ static void APP_AdoptToHardware(void) {
 } */
 #if PL_CONFIG_HAS_BLINKY_TASK
 static void BlinkyTask(void *pvParameters){
-	 SHELL_SendString("Blinky started.\r\n");
+	SHELL_SendString("Blinky started.\r\n");
+
 	for(;;){
 		LED1_Neg();
-
+		EVNT_HandleEvent(APP_EventHandler,TRUE);
 		vTaskDelay(pdMS_TO_TICKS(100));
 	}
 }
@@ -251,9 +255,9 @@ void Task_init(void){
 		  }
 #endif
 #if PL_CONFIG_HAS_TACHO_TASK
-		  BaseType_t beep_res;
-		  beep_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
-		  if (beep_res != pdPASS){
+		  BaseType_t tacho_res;
+		  tacho_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
+		  if (tacho_res != pdPASS){
 				  // something went wrong
 				  for(;;);
 		  }
@@ -265,6 +269,11 @@ void APP_Start(void) {
   APP_AdoptToHardware();
   //__asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
+
+  PID_LoadSettingsFromFlash();
+  DRV_SetMode(DRV_MODE_POS);
+
+
   Task_init();
   vTaskStartScheduler() ;
   for(;;) {
