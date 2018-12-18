@@ -106,6 +106,7 @@ void APP_EventHandler(EVNT_Handle event) {
 #if PL_CONFIG_NOF_KEYS>=1
   case EVNT_SW1_PRESSED:
 	  BtnMsg(1,NULL);
+	  PID_Init(PID_CONFIG_AGRO);
 	  LF_StartFollowing();
  //   BUZ_Beep(100,100);
     LED1_On();
@@ -270,7 +271,7 @@ void APP_Start(void) {
   //__asm volatile("cpsie i"); /* enable interrupts */
   EVNT_SetEvent(EVNT_STARTUP);
 
-  PID_LoadSettingsFromFlash();
+  //PID_LoadSettingsFromFlash();
   DRV_SetMode(DRV_MODE_POS);
 
 

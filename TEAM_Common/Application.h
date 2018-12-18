@@ -21,11 +21,5 @@ void APP_Start(void);
 
 void Task_init(void);
 
-#if PL_CONFIG_HAS_BLINKY_TASK
-static void BlinkyTask(void *pvParameters);
-#endif
-#if PL_CONFIG_HAS_BLINKY_TASK
-static void BeepyTask(void *pvParameters);
-#endif
 
 #endif /* SOURCES_FS2016_COMMON_APPLICATION_H_ */

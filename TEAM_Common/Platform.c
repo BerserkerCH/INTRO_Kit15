@@ -132,7 +132,7 @@ void PL_Init(void) {
   TACHO_Init();
 #endif
 #if PL_CONFIG_HAS_PID
-  PID_Init();
+  PID_Init(PID_CONFIG_SLOW);
 #endif
 #if PL_CONFIG_HAS_DRIVE
   DRV_Init();

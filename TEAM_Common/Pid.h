@@ -16,7 +16,9 @@ typedef enum {
   PID_CONFIG_POS_LEFT,
   PID_CONFIG_POS_RIGHT,
   PID_CONFIG_SPEED_LEFT,
-  PID_CONFIG_SPEED_RIGHT
+  PID_CONFIG_SPEED_RIGHT,
+  PID_CONFIG_AGRO,
+  PID_CONFIG_SLOW
 } PID_ConfigType;
 
 typedef struct {
@@ -64,12 +66,16 @@ void PID_Pos(int32_t currPos, int32_t setPos, bool isLeft);
  * \param setLine Desired line position
  */
 void PID_Line(uint16_t currLine, uint16_t setLine);
+void PID_SetFwConfigSpeed(int speed);
 
 /*! \brief Driver re-init and reset */
 void PID_Start(void);
 
 /*! \brief Driver initialization */
-void PID_Init(void);
+void PID_Init(PID_ConfigType type);
+void PID_LineFw_aggressive(void);
+void PID_LineFw_constructive(void);
+
 
 /*! \brief Driver de-initialization */
 void PID_Deinit(void);

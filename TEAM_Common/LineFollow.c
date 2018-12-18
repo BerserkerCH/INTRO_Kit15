@@ -36,6 +36,8 @@ typedef enum {
   STATE_IDLE,              /* idle, not doing anything */
   STATE_FOLLOW_SEGMENT,    /* line following segment, going forward */
   STATE_TURN,              /* reached an intersection, turning around */
+  STATE_FIND_LINE_LEFT,		   /* lost line, turning around */
+  STATE_STEP,		  	   /* step intersection*/
   STATE_FINISHED,          /* reached finish area */
   STATE_STOP               /* stop the engines */
 } StateType;
@@ -84,8 +86,11 @@ static bool FollowSegment(void) {
   }
 }
 
+
 static void StateMachine(void) {
   REF_LineKind lineKind;
+  static uint8_t NOF_turns;
+  //static uint8_t NOF_steps;
 
   switch (LF_currState) {
     case STATE_IDLE:
@@ -93,38 +98,66 @@ static void StateMachine(void) {
 
     case STATE_FOLLOW_SEGMENT:
       if (!FollowSegment()) {
-        //SHELL_SendString((unsigned char*)"No line, stopped!\r\n");
         //LF_currState = STATE_STOP; /* stop if we do not have a line any more */
         LF_currState = STATE_TURN;
+      } else {
       }
       break;
-
     case STATE_TURN:
       lineKind = REF_GetLineKind();
       if (lineKind==REF_LINE_FULL) {
-        LF_currState = STATE_FINISHED;
-      } if (lineKind==REF_LINE_NONE) {
-        TURN_Turn(TURN_LEFT180, NULL);
-        DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
-        LF_currState = STATE_FOLLOW_SEGMENT;
+          //SHELL_SendString("all sensors see a line !\r\n");
+          LF_currState = STATE_STEP;
+      } else if (lineKind==REF_LINE_NONE) {
+          //SHELL_SendString("sensors do not see a line !\r\n");
+          if (NOF_turns < 3){
+        	  //PID_SetFwConfigSpeed(40);
+        	  NOF_turns++;
+              TURN_Turn(TURN_LEFT45, NULL);
+          } else if ((NOF_turns >= 3) && (NOF_turns < 4)) {
+        	  NOF_turns++;
+              TURN_Turn(TURN_RIGHT180, NULL);
+              //PID_SetFwConfigSpeed(20);
+          } else if ((NOF_turns >= 4) && (NOF_turns <7 )) {
+        	  NOF_turns++;
+              TURN_Turn(TURN_RIGHT45, NULL);
+          } else{
+        	  NOF_turns = 0;
+              TURN_Turn(TURN_STEP_LINE_BW_POST_LINE, NULL);
+          }
+          DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+          LF_currState = STATE_FOLLOW_SEGMENT;
       } else {
-        LF_currState = STATE_STOP;
+          LF_currState = STATE_FIND_LINE_LEFT;
       }
       break;
+    case STATE_STEP:
+        TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
+        lineKind = REF_GetLineKind();
+        if (lineKind==REF_LINE_FULL){
+        	LF_currState = STATE_FINISHED;
+        } else {
+            DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+            LF_currState = STATE_FIND_LINE_LEFT;
+        }
+    	break;
+    case STATE_FIND_LINE_LEFT:
+		//SHELL_SendString("Find line left!\r\n");
+        TURN_Turn(TURN_LEFT45, NULL);
+        DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+        LF_currState = STATE_FOLLOW_SEGMENT;
+    	break;
 
     case STATE_FINISHED:
-      SHELL_SendString("Finished!\r\n");
-      LF_currState = STATE_STOP;
-      break;
+		SHELL_SendString("Finished!\r\n");
+		LF_currState = STATE_STOP;
+		break;
 
     case STATE_STOP:
-#if 0
-      RNETA_SendSignal('C'); /*! \todo */
-#endif
-      SHELL_SendString("Stopped!\r\n");
-      TURN_Turn(TURN_STOP, NULL);
-      LF_currState = STATE_IDLE;
-      break;
+    	SHELL_SendString("Stopped!\r\n");
+	    TURN_Turn(TURN_STOP, NULL);
+	    LF_currState = STATE_IDLE;
+	    break;
   } /* switch */
 }
 
@@ -209,7 +242,7 @@ void LF_Deinit(void) {
 
 void LF_Init(void) {
   LF_currState = STATE_IDLE;
-  if (xTaskCreate(LineTask, "Line", 400/sizeof(StackType_t), NULL, tskIDLE_PRIORITY, &LFTaskHandle) != pdPASS) {
+  if (xTaskCreate(LineTask, "Line", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY, &LFTaskHandle) != pdPASS) {
     for(;;){} /* error */
   }
 }

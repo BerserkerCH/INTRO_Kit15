@@ -435,6 +435,9 @@ uint8_t PID_ParseCommand(const unsigned char *cmd, bool *handled, const CLS1_Std
   return res;
 }
 #endif /* PL_HAS_SHELL */
+void PID_SetFwConfigSpeed(int speed) {
+	config.lineFwConfig.maxSpeedPercent = speed;
+}
 
 void PID_Start(void) {
   /* reset the 'memory' values of the structure back to zero */
@@ -454,14 +457,18 @@ void PID_Start(void) {
 void PID_Deinit(void) {
   /* nothing needed */
 }
-
-void PID_Init(void) {
+void PID_Init(PID_ConfigType type){
   /*! \todo determine your PID values */
+	  if(type == PID_CONFIG_AGRO){
+		  PID_LineFw_aggressive();
+	  }  else {
+		  PID_LineFw_constructive();
+	  }
+
   config.speedLeftConfig.pFactor100 = 600;
   config.speedLeftConfig.iFactor100 = 60;
   config.speedLeftConfig.dFactor100 = 80;
   config.speedLeftConfig.iAntiWindup = 100000;
-  config.speedLeftConfig.maxSpeedPercent = 0;
   config.speedLeftConfig.lastError = 0;
   config.speedLeftConfig.integral = 0;
 
@@ -469,22 +476,15 @@ void PID_Init(void) {
   config.speedRightConfig.iFactor100 = config.speedLeftConfig.iFactor100;
   config.speedRightConfig.dFactor100 = config.speedLeftConfig.dFactor100;
   config.speedRightConfig.iAntiWindup = config.speedLeftConfig.iAntiWindup;
+  config.speedRightConfig.maxSpeedPercent = config.speedLeftConfig.maxSpeedPercent;
   config.speedRightConfig.lastError = 0;
   config.speedRightConfig.integral = 0;
 
-  config.lineFwConfig.pFactor100 = 0;
-  config.lineFwConfig.iFactor100 = 0;
-  config.lineFwConfig.dFactor100 = 0;
-  config.lineFwConfig.iAntiWindup = 0;
-  config.lineFwConfig.maxSpeedPercent = 0;
-  config.lineFwConfig.lastError = 0;
-  config.lineFwConfig.integral = 0;
-
-  config.posLeftConfig.pFactor100 = 0;
-  config.posLeftConfig.iFactor100 = 0;
-  config.posLeftConfig.dFactor100 = 0;
-  config.posLeftConfig.iAntiWindup = 0;
-  config.posLeftConfig.maxSpeedPercent = 0;
+  config.posLeftConfig.pFactor100 = 80;
+  config.posLeftConfig.iFactor100 = 10;//25;
+  config.posLeftConfig.dFactor100 = 0;//10;
+  config.posLeftConfig.iAntiWindup = 10;//30000;
+  config.posLeftConfig.maxSpeedPercent = config.speedLeftConfig.maxSpeedPercent;
   config.posLeftConfig.lastError = 0;
   config.posLeftConfig.integral = 0;
   config.posRightConfig.pFactor100 = config.posLeftConfig.pFactor100;
@@ -493,7 +493,36 @@ void PID_Init(void) {
   config.posRightConfig.iAntiWindup = config.posLeftConfig.iAntiWindup;
   config.posRightConfig.lastError = config.posLeftConfig.lastError;
   config.posRightConfig.integral = config.posLeftConfig.integral;
-  config.posRightConfig.maxSpeedPercent = config.posLeftConfig.maxSpeedPercent;
+  config.posRightConfig.maxSpeedPercent = config.speedLeftConfig.maxSpeedPercent;
+
+
+}
+void PID_LineFw_aggressive(void) {
+  config.lineFwConfig.pFactor100 = 600;	//600
+  config.lineFwConfig.iFactor100 = 25; 	//25
+  config.lineFwConfig.dFactor100 = 10; 	//10
+  config.lineFwConfig.iAntiWindup = 30000;//30000
+  config.lineFwConfig.maxSpeedPercent = 55;
+  config.lineFwConfig.lastError = 0;
+  config.lineFwConfig.integral = 0;
+
+  config.speedLeftConfig.maxSpeedPercent = 50;
+
+}
+
+
+
+void PID_LineFw_constructive(void) {
+  config.lineFwConfig.pFactor100 = 600;
+  config.lineFwConfig.iFactor100 = 25;
+  config.lineFwConfig.dFactor100 = 10;
+  config.lineFwConfig.iAntiWindup = 300000;
+  config.lineFwConfig.maxSpeedPercent = 40;
+  config.lineFwConfig.lastError = 0;
+  config.lineFwConfig.integral = 0;
+
+  config.speedLeftConfig.maxSpeedPercent = 28;
+
 }
 
 #endif /* PL_CONFIG_HAS_PID */
