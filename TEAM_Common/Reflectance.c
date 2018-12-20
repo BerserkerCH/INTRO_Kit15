@@ -60,7 +60,7 @@ typedef struct SensorFctType_ {
 } SensorFctType;
 
 typedef uint16_t SensorTimeType;
-#define MAX_SENSOR_VALUE  ((SensorTimeType)-1)
+#define MAX_SENSOR_VALUE  (54000)
 
 /* calibration min/max values */
 typedef struct SensorCalibT_ {
@@ -131,7 +131,7 @@ void REF_CalibrateStartStop(void) {
 }
 #endif
 
-#define REF_MEASURERAW_TIMOUT (800*(RefCnt_CNT_INP_FREQ_U_0/1000000))
+#define REF_MEASURERAW_TIMOUT (900*(RefCnt_CNT_INP_FREQ_U_0/1000000))
 /*!
  * \brief Measures the time until the sensor discharges
  * \param raw Array to store the raw values.
@@ -151,7 +151,7 @@ static void REF_MeasureRaw(SensorTimeType raw[REF_NOF_SENSORS]) {
     SensorFctArray[i].SetVal(); /* put high */
     raw[i] = MAX_SENSOR_VALUE;
   }
-  WAIT1_Waitus(50); /* give at least 10 us to charge the capacitor */
+  WAIT1_Waitus(30); /* give at least 10 us to charge the capacitor */
   taskENTER_CRITICAL();
   for(i=0;i<REF_NOF_SENSORS;i++) {
     SensorFctArray[i].SetInput(); /* turn I/O line as input */
@@ -271,7 +271,7 @@ uint16_t REF_GetLineValue(void) {
 static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
   uint32_t sum, sumLeft, sumRight, outerLeft, outerRight;
   int i;
-  #define REF_MIN_LINE_VAL      0x60   /* minimum value indicating a line */
+  #define REF_MIN_LINE_VAL      0x80   /* minimum value indicating a line */
 
   for(i=0;i<REF_NOF_SENSORS;i++) {
     if (val[i]<REF_MIN_LINE_VAL) { /* smaller value? White seen! */
@@ -601,7 +601,7 @@ void REF_Init(void) {
   refState = REF_STATE_INIT;
   timerHandle = RefCnt_Init(NULL);
   /*! \todo You might need to adjust priority or other task settings */
-  if (xTaskCreate(ReflTask, "Refl", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY, NULL) != pdPASS) {
+  if (xTaskCreate(ReflTask, "Refl", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+5, NULL) != pdPASS) {
     for(;;){} /* error */
   }
 }

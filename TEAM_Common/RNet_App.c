@@ -190,7 +190,7 @@ void RNETA_Init(void) {
         "Radio", /* task name for kernel awareness debugging */
         600/sizeof(StackType_t), /* task stack size */
         (void*)NULL, /* optional task startup argument */
-        tskIDLE_PRIORITY+3,  /* initial priority */
+        tskIDLE_PRIORITY+6,  /* initial priority */
         (xTaskHandle*)NULL /* optional task handle to create */
       ) != pdPASS) {
     /*lint -e527 */

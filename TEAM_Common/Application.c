@@ -252,7 +252,7 @@ void Task_init(void){
 #endif
 #if PL_CONFIG_HAS_TACHO_TASK
 		  BaseType_t beep_res;
-		  beep_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
+		  beep_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+4, NULL);
 		  if (beep_res != pdPASS){
 				  // something went wrong
 				  for(;;);

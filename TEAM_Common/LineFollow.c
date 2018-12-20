@@ -36,9 +36,14 @@ typedef enum {
   STATE_IDLE,              /* idle, not doing anything */
   STATE_FOLLOW_SEGMENT,    /* line following segment, going forward */
   STATE_TURN,              /* reached an intersection, turning around */
+  STATE_LEFT,              /* reached an intersection, turning left */
+  STATE_RIGHT,               /* reached an intersection, turning Right */
+  STATE_STRIGHT,               /* reached an intersection, strightforeward */
+  STATE_BACK,
   STATE_FINISHED,          /* reached finish area */
   STATE_STOP               /* stop the engines */
 } StateType;
+
 
 /* task notification bits */
 #define LF_START_FOLLOWING (1<<0)  /* start line following */
@@ -66,6 +71,7 @@ void LF_StartStopFollowing(void) {
 /* forward declaration */
 static void StateMachine(void);
 
+
 /*!
  * \brief follows a line segment.
  * \return Returns TRUE if still on line segment
@@ -86,6 +92,7 @@ static bool FollowSegment(void) {
 
 static void StateMachine(void) {
   REF_LineKind lineKind;
+  static int8_t uturn =0;
 
   switch (LF_currState) {
     case STATE_IDLE:
@@ -93,26 +100,94 @@ static void StateMachine(void) {
 
     case STATE_FOLLOW_SEGMENT:
       if (!FollowSegment()) {
-        SHELL_SendString((unsigned char*)"No line, stopped!\r\n");
-        LF_currState = STATE_STOP; /* stop if we do not have a line any more */
-        //LF_currState = STATE_TURN;
+        //SHELL_SendString((unsigned char*)"No line, stopped!\r\n");
+        //LF_currState = STATE_STOP; /* stop if we do not have a line any more */
+        LF_currState = STATE_TURN;
+        ;
       }
       break;
 #if PL_CONFIG_HAS_TURN
     case STATE_TURN:
       lineKind = REF_GetLineKind();
       if (lineKind==REF_LINE_FULL) {
-        LF_currState = STATE_FINISHED;
-      } if (lineKind==REF_LINE_NONE) {
-        TURN_Turn(TURN_LEFT180, NULL);
+
+    	  //TURN_Turn(TURN_LEFT90,NULL);
+
+       	  //DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+    	 // LF_currState = STATE_LEFT;
+    	  LF_currState = STATE_FINISHED;
+      } else if  (lineKind==REF_LINE_STRAIGHT){
+    	  LF_currState = STATE_FOLLOW_SEGMENT;
+    	  uturn=0;
+      } else if (lineKind==REF_LINE_LEFT){
+    	  TURN_Turn(TURN_LEFT45, NULL);
+    	  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+    	  LF_currState = STATE_FOLLOW_SEGMENT;
+      } else if  (lineKind==REF_LINE_RIGHT){
+		  TURN_Turn(TURN_RIGHT45, NULL);
+		  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+		  LF_currState = STATE_FOLLOW_SEGMENT;
+
+      } else if  (lineKind==REF_LINE_NONE) {
+    	  if (uturn==0){
+    		  TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
+    		  uturn++;
+    	  }else if (uturn<3){
+    		  TURN_Turn(TURN_LEFT45, NULL);
+    		  uturn++;
+    	  }else if (uturn==3){
+    		  TURN_Turn(TURN_RIGHT90, NULL);
+    		  TURN_Turn(TURN_RIGHT45, NULL);
+    		  uturn++;
+    	  }else if(uturn<6){
+    		  TURN_Turn(TURN_RIGHT45, NULL);
+    	  	  uturn++;
+    	  }else{
+    		  TURN_Turn(TURN_RIGHT45, NULL);
+    		  uturn=0;
+    	  }
+
         DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
-        LF_currState = STATE_FOLLOW_SEGMENT;
+
+
       } else {
         LF_currState = STATE_STOP;
       }
       break;
-#endif
+    case STATE_LEFT:
+    	lineKind = REF_GetLineKind();
+    	 if (lineKind==REF_LINE_STRAIGHT){
+			  LF_currState = STATE_FOLLOW_SEGMENT;
+		  }else{
+			  TURN_Turn(TURN_RIGHT90, NULL);
 
+			  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+			  LF_currState = STATE_STRIGHT;
+		  }
+    	 break;
+    case STATE_STRIGHT:
+    	lineKind = REF_GetLineKind();
+		 if (lineKind==REF_LINE_STRAIGHT){
+			  LF_currState = STATE_FOLLOW_SEGMENT;
+		  }else{
+			  TURN_Turn(TURN_RIGHT90, NULL);
+			  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+			  LF_currState = STATE_RIGHT;
+		  }
+		 break;
+    case STATE_RIGHT:
+    	lineKind = REF_GetLineKind();
+    	if (lineKind==REF_LINE_STRAIGHT){
+    		LF_currState = STATE_FOLLOW_SEGMENT;
+    	}else{
+    		TURN_Turn(TURN_RIGHT180, NULL);
+    		TURN_Turn(TURN_RIGHT90, NULL);
+
+    		LF_currState = STATE_FINISHED;
+    	}
+		break;
+
+#endif
     case STATE_FINISHED:
       SHELL_SendString("Finished!\r\n");
       LF_currState = STATE_STOP;
@@ -211,7 +286,7 @@ void LF_Deinit(void) {
 
 void LF_Init(void) {
   LF_currState = STATE_IDLE;
-  if (xTaskCreate(LineTask, "Line", 400/sizeof(StackType_t), NULL, tskIDLE_PRIORITY, &LFTaskHandle) != pdPASS) {
+  if (xTaskCreate(LineTask, "Line", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+2, &LFTaskHandle) != pdPASS) {
     for(;;){} /* error */
   }
 }
