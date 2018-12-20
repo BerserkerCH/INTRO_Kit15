@@ -128,7 +128,7 @@ static void StateMachine(void) {
 		  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
 		  LF_currState = STATE_FOLLOW_SEGMENT;
 
-      } else if  (lineKind==REF_LINE_NONE) {
+      } else if  (lineKind==REF_LINSE_NONE) {
     	  if (uturn==0){
     		  TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
     		  uturn++;
