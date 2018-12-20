@@ -36,7 +36,9 @@ typedef enum {
   STATE_IDLE,              /* idle, not doing anything */
   STATE_FOLLOW_SEGMENT,    /* line following segment, going forward */
   STATE_TURN,              /* reached an intersection, turning around */
-  STATE_FIND_LINE_LEFT,		   /* lost line, turning around */
+  STATE_FIND_LINE_LEFT,	   /* lost line, turning around */
+  STATE_TWO_LINE_LEFT,	   /* all sensors see  a pattern == two lines */
+  STATE_TWO_LINE_RIGHT,	   /* all sensors see  a pattern == two lines */
   STATE_STEP,		  	   /* step intersection*/
   STATE_FINISHED,          /* reached finish area */
   STATE_STOP               /* stop the engines */
@@ -81,6 +83,10 @@ static bool FollowSegment(void) {
   if (currLineKind==REF_LINE_STRAIGHT) {
     PID_Line(currLine, REF_MIDDLE_LINE_VALUE); /* move along the line */
     return TRUE;
+  } else if(currLineKind==REF_LINE_TWO_LEFT){
+	  LF_currState = STATE_TWO_LINE_LEFT;
+  } else if(currLineKind==REF_LINE_TWO_RIGHT){
+	  LF_currState = STATE_TWO_LINE_RIGHT;
   } else {
     return FALSE; /* intersection/change of direction or not on line any more */
   }
@@ -94,6 +100,16 @@ static void StateMachine(void) {
 
   switch (LF_currState) {
     case STATE_IDLE:
+      break;
+    case STATE_TWO_LINE_LEFT:
+		SHELL_SendString("Second line LEFT!\r\n");
+    	TURN_Turn(TURN_LEFT90, NULL);
+    	DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+      break;
+    case STATE_TWO_LINE_RIGHT:
+		SHELL_SendString("Second line RIGHT!\r\n");
+    	TURN_Turn(TURN_RIGHT90, NULL);
+    	DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
       break;
 
     case STATE_FOLLOW_SEGMENT:
@@ -242,7 +258,7 @@ void LF_Deinit(void) {
 
 void LF_Init(void) {
   LF_currState = STATE_IDLE;
-  if (xTaskCreate(LineTask, "Line", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY, &LFTaskHandle) != pdPASS) {
+  if (xTaskCreate(LineTask, "Line", 600/sizeof(StackType_t), NULL, tskIDLE_PRIORITY+2, &LFTaskHandle) != pdPASS) {
     for(;;){} /* error */
   }
 }
