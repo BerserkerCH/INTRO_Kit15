@@ -15,6 +15,8 @@ f * \file
 #include "KeyDebounce.h"
 #include "CLS1.h"
 #include "KIN1.h"
+#include "RNet_App.h"
+#include "RStdIO.h"
 #include "Drive.h"
 #include "Pid.h"
 #if PL_CONFIG_HAS_KEYS
@@ -66,6 +68,8 @@ static void BtnMsg(int btn, const char *msg) {
 #if PL_CONFIG_HAS_SHELL
   #if PL_CONFIG_HAS_SHELL_QUEUE
     uint8_t buf[48];
+    RSTDIO_QueueType queue;
+
 
     UTIL1_strcpy(buf, sizeof(buf), "Button pressed: ");
     UTIL1_strcat(buf, sizeof(buf), msg);
@@ -73,6 +77,13 @@ static void BtnMsg(int btn, const char *msg) {
     UTIL1_strcatNum32s(buf, sizeof(buf), btn);
     UTIL1_strcat(buf, sizeof(buf), "\r\n");
     SHELL_SendString(buf);
+    UTIL1_strcpy(buf, sizeof(buf), "line start\r\n");
+	queue = RSTDIO_QUEUE_TX_IN;
+
+	if(RSTDIO_SendToTxStdio(queue, buf, UTIL1_strlen((char*)buf))!=ERR_OK) {
+		SHELL_SendString("Error!");
+	}
+
   #else
     CLS1_SendStr("Button pressed: ", CLS1_GetStdio()->stdOut);
     CLS1_SendStr(msg, CLS1_GetStdio()->stdOut);
@@ -220,6 +231,16 @@ static void BlinkyTask(void *pvParameters){
 	}
 }
 #endif
+#if PL_CONFIG_HAS_EVENT_TASK
+static void EventTask(void *pvParameters){
+	 SHELL_SendString("Event started.\r\n");
+	for(;;){
+		EVNT_HandleEvent(APP_EventHandler,TRUE);
+
+		vTaskDelay(pdMS_TO_TICKS(10));
+	}
+}
+#endif
 #if PL_CONFIG_HAS_BEEP_TASK
 static void BeepyTask(void *pvParameters){
 	SHELL_SendString("I am Blinky\r\n");
@@ -255,6 +276,15 @@ void Task_init(void){
 				  WAIT1_Waitms(10);
 		  }
 #endif
+#if PL_CONFIG_HAS_EVENT_TASK
+	  BaseType_t event_res;
+	  event_res = xTaskCreate(EventTask, "Event", 500/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+3, NULL);
+	  if (event_res != pdPASS){
+					// something went wrong
+						 for(;;);
+				  }
+
+#endif
 #if PL_CONFIG_HAS_TACHO_TASK
 		  BaseType_t tacho_res;
 		  tacho_res = xTaskCreate(TachoTask, "Tacho", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
@@ -278,7 +308,7 @@ void APP_Start(void) {
   Task_init();
   vTaskStartScheduler() ;
   for(;;) {
-	  EVNT_HandleEvent(APP_EventHandler,TRUE);
+	  //EVNT_HandleEvent(APP_EventHandler,TRUE);
   }
 }
 

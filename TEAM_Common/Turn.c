@@ -30,7 +30,8 @@
 #if 0
 #define TURN_STEPS_90         400
 #else
-#define TURN_STEPS_90         700
+#define TURN_STEPS_90         670
+
 #endif
   /*!< number of steps for a 90 degree turn */
 #define TURN_STEPS_LINE       100
@@ -52,10 +53,14 @@ static int32_t TURN_StepsPostLine = TURN_STEPS_POST_LINE;
  */
 const unsigned char *TURN_TurnKindStr(TURN_Kind kind) {
   switch(kind) {
+    case TURN_LEFT10:                 return (const unsigned char*)"LEFT10";
     case TURN_LEFT45:                 return (const unsigned char*)"LEFT45";
     case TURN_LEFT90:                 return (const unsigned char*)"LEFT90";
+    case TURN_LEFT100:				  return (const unsigned char*)"LEFT100";
+    case TURN_RIGHT10:                 return (const unsigned char*)"LEFT10";
     case TURN_RIGHT45:                return (const unsigned char*)"RIGHT45";
     case TURN_RIGHT90:                return (const unsigned char*)"RIGHT90";
+    case TURN_RIGHT100:				  return (const unsigned char*)"RIGHT100";
     case TURN_LEFT180:                return (const unsigned char*)"LEFT180";
     case TURN_RIGHT180:               return (const unsigned char*)"RIGHT180";
     case TURN_STRAIGHT:               return (const unsigned char*)"STRAIGHT";
@@ -187,7 +192,7 @@ void TURN_TurnAngle(int16_t angle, TURN_StopFct stopIt) {
   if (isLeft) {
     angle = -angle; /* make it positive */
   }
-  angle %= 360; /* keep it inside 360° */
+  angle %= 360; /* keep it inside 360ï¿½ */
   steps = (angle*TURN_Steps90)/90;
   if (isLeft) {
     StepsTurn(-steps, steps, stopIt, ((angle/90)+1)*TURN_STEPS_90_TIMEOUT_MS);
@@ -215,7 +220,7 @@ static void TURN_PrintStatus(const CLS1_StdIOType *io) {
   CLS1_SendStatusStr((unsigned char*)"turn", (unsigned char*)"\r\n", io->stdOut);
   UTIL1_Num32sToStr(buf, sizeof(buf), TURN_Steps90);
   UTIL1_strcat(buf, sizeof(buf), (unsigned char*)" steps\r\n");
-  CLS1_SendStatusStr((unsigned char*)"  90°", buf, io->stdOut);
+  CLS1_SendStatusStr((unsigned char*)"  90ï¿½", buf, io->stdOut);
 
   UTIL1_Num32sToStr(buf, sizeof(buf), TURN_StepsLine);
   UTIL1_strcat(buf, sizeof(buf), (unsigned char*)" steps\r\n");

@@ -3,7 +3,7 @@
   <Header>
     <Name>TEAM_Robot</Name>
     <SavedBy>Erich Styger</SavedBy>
-    <ModificationStamp>294</ModificationStamp>
+    <ModificationStamp>297</ModificationStamp>
     <Date>2016-02-29</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -29,7 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-    <ProjectCompNumb>1004</ProjectCompNumb>
+    <ProjectCompNumb>1014</ProjectCompNumb>
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -1160,7 +1160,7 @@
         <ItemSymbol>PeriphDeviceFMC</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-        <Value />
+        <Value>FMC</Value>
         <SharedPrphMode>false</SharedPrphMode>
       </ItemState>
       <ItemState>
@@ -1415,8 +1415,8 @@
       <ItemState>
         <ItemSymbol>FMCIsInitialized</ItemSymbol>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>1</Index>
-        <Value>false</Value>
+        <Index>0</Index>
+        <Value>true</Value>
       </ItemState>
       <ItemState>
         <ItemSymbol>ShrdFLASHCfgGrp</ItemSymbol>
@@ -1428,7 +1428,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>true</Expanded>
+        <Expanded>false</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>PeriphDeviceFTFL_FlashConfig</ItemSymbol>
@@ -42763,7 +42763,7 @@
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Value>42</Value>
+        <Value>8</Value>
         <Base>DEC</Base>
       </ItemState>
       <ItemState>
@@ -42936,7 +42936,7 @@
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Value>true</Value>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>RStdioEnabled</ItemSymbol>

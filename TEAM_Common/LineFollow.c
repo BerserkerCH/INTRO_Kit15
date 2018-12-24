@@ -37,8 +37,8 @@ typedef enum {
   STATE_FOLLOW_SEGMENT,    /* line following segment, going forward */
   STATE_TURN,              /* reached an intersection, turning around */
   STATE_FIND_LINE_LEFT,	   /* lost line, turning around */
-  STATE_TWO_LINE_LEFT,	   /* all sensors see  a pattern == two lines */
-  STATE_TWO_LINE_RIGHT,	   /* all sensors see  a pattern == two lines */
+  STATE_LEFT,	   /* all sensors see  a pattern == two lines */
+  STATE_RIGHT,	   /* all sensors see  a pattern == two lines */
   STATE_STEP,		  	   /* step intersection*/
   STATE_FINISHED,          /* reached finish area */
   STATE_STOP               /* stop the engines */
@@ -83,10 +83,6 @@ static bool FollowSegment(void) {
   if (currLineKind==REF_LINE_STRAIGHT) {
     PID_Line(currLine, REF_MIDDLE_LINE_VALUE); /* move along the line */
     return TRUE;
-  } else if(currLineKind==REF_LINE_TWO_LEFT){
-	  LF_currState = STATE_TWO_LINE_LEFT;
-  } else if(currLineKind==REF_LINE_TWO_RIGHT){
-	  LF_currState = STATE_TWO_LINE_RIGHT;
   } else {
     return FALSE; /* intersection/change of direction or not on line any more */
   }
@@ -95,28 +91,30 @@ static bool FollowSegment(void) {
 
 static void StateMachine(void) {
   REF_LineKind lineKind;
-  static uint8_t NOF_turns;
+  static uint8_t NOF_turnsL;
+  static uint8_t NOF_turnsR;
+  static bool NOF_LR_Toggle = FALSE;
+  static bool State_LR = FALSE; // 0 = Left 	1 = Right
   //static uint8_t NOF_steps;
 
   switch (LF_currState) {
     case STATE_IDLE:
       break;
-    case STATE_TWO_LINE_LEFT:
-		SHELL_SendString("Second line LEFT!\r\n");
-    	TURN_Turn(TURN_LEFT90, NULL);
-    	DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
-      break;
-    case STATE_TWO_LINE_RIGHT:
-		SHELL_SendString("Second line RIGHT!\r\n");
-    	TURN_Turn(TURN_RIGHT90, NULL);
-    	DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
-      break;
-
     case STATE_FOLLOW_SEGMENT:
-      if (!FollowSegment()) {
-        //LF_currState = STATE_STOP; /* stop if we do not have a line any more */
-        LF_currState = STATE_TURN;
+        if (!FollowSegment()) {
+         LF_currState = STATE_TURN;
       } else {
+    	  if (NOF_LR_Toggle){
+    		  NOF_LR_Toggle = FALSE;
+			  if(State_LR==TRUE){
+				 //SHELL_SendString("FALSE Left!\r\n");
+				 State_LR=FALSE;
+			  }else{
+				 //SHELL_SendString("TRUE Right!\r\n");
+				 State_LR=TRUE;
+			  }
+    	  }
+
       }
       break;
     case STATE_TURN:
@@ -126,28 +124,43 @@ static void StateMachine(void) {
           LF_currState = STATE_STEP;
       } else if (lineKind==REF_LINE_NONE) {
           //SHELL_SendString("sensors do not see a line !\r\n");
-          if (NOF_turns < 3){
-        	  //PID_SetFwConfigSpeed(40);
-        	  NOF_turns++;
-              TURN_Turn(TURN_LEFT45, NULL);
-          } else if ((NOF_turns >= 3) && (NOF_turns < 4)) {
-        	  NOF_turns++;
-              TURN_Turn(TURN_RIGHT180, NULL);
-              //PID_SetFwConfigSpeed(20);
-          } else if ((NOF_turns >= 4) && (NOF_turns <7 )) {
-        	  NOF_turns++;
-              TURN_Turn(TURN_RIGHT45, NULL);
+          if(State_LR == FALSE){
+        	  LF_currState = STATE_LEFT;
           } else{
-        	  NOF_turns = 0;
-              TURN_Turn(TURN_STEP_LINE_BW_POST_LINE, NULL);
+        	  LF_currState = STATE_RIGHT;
           }
-          DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
-          LF_currState = STATE_FOLLOW_SEGMENT;
       } else {
           LF_currState = STATE_FIND_LINE_LEFT;
       }
       break;
+    case STATE_LEFT:
+      NOF_turnsR = 0;
+	  if (NOF_turnsL < 1){
+		  NOF_turnsL++;
+		  SHELL_SendString("LEFT 100° !\r\n");
+		  TURN_TurnAngle(-100, NULL);
+		  NOF_LR_Toggle = TRUE;
+	  } else if ((NOF_turnsL >= 1) && (NOF_turnsL <7)){
+		  TURN_TurnAngle(-10, NULL);
+	  }
+      DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+      LF_currState = STATE_FOLLOW_SEGMENT;
+      break;
+    case STATE_RIGHT:
+  	  NOF_turnsL = 0;
+  	  if (NOF_turnsR < 1){
+  		  NOF_turnsR++;
+		  SHELL_SendString("RIGHT 100° !\r\n");
+		  TURN_TurnAngle(100, NULL);
+		  NOF_LR_Toggle = TRUE;
+	  } else if ((NOF_turnsR >= 1) && (NOF_turnsR <7)){
+		  TURN_TurnAngle(10, NULL);
+	  }
+      DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
+      LF_currState = STATE_FOLLOW_SEGMENT;
+      break;
     case STATE_STEP:
+		//SHELL_SendString("Step line fw!\r\n");
         TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
         lineKind = REF_GetLineKind();
         if (lineKind==REF_LINE_FULL){
@@ -173,6 +186,8 @@ static void StateMachine(void) {
     	SHELL_SendString("Stopped!\r\n");
 	    TURN_Turn(TURN_STOP, NULL);
 	    LF_currState = STATE_IDLE;
+	    State_LR = TRUE; // 0 = Left 	1 = Right
+	    BUZ_Beep(300,1000);
 	    break;
   } /* switch */
 }

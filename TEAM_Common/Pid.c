@@ -502,7 +502,7 @@ void PID_LineFw_aggressive(void) {
   config.lineFwConfig.iFactor100 = 25; 	//25
   config.lineFwConfig.dFactor100 = 10; 	//10
   config.lineFwConfig.iAntiWindup = 30000;//30000
-  config.lineFwConfig.maxSpeedPercent = 55;
+  config.lineFwConfig.maxSpeedPercent = 40;
   config.lineFwConfig.lastError = 0;
   config.lineFwConfig.integral = 0;
 
@@ -517,7 +517,7 @@ void PID_LineFw_constructive(void) {
   config.lineFwConfig.iFactor100 = 25;
   config.lineFwConfig.dFactor100 = 10;
   config.lineFwConfig.iAntiWindup = 300000;
-  config.lineFwConfig.maxSpeedPercent = 40;
+  config.lineFwConfig.maxSpeedPercent = 35;
   config.lineFwConfig.lastError = 0;
   config.lineFwConfig.integral = 0;
 

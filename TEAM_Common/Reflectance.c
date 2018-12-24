@@ -277,8 +277,8 @@ static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
   uint32_t sum, sumLeft, sumRight, outerLeft, outerRight;
   int i;
   //#define REF_MIN_LINE_VAL      0x60   /* minimum value indicating a line */
-  #define REF_MIN_LINE_VAL      0x80   /* minimum value indicating a line */
-  #define REF_MIN_TWO_LINE_VAL  0xA0   /* minimum value indicating a a second line */
+  #define REF_MIN_LINE_VAL      0x90   /* minimum value indicating a line */
+  #define REF_MIN_TWO_LINE_VAL  0xC0   /* minimum value indicating a a second line */
 
 
   for(i=0;i<REF_NOF_SENSORS;i++) {
@@ -324,14 +324,14 @@ static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
 #if 0 || PL_APP_LINE_MAZE
     return REF_LINE_LEFT; /* line going to the left side */
 #else
-    return REF_LINE_TWO_LEFT; //REF_LINE_STRAIGHT
+    return REF_LINE_STRAIGHT; // REF_LINE_TWO_LEFT
 #endif
   } else if (outerLeft<REF_MIN_LINE_VAL && outerRight>=REF_MIN_TWO_LINE_VAL && SensorCalibMinMax.maxVal[1]) {
 	//else if (outerLeft<REF_MIN_LINE_VAL && outerRight>=REF_MIN_LINE_VAL && sumRight>MIN_LEFT_RIGHT_SUM && sumLeft<MIN_LEFT_RIGHT_SUM) {
 #if 0 || PL_APP_LINE_MAZE
     return REF_LINE_RIGHT; /* line going to the right side */
 #else
-    return REF_LINE_TWO_RIGHT; //REF_LINE_STRAIGHT
+    return REF_LINE_STRAIGHT; // REF_LINE_TWO_RIGHT
 #endif
   } else if (outerLeft>=REF_MIN_LINE_VAL && outerRight>=REF_MIN_LINE_VAL && sumRight>MIN_LEFT_RIGHT_SUM && sumLeft>MIN_LEFT_RIGHT_SUM) {
     return REF_LINE_FULL; /* full line */
