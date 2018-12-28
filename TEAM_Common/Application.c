@@ -257,7 +257,7 @@ static void TachoTask(void *pvParameters){
 void Task_init(void){
 #if PL_CONFIG_HAS_BLINKY_TASK
 	 BaseType_t blink_res;
-		  blink_res = xTaskCreate(BlinkyTask, "Blinky", 500/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+1, NULL);
+		  blink_res = xTaskCreate(BlinkyTask, "Blinky", 500/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+2, NULL);
 		  if (blink_res != pdPASS){
 				  // something went wrong
 				 for(;;);
@@ -265,7 +265,7 @@ void Task_init(void){
 #endif
 #if PL_CONFIG_HAS_EVENT_TASK
 	  BaseType_t event_res;
-	  event_res = xTaskCreate(EventTask, "Event", 500/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+3, NULL);
+	  event_res = xTaskCreate(EventTask, "Event", 1400/sizeof(StackType_t), (void*)NULL, tskIDLE_PRIORITY+3, NULL);
 	  if (event_res != pdPASS){
 					// something went wrong
 						 for(;;);
@@ -274,7 +274,7 @@ void Task_init(void){
 #endif
 #if PL_CONFIG_HAS_BEEP_TASK
 		  BaseType_t beep_res;
-		  beep_res = xTaskCreate(BeepyTask, "Beepy", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+1, NULL);
+		  beep_res = xTaskCreate(BeepyTask, "Beepy", 500/sizeof(StackType_t), (void*)NULL,	tskIDLE_PRIORITY+2, NULL);
 		  if (beep_res != pdPASS){
 				  // something went wrong
 				  WAIT1_Waitms(10);

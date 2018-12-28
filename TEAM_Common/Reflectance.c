@@ -32,7 +32,7 @@
 
 #define REF_NOF_SENSORS       6 /* number of sensors */
 #define REF_SENSOR1_IS_LEFT   1 /* sensor number one is on the left side */
-#define REF_MIN_NOISE_VAL     0x40   /* values below this are not added to the weighted sum */
+#define REF_MIN_NOISE_VAL     0x80   /* values below this are not added to the weighted sum */
 #define REF_USE_WHITE_LINE    0  /* if set to 1, then the robot is using a white (on black) line, otherwise a black (on white) line */
 
 #define REF_START_STOP_CALIB      1 /* start/stop calibration commands */
@@ -325,6 +325,10 @@ static REF_LineKind ReadLineKind(SensorTimeType val[REF_NOF_SENSORS]) {
 #endif
   } else if (outerLeft>=REF_MIN_LINE_VAL && outerRight>=REF_MIN_LINE_VAL && sumRight>MIN_LEFT_RIGHT_SUM && sumLeft>MIN_LEFT_RIGHT_SUM) {
     return REF_LINE_FULL; /* full line */
+  } else if(val[0]>3*val[1] && val[3]>3*val[1]){
+	  return REF_SEC_LINE_LEFT;
+  } else if(val[REF_NOF_SENSORS-1]>3*val[REF_NOF_SENSORS-2] && val[REF_NOF_SENSORS-3]>3*val[REF_NOF_SENSORS-2]){
+  	  return REF_SEC_LINE_RIGHT;
   } else if (sumRight==0 && sumLeft==0 && sum == 0) {
     return REF_LINE_NONE; /* no line */
   } else {
@@ -383,6 +387,10 @@ static unsigned char *REF_LineKindStr(REF_LineKind line) {
     return (unsigned char *)"LEFT";
   case REF_LINE_RIGHT:
     return (unsigned char *)"RIGHT";
+  case REF_SEC_LINE_LEFT:
+      return (unsigned char *)"SECOND LEFT";
+  case REF_SEC_LINE_RIGHT:
+       return (unsigned char *)"SECOND RIGHT";
   case REF_LINE_FULL:
     return (unsigned char *)"FULL";
   default:

@@ -22,6 +22,8 @@ typedef enum {
   REF_LINE_LEFT=2,     /* left half of sensors see line */
   REF_LINE_RIGHT=3,    /* right half of sensors see line */
   REF_LINE_FULL=4,     /* all sensors see a line */
+  REF_SEC_LINE_LEFT=5,
+  REF_SEC_LINE_RIGHT=6,     /* all sensors see a line */
   REF_NOF_LINES        /* Sentinel */
 } REF_LineKind;
 

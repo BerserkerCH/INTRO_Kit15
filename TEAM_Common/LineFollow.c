@@ -27,7 +27,7 @@
 #if PL_CONFIG_HAS_DRIVE
   #include "Drive.h"
 #endif
-
+#include "LED.h"
 #if 1 /*! \todo */
 #include "RNet_App.h"
 #endif
@@ -40,6 +40,8 @@ typedef enum {
   STATE_RIGHT,               /* reached an intersection, turning Right */
   STATE_STRIGHT,               /* reached an intersection, strightforeward */
   STATE_BACK,
+  STETE_UTURN_LEFT,
+  STETE_UTURN_RIGHT,
   STATE_FINISHED,          /* reached finish area */
   STATE_STOP               /* stop the engines */
 } StateType;
@@ -119,6 +121,8 @@ static void StateMachine(void) {
       } else if  (lineKind==REF_LINE_STRAIGHT){
     	  LF_currState = STATE_FOLLOW_SEGMENT;
     	  uturn=0;
+      } else if (lineKind == REF_SEC_LINE_LEFT){
+    	  LF_currState = STETE_UTURN_LEFT;
       } else if (lineKind==REF_LINE_LEFT){
     	  TURN_Turn(TURN_LEFT45, NULL);
     	  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
@@ -128,7 +132,7 @@ static void StateMachine(void) {
 		  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
 		  LF_currState = STATE_FOLLOW_SEGMENT;
 
-      } else if  (lineKind==REF_LINSE_NONE) {
+      } else if  (lineKind==REF_LINE_NONE) {
     	  if (uturn==0){
     		  TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
     		  uturn++;
@@ -154,6 +158,18 @@ static void StateMachine(void) {
         LF_currState = STATE_STOP;
       }
       break;
+    case STETE_UTURN_LEFT:
+    	LED1_Neg();
+    	TURN_TurnAngle(100,NULL);
+    	TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
+    	LF_currState = STATE_FOLLOW_SEGMENT;
+    	break;
+    case STETE_UTURN_RIGHT:
+    	LED1_Neg();
+    	TURN_TurnAngle(-100,NULL);
+		TURN_Turn(TURN_STEP_LINE_FW_POST_LINE, NULL);
+		LF_currState = STATE_FOLLOW_SEGMENT;
+    	break;
     case STATE_LEFT:
     	lineKind = REF_GetLineKind();
     	 if (lineKind==REF_LINE_STRAIGHT){
@@ -171,6 +187,7 @@ static void StateMachine(void) {
 			  LF_currState = STATE_FOLLOW_SEGMENT;
 		  }else{
 			  TURN_Turn(TURN_RIGHT90, NULL);
+
 			  DRV_SetMode(DRV_MODE_NONE); /* disable position mode */
 			  LF_currState = STATE_RIGHT;
 		  }
@@ -190,6 +207,7 @@ static void StateMachine(void) {
 #endif
     case STATE_FINISHED:
       SHELL_SendString("Finished!\r\n");
+      BUZ_Beep(60,200);
       LF_currState = STATE_STOP;
       break;
 
